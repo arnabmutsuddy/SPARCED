@@ -14,8 +14,8 @@ import re
 from antimony import *
 import argparse
 
-from modules.paramSweep import paramSweep
-from modules.copyDir import copyDirectory
+#from modules.paramSweep import paramSweep
+#from modules.copyDir import copyDirectory
 
 
 parser = argparse.ArgumentParser(description='Provide arguments to build the SPARCED model')
@@ -31,7 +31,7 @@ if args.folder == None:
 input_data_folder = args.folder
 
 #move input data into working directory
-copyDirectory(input_data_folder, os.getcwd()+"/")
+#copyDirectory(input_data_folder, os.getcwd()+"/")
 
 # Antimony model name and text
 fileModel = open('SPARCED.txt','w') # file name
@@ -50,7 +50,7 @@ compartments = []
 volumes = []
 
 # Create/write compartments
-compartment_sheet = np.array([np.array(line.strip().split("\t")) for line in open('Compartments.txt')])
+compartment_sheet = np.array([np.array(line.strip().split("\t")) for line in open(os.path.join(input_data_folder,'Compartments.txt'))])
 
 #read in each line minus the header row
 for row in compartment_sheet[1:]:
@@ -65,7 +65,7 @@ for idx in range(len(compartments)):
 fileModel.write("\n")
 
 # Write species and assign compartments
-species_sheet = np.array([np.array(line.strip().split("\t")) for line in open('Species.txt', encoding='latin-1')])
+species_sheet = np.array([np.array(line.strip().split("\t")) for line in open(os.path.join(input_data_folder,'Species.txt'), encoding='latin-1')])
 
 species_compartments = []
 for row in species_sheet[1:]:
@@ -84,7 +84,7 @@ for idx,val in enumerate(species_sheet[1:]):
 fileModel.write("\n\n  # Reactions:\n")
 
 #reads in file from excel and gets rid of first row and column (they're data labels)
-stoic_sheet = np.array([np.array(line.strip().split("\t")) for line in open('StoicMat.txt')])
+stoic_sheet = np.array([np.array(line.strip().split("\t")) for line in open('os.path.join(input_data_folder,'StoicMat.txt'))])
 
 #gets first column minus blank space at the beginning
 stoic_columnnames = stoic_sheet[0]
@@ -92,7 +92,7 @@ stoic_rownames = [line[0] for line in stoic_sheet[1:]]
 stoic_data = np.array([line[1:] for line in stoic_sheet[1:]])
 
 
-ratelaw_sheet = np.array([np.array(line.strip().split("\t")) for line in open('Ratelaws.txt')])
+ratelaw_sheet = np.array([np.array(line.strip().split("\t")) for line in open(os.path.join(input_data_folder,'Ratelaws.txt'))])
 ratelaw_data = np.array([line[1:] for line in ratelaw_sheet[1:]])
 
 paramnames = []
