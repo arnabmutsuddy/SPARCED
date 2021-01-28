@@ -2,11 +2,13 @@ import libsbml
 import importlib
 import amici
 import numpy as np
+import re
+import pandas as pd
 
 from modules.SGEmodule import SGEmodule
 from modules.RunPrep import RunPrep
 
-def RunSPARCED(flagD,th,spdata,genedata,Vn,Vc,model):
+def RunSPARCED(flagD,th,spdata,genedata,Vn,Vc,model,input_data_folder):
     ts = 30 # time-step to update mRNA numbers
     NSteps = int(th*3600/ts)
     tout_all = np.arange(0,th*3600+1,30)    

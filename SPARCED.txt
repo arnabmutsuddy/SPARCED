@@ -166,7 +166,7 @@ model SPARCED()
   Species F in Extracellular;
   Species I in Extracellular;
   Species INS in Extracellular;
-  Species E1 in Cytoplasm;
+  Species EGFR in Cytoplasm;
   Species pE1 in Cytoplasm;
   Species E2 in Cytoplasm;
   Species pE2 in Cytoplasm;
@@ -3388,7 +3388,7 @@ model SPARCED()
   F = 4.132678e-16;
   I = 1.256692e-18;
   INS = 8.952911e-15;
-  E1 = 5.003457e+01;
+  EGFR = 5.003457e+01;
   pE1 = 5.051704e+00;
   E2 = 3.798189e+00;
   pE2 = 3.835012e-01;

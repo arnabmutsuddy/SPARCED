@@ -28,15 +28,18 @@ model_output_dir = model_name
 
 parser = argparse.ArgumentParser(description='Provide arguments to build the SPARCED model')
 parser.add_argument('--deterministic', metavar='flagD', type=int, help='0 for deterministic run, 1 for stochastic')
-parser.add_argument('--time', metavar='time', type=int, help='experiment run time (in hours)')
-parser.add_argument('--Vn', metavar='Vn', help='the volume of the nucleus in liters')
-parser.add_argument('--Vc', metavar='Vc', help='the volume of the cytoplasm in liters')
-parser.add_argument('--outfile', metavar='outfile', help='the prefix for the name of the output files')
+parser.add_argument('--time', metavar='time', type=int, help='experiment run time (in hours)'default=12)
+parser.add_argument('--Vn', metavar='Vn', help='the volume of the nucleus in liters',default=1.7500E-12)
+parser.add_argument('--Vc', metavar='Vc', help='the volume of the cytoplasm in liters',default=5.2500E-12)
+parser.add_argument('--folder', metavar='folder', help='input data folder path',default='input_files')
+parser.add_argument('--outfile', metavar='outfile', help='the prefix for the name of the output files',default='output')
 args = parser.parse_args()
 
 
 if args.time == None or args.deterministic == None or args.Vn == None or args.Vc == None or args.outfile == None:
     print("ERROR: missing arguments. Need to pass --time, --deterministic, --Vn, --Vc, --outfile. Use -h for help.")
+
+input_data_folder = args.folder
 
 flagD = args.deterministic
 th = args.time
@@ -52,7 +55,7 @@ if flagD == 0:
     
     sys.path.insert(0, os.path.abspath(model_output_dir))
 
-    species_sheet = np.array([np.array(line.strip().split("\t")) for line in open('Species.txt', encoding='latin-1')])
+    species_sheet = np.array([np.array(line.strip().split("\t")) for line in open(os.path.join(input_data_folder,'Species.txt'), encoding='latin-1')])
 
     species_initializations = []
     for row in species_sheet[1:]:
@@ -65,7 +68,7 @@ if flagD == 0:
     solver.setMaxSteps = 1e10
     model.setTimepoints(np.linspace(0,ts)) # np.linspace(0, 30) # set timepoints
 
-    xoutS_all, xoutG_all, tout_all = RunSPARCED(flagD,th,species_initializations,[],Vn,Vc,model)
+    xoutS_all, xoutG_all, tout_all = RunSPARCED(flagD,th,species_initializations,[],Vn,Vc,model,input_data_folder)
 
     if flagWr==1:
         columnsS=[ele for ele in model.getStateIds()]
@@ -85,7 +88,7 @@ elif flagD == 1:
     nmxlsfile = outfile
 
     sys.path.insert(0, os.path.abspath(model_output_dir))
-    species_sheet = np.array([np.array(line.strip().split("\t")) for line in open('Species.txt', encoding='latin-1')])
+    species_sheet = np.array([np.array(line.strip().split("\t")) for line in open(os.path.join(input_data_folder,'Species.txt'), encoding='latin-1')])
 
     species_initializations = []
     for row in species_sheet[1:]:
@@ -100,7 +103,7 @@ elif flagD == 1:
     solver.setMaxSteps = 1e10
     model.setTimepoints(np.linspace(0,ts)) # np.linspace(0, 30) # set timepoints
 
-    xoutS_all, xoutG_all, tout_all = RunSPARCED(flagD,th,species_initializations,[],Vn,Vc,model)
+    xoutS_all, xoutG_all, tout_all = RunSPARCED(flagD,th,species_initializations,[],Vn,Vc,model,input_data_folder)
 
     if flagWr==1:
         columnsS=[ele for ele in model.getStateIds()]

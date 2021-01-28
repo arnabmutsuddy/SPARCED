@@ -25,6 +25,7 @@
       </unitDefinition>
     </listOfUnitDefinitions>
     <listOfCompartments>
+      <compartment sboTerm="SBO:0000410" id="default_compartment" spatialDimensions="3" size="1" constant="true"/>
       <compartment id="Cytoplasm" spatialDimensions="3" size="5.25e-12" units="volume" constant="true">
         <annotation>GO:0005737</annotation>
       </compartment>
@@ -481,7 +482,7 @@
       <species id="INS" compartment="Extracellular" initialConcentration="8.952911e-15" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000254647</annotation>
       </species>
-      <species id="E1" compartment="Cytoplasm" initialConcentration="50.03457" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="EGFR" compartment="Cytoplasm" initialConcentration="50.03457" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000146648</annotation>
       </species>
       <species id="pE1" compartment="Cytoplasm" initialConcentration="5.051704" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
@@ -2292,6 +2293,7 @@
       <species id="AKTi_AKT" compartment="Cytoplasm" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
       <species id="mT" compartment="Cytoplasm" initialConcentration="37.68814" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
       <species id="EIF4E_mT" compartment="Cytoplasm" initialConcentration="88.81107" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="E1" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
     </listOfSpecies>
     <listOfParameters>
       <parameter id="k1_1" value="0.0042005" constant="true"/>

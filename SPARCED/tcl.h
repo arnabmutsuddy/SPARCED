@@ -1,0 +1,1 @@
+#define tcl_EGFR tcl[0]

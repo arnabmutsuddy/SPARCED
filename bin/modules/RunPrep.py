@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 
-def RunPrep(flagD,Vn,model):
-    kGsRead = pd.read_csv('OmicsData.txt',header=0,index_col=0,sep="\t")
+def RunPrep(flagD,Vn,model,input_data_folder):
+    kGsRead = pd.read_csv(os.path.join(input_data_folder,'OmicsData.txt'),header=0,index_col=0,sep="\t")
     gExp_mpc = np.float64(kGsRead.values[:,0])
     mExp_mpc = np.float64(kGsRead.values[:,1])
     kGin = np.float64(kGsRead.values[:,2])
@@ -12,7 +12,7 @@ def RunPrep(flagD,Vn,model):
     kTCd = np.float64(kGsRead.values[:,6])
 
     # Read-in the activators matrix and assign concentrations of activators
-    TARsRead = pd.read_csv('GeneReg.txt',header=0,index_col=0,sep="\t")
+    TARsRead = pd.read_csv(os.path.join(input_data_folder,'GeneReg.txt'),header=0,index_col=0,sep="\t")
     TARs0 = (TARsRead.values)
     numberofTARs = len(TARsRead.columns)
     spnames = [ele for ele in model.getStateIds()]
@@ -57,8 +57,11 @@ def RunPrep(flagD,Vn,model):
     genedata = []
     if flagD==1:
         genedata = np.concatenate((xgac_mpc_D, xgin_mpc_D), axis=None)
+        genedata = np.concatenate((genedata, mExp_mpc), axis=None)
+
     else:
         genedata = np.concatenate((xgac_mpc, xgin_mpc), axis=None)
+        genedata = np.concatenate((genedata, mExp_mpc), axis=None)
     
     # Gene switching constants
     kGin_1 = kGin[0]

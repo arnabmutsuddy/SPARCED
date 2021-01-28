@@ -64,13 +64,13 @@ species_initializations[155:162] = STIMligs
 
 # reaction rate constant modification
 
-slr = pd.read_csv('silenced.txt', header=None, sep='\t')
-slr = [slr.values[i][0] for i in range(len(slr))]
-slr = np.array(slr)
+# slr = pd.read_csv('silenced.txt', header=None, sep='\t')
+# slr = [slr.values[i][0] for i in range(len(slr))]
+# slr = np.array(slr)
 
-ratelaws = pd.read_csv('input_files/Ratelaws.txt',sep='\t',header=0,index_col=0)
+# ratelaws = pd.read_csv('input_files/Ratelaws.txt',sep='\t',header=0,index_col=0)
 
-slr_param = ['k'+str(list(ratelaws.index).index(slr[i])+1) for i in range(len(slr))]
+# slr_param = ['k'+str(list(ratelaws.index).index(slr[i])+1) for i in range(len(slr))]
 
 #%%
 
@@ -85,20 +85,22 @@ model = model_module.getModel()
 
 model_param = np.array(model.getFixedParameterIds())
 
-slr_param_actual = []
-for i in range(len(model_param)):
-    for j in range(len(slr_param)):
-        if slr_param[j] == model_param[i] or slr_param[j]+'_1' == model_param[i]:
-            slr_param_actual.append(model_param[i])
+
+#%%
+# slr_param_actual = []
+# for i in range(len(model_param)):
+#     for j in range(len(slr_param)):
+#         if slr_param[j] == model_param[i] or slr_param[j]+'_1' == model_param[i]:
+#             slr_param_actual.append(model_param[i])
             
-for i in range(len(slr_param_actual)):
-    model.setFixedParameterById(slr_param_actual[i],0)
+# for i in range(len(slr_param_actual)):
+#     model.setFixedParameterById(slr_param_actual[i],0)
 
 
 #%%
 
 if flagD == 1:
-    flagWr = 1
+    flagWr = 0
     nmxlsfile = outfile
     
     #sys.path.insert(0, os.path.abspath(model_output_dir))
@@ -138,7 +140,7 @@ if flagD == 1:
 flagD = 0
 
 
-flagWr = 1
+flagWr = 0
 nmxlsfile = outfile
 
 sys.path.insert(0, os.path.abspath(model_output_dir))
