@@ -19,7 +19,7 @@ from modules.copyDir import copyDirectory
 
 
 parser = argparse.ArgumentParser(description='Provide arguments to build the SPARCED model')
-parser.add_argument('--folder', metavar='folder', help='input data folder path')
+parser.add_argument('--folder', metavar='folder', help='input data folder path',default='input_files')
 # parser.add_argument('--paramfile', metavar='paramfile', help='file containing any non-default values')
 args = parser.parse_args()
 
@@ -253,43 +253,3 @@ for row in compartment_sheet[1:]:
 # Write with the same name or use the next section instead of below lines
 writer = libsbml.SBMLWriter()
 writer.writeSBML(sbml_doc, sbml_file)
-
-# # Change model name and write with a new name
-# sbml_model.setName(model_name+'_Annot')
-# sbml_model.setId(model_name+'_Annot')
-# sbml_filewAnnot = model_name+'_Annot.xml'
-# writer = libsbml.SBMLWriter()
-# writer.writeSBML(sbml_doc, sbml_filewAnnot)
-
-# sbml_file = sbml_filewAnnot # Comment-out to use the file name  w/t annotations
-model_name = sbml_file[0:-4]
-model_output_dir = model_name
-
-sbml_reader = libsbml.SBMLReader()
-sbml_doc = sbml_reader.readSBML(sbml_file)
-sbml_model = sbml_doc.getModel()
-
-# Create an SbmlImporter instance for our SBML model
-sbml_importer = amici.SbmlImporter(sbml_file)
-
-constantParameters = [params.getId() for params in sbml_model.getListOfParameters()]
-
-observables={'actp53':{'formula': 'p53ac'},'phERK':{'formula': 'ppERK'},'egfLR':{'formula': 'EE1'}}
-
-sbml_importer.sbml2amici(model_name,
-                         model_output_dir,
-                         verbose=False,
-                         observables=observables,
-                         constantParameters=constantParameters)
-
-sys.path.insert(0, os.path.abspath(model_output_dir))
-model_module = importlib.import_module(model_name)
-model = model_module.getModel()
-
-# set timepoints for which we want to simulate the model
-model.setTimepoints(np.linspace(0, 86400, 2881))
-# Create solver instance
-solver = model.getSolver()
-solver.setMaxSteps = 1e10
-# Run simulation using default model parameters and solver options
-rdata = amici.runAmiciSimulation(model, solver)
