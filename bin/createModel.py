@@ -84,7 +84,7 @@ for idx,val in enumerate(species_sheet[1:]):
 fileModel.write("\n\n  # Reactions:\n")
 
 #reads in file from excel and gets rid of first row and column (they're data labels)
-stoic_sheet = np.array([np.array(line.strip().split("\t")) for line in open('os.path.join(input_data_folder,'StoicMat.txt'))])
+stoic_sheet = np.array([np.array(line.strip().split("\t")) for line in open(os.path.join(input_data_folder,'StoicMat.txt'))])
 
 #gets first column minus blank space at the beginning
 stoic_columnnames = stoic_sheet[0]
@@ -140,14 +140,15 @@ for rowNum, ratelaw in enumerate(ratelaw_data):
             paramnames_vTL = []
             for ematch in matches_kTL:
                 paramnames_vTL.append(ematch.group())
+            paramnames_vTL = list(dict.fromkeys(paramnames_vTL))
             for k,p in enumerate(paramnames_vTL):
                 if 'mrna_' in p:
                     paramname = p
                 else:
                     paramname = "k"+str(rowNum+1)+"_"+str(j)
-                    ratelaw[1].replace(p,paramname)
+                    formula = formula.replace(p,paramname)
                     j += 1
-                paramname.append(paramname)
+                paramnames.append(paramname)
                 paramvals.append(params[k])
                 
         else:
