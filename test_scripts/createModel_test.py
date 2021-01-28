@@ -158,18 +158,35 @@ for rowNum, ratelaw in enumerate(ratelaw_data):
                 formula = formula.replace(ematch.group(),paramnames[-1])
                 
         elif 'mrna_' in ratelaw[1]:
-            mrna = re.search(r"mrna_[A-Z0-9]+", ratelaw[1])
-            for p in params:
-                paramnames.append("k"+str(rowNum+1)+"_"+str(j))
-                paramvals.append(float(ratelaw[j+1]))
-                pattern1 = 'k(\D*)\d*'+'_'+str(j)
-                compiled1 = re.compile(pattern1)
-                matches1 = compiled1.finditer(formula)
-                for ematch in matches1:
-                    formula = formula.replace(ematch.group(), paramnames[-1])
-                j += 1
-            paramnames[-2] = mrna.group()
-            paramnames[-1] = "k"+str(rowNum+1)+"_2"
+            # mrna = re.search(r"mrna_[A-Z0-9]+", ratelaw[1])
+            # for p in params:
+            #     paramnames.append("k"+str(rowNum+1)+"_"+str(j))
+            #     paramvals.append(float(ratelaw[j+1]))
+            #     pattern1 = 'k(\D*)\d*'+'_'+str(j)
+            #     compiled1 = re.compile(pattern1)
+            #     matches1 = compiled1.finditer(formula)
+            #     for ematch in matches1:
+            #         formula = formula.replace(ematch.group(), paramnames[-1])
+            #     j += 1
+            # paramnames[-2] = mrna.group()
+            # paramnames[-1] = "k"+str(rowNum+1)+"_2"
+            
+            pattern_kTL = 'k\D*\d*\w+|mrna_[A-Z0-9]+'
+            matches_kTL = re.compile(pattern_kTL).finditer(ratelaw[1])
+            paramnames_vTL = []
+            for ematch in matches_kTL:
+                paramnames_vTL.append(ematch.group())
+            for k,p in enumerate(paramnames_vTL):
+                if 'mrna_' in p:
+                    paramname = p
+                else:
+                    paramname = "k"+str(rowNum+1)+"_"+str(j)
+                    ratelaw[1].replace(p,paramname)
+                    j += 1
+                paramname.append(paramname)
+                paramvals.append(params[k])
+                
+                
         
         
         else:

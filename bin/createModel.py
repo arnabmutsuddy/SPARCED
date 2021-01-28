@@ -132,6 +132,24 @@ for rowNum, ratelaw in enumerate(ratelaw_data):
             matches = compiled.finditer(formula)
             for ematch in matches:
                 formula = formula.replace(ematch.group(),paramnames[-1])
+                
+                
+        elif 'mrna_' in ratelaw[1]:      
+            pattern_kTL = 'k\D*\d*\w+|mrna_[A-Z0-9]+'
+            matches_kTL = re.compile(pattern_kTL).finditer(ratelaw[1])
+            paramnames_vTL = []
+            for ematch in matches_kTL:
+                paramnames_vTL.append(ematch.group())
+            for k,p in enumerate(paramnames_vTL):
+                if 'mrna_' in p:
+                    paramname = p
+                else:
+                    paramname = "k"+str(rowNum+1)+"_"+str(j)
+                    ratelaw[1].replace(p,paramname)
+                    j += 1
+                paramname.append(paramname)
+                paramvals.append(params[k])
+                
         else:
             for p in params:
                 paramnames.append("k"+str(rowNum+1)+"_"+str(j))
