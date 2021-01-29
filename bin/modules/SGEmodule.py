@@ -28,7 +28,8 @@ def SGEmodule(flagD,ts,genedata,spdata,Vn,Vc,kTCmaxs,kTCleak,kTCd,AllGenesVec,Ge
     xgac = genedata[ix:ix+numberofgenes]
     ix = ix+numberofgenes
     xgin = genedata[ix:ix+numberofgenes]
-    xm = np.divide(spdata[773:],mpc2nmcf_Vc)
+    ix = ix+numberofgenes
+    xm = genedata[ix:ix+numberofgenes]
         
     TARarr = np.array(spdata[spIDs])
     TAs = np.zeros((numberofgenes,numberofTARs))
@@ -113,6 +114,6 @@ def SGEmodule(flagD,ts,genedata,spdata,Vn,Vc,kTCmaxs,kTCleak,kTCd,AllGenesVec,Ge
     xmN_nM = xmN*mpc2nmcf_Vc
 
     genedataNew = []
-    genedataNew = np.concatenate((xgacN, xginN), axis=None)
+    genedataNew = np.concatenate((xgacN, xginN, xmN), axis=None)
 
     return genedataNew, xmN, AllGenesVecN
