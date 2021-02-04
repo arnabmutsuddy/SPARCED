@@ -212,13 +212,13 @@ def timecourse_mrna(gene_symbol,x_g = xoutG_all[:,282:], tout_all = tout_all):
 #%%
 
 
-timecourse('ppERK', x_s = xoutS_all,tout_all= tout_all)
+timecourse('Raptor', x_s = xoutS_all,tout_all= tout_all)
 
 #xoutS_all[:,list(species_all).index('E')]
 
 #%%
 
-timecourse_mrna('CCND2')
+timecourse_mrna('CDK6')
 
 
 

@@ -783,6 +783,9 @@ void x_solver_SPARCED(realtype *x_solver, const realtype *x_rdata){
     x_solver[770] = AKTi_AKT;
     x_solver[771] = mT;
     x_solver[772] = EIF4E_mT;
+    x_solver[773] = Cdk1;
+    x_solver[774] = Cdk2;
+    x_solver[775] = Cdk46;
 }
 
 } // namespace amici

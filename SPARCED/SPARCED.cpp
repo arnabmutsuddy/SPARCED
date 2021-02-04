@@ -94,6 +94,14 @@ std::array<const char*, 2856> fixedParameterNames = {
 "mrna_CHEK1",
 "k28_1",
 "mrna_CDKN1A",
+"k29_1",
+"mrna_CDK1",
+"k30_1",
+"mrna_CDK2",
+"k31_1",
+"mrna_CDK4",
+"k32_1",
+"mrna_CDK6",
 "k33_1",
 "mrna_TNFSF10",
 "k33_2",
@@ -2858,17 +2866,9 @@ std::array<const char*, 2856> fixedParameterNames = {
 "k2436",
 "k2437",
 "k2438",
-"k29_1",
-"mrna_CDK1",
-"k30_1",
-"mrna_CDK2",
-"k31_1",
-"mrna_CDK4",
-"k32_1",
-"mrna_CDK6",
 };
 
-std::array<const char*, 773> stateNames = {
+std::array<const char*, 776> stateNames = {
     "Ribosome",
 "p53inac",
 "p53ac",
@@ -3642,6 +3642,9 @@ std::array<const char*, 773> stateNames = {
 "AKTi_AKT",
 "mT",
 "EIF4E_mT",
+"Cdk1",
+"Cdk2",
+"Cdk46",
 };
 
 std::array<const char*, 105> observableNames = {
@@ -3841,6 +3844,14 @@ std::array<const char*, 2856> fixedParameterIds = {
 "mrna_CHEK1",
 "k28_1",
 "mrna_CDKN1A",
+"k29_1",
+"mrna_CDK1",
+"k30_1",
+"mrna_CDK2",
+"k31_1",
+"mrna_CDK4",
+"k32_1",
+"mrna_CDK6",
 "k33_1",
 "mrna_TNFSF10",
 "k33_2",
@@ -6605,17 +6616,9 @@ std::array<const char*, 2856> fixedParameterIds = {
 "k2436",
 "k2437",
 "k2438",
-"k29_1",
-"mrna_CDK1",
-"k30_1",
-"mrna_CDK2",
-"k31_1",
-"mrna_CDK4",
-"k32_1",
-"mrna_CDK6",
 };
 
-std::array<const char*, 773> stateIds = {
+std::array<const char*, 776> stateIds = {
     "Ribosome",
 "p53inac",
 "p53ac",
@@ -7389,6 +7392,9 @@ std::array<const char*, 773> stateIds = {
 "AKTi_AKT",
 "mT",
 "EIF4E_mT",
+"Cdk1",
+"Cdk2",
+"Cdk46",
 };
 
 std::array<const char*, 105> observableIds = {

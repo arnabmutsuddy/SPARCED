@@ -771,3 +771,6 @@
 #define AKTi_AKT x_rdata[770]
 #define mT x_rdata[771]
 #define EIF4E_mT x_rdata[772]
+#define Cdk1 x_rdata[773]
+#define Cdk2 x_rdata[774]
+#define Cdk46 x_rdata[775]

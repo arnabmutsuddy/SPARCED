@@ -2292,6 +2292,9 @@
       <species id="AKTi_AKT" compartment="Cytoplasm" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
       <species id="mT" compartment="Cytoplasm" initialConcentration="37.68814" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
       <species id="EIF4E_mT" compartment="Cytoplasm" initialConcentration="88.81107" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Cdk1" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Cdk2" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Cdk46" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
     </listOfSpecies>
     <listOfParameters>
       <parameter id="k1_1" value="0.0042005" constant="true"/>
@@ -2378,6 +2381,14 @@
       <parameter id="mrna_CHEK1" value="0.005376217" constant="true"/>
       <parameter id="k28_1" value="0.5312" constant="true"/>
       <parameter id="mrna_CDKN1A" value="0.003794976" constant="true"/>
+      <parameter id="k29_1" value="0.2635" constant="true"/>
+      <parameter id="mrna_CDK1" value="0.01391491" constant="true"/>
+      <parameter id="k30_1" value="0.1792" constant="true"/>
+      <parameter id="mrna_CDK2" value="0.0006324961" constant="true"/>
+      <parameter id="k31_1" value="0.0082295" constant="true"/>
+      <parameter id="mrna_CDK4" value="0.003478728" constant="true"/>
+      <parameter id="k32_1" value="0.296215" constant="true"/>
+      <parameter id="mrna_CDK6" value="0.002213736" constant="true"/>
       <parameter id="k33_1" value="0" constant="true"/>
       <parameter id="mrna_TNFSF10" value="0" constant="true"/>
       <parameter id="k33_2" value="100" constant="true"/>
@@ -5142,14 +5153,6 @@
       <parameter id="k2436" value="4.145121e-06" constant="true"/>
       <parameter id="k2437" value="2.218213e-06" constant="true"/>
       <parameter id="k2438" value="5.754195e-06" constant="true"/>
-      <parameter id="k29_1" value="0.2635" constant="true"/>
-      <parameter id="mrna_CDK1" value="0.01391491" constant="true"/>
-      <parameter id="k30_1" value="0.1792" constant="true"/>
-      <parameter id="mrna_CDK2" value="0.0006324961" constant="true"/>
-      <parameter id="k31_1" value="0.0082295" constant="true"/>
-      <parameter id="mrna_CDK4" value="0.003478728" constant="true"/>
-      <parameter id="k32_1" value="0.296215" constant="true"/>
-      <parameter id="mrna_CDK6" value="0.002213736" constant="true"/>
     </listOfParameters>
     <listOfReactions>
       <reaction id="vbR" reversible="false" fast="false">
@@ -5894,6 +5897,66 @@
               <times/>
               <ci> k28_1 </ci>
               <ci> mrna_CDKN1A </ci>
+              <cn type="e-notation"> 5.25 <sep/> -12 </cn>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vTL27" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="Cdk1" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k29_1 </ci>
+              <ci> mrna_CDK1 </ci>
+              <cn type="e-notation"> 5.25 <sep/> -12 </cn>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vTL28" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="Cdk2" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k30_1 </ci>
+              <ci> mrna_CDK2 </ci>
+              <cn type="e-notation"> 5.25 <sep/> -12 </cn>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vTL29" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="Cdk46" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k31_1 </ci>
+              <ci> mrna_CDK4 </ci>
+              <cn type="e-notation"> 5.25 <sep/> -12 </cn>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vTL30" reversible="false" fast="false">
+        <listOfProducts>
+          <speciesReference species="Cdk46" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k32_1 </ci>
+              <ci> mrna_CDK6 </ci>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
           </math>
