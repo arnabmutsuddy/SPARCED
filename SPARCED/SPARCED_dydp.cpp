@@ -8,7 +8,6 @@
 #include "k.h"
 #include "w.h"
 #include "x.h"
-#include "dtcldp.h"
 
 namespace amici {
 namespace model_SPARCED {

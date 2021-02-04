@@ -4,7 +4,7 @@ from random import *
 import pandas as pd
 
 def SGEmodule(flagD,ts,genedata,spdata,Vn,Vc,kTCmaxs,kTCleak,kTCd,AllGenesVec,GenePositionMatrix,kGin_1,kGac_1, 
-              tcnas,tck50as,tcnrs,tck50rs,spIDs):
+              tcnas,tck50as,tcnrs,tck50rs,spIDs,mrna_IDs_sge):
     # Inputs:
     # flagD = deterministic (1) or stochastic (0) simulation
     # ts = time
@@ -112,8 +112,9 @@ def SGEmodule(flagD,ts,genedata,spdata,Vn,Vc,kTCmaxs,kTCleak,kTCd,AllGenesVec,Ge
     xmN = xm+Nb-Nd
     xmN[xmN<0.0] = 0.0
     xmN_nM = xmN*mpc2nmcf_Vc
+    xmN_nM = pd.Series(data=xmN_nM, index=mrna_IDs_sge)
 
     genedataNew = []
     genedataNew = np.concatenate((xgacN, xginN, xmN), axis=None)
 
-    return genedataNew, xmN, AllGenesVecN
+    return genedataNew, xmN_nM, AllGenesVecN

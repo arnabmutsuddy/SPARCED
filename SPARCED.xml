@@ -25,7 +25,6 @@
       </unitDefinition>
     </listOfUnitDefinitions>
     <listOfCompartments>
-      <compartment sboTerm="SBO:0000410" id="default_compartment" spatialDimensions="3" size="1" constant="true"/>
       <compartment id="Cytoplasm" spatialDimensions="3" size="5.25e-12" units="volume" constant="true">
         <annotation>GO:0005737</annotation>
       </compartment>
@@ -2293,7 +2292,6 @@
       <species id="AKTi_AKT" compartment="Cytoplasm" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
       <species id="mT" compartment="Cytoplasm" initialConcentration="37.68814" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
       <species id="EIF4E_mT" compartment="Cytoplasm" initialConcentration="88.81107" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
-      <species id="E1" compartment="default_compartment" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
     </listOfSpecies>
     <listOfParameters>
       <parameter id="k1_1" value="0.0042005" constant="true"/>
@@ -2462,7 +2460,7 @@
       <parameter id="mrna_NRG1" value="0" constant="true"/>
       <parameter id="k59_2" value="100" constant="true"/>
       <parameter id="k60_1" value="0.5191829" constant="true"/>
-      <parameter id="mrna_EGFR" value="0" constant="true"/>
+      <parameter id="mrna_EGFR" value="0.002529984" constant="true"/>
       <parameter id="k60_2" value="100" constant="true"/>
       <parameter id="k61_1" value="0.05307133" constant="true"/>
       <parameter id="mrna_ERBB2" value="0.001264992" constant="true"/>
@@ -2474,6 +2472,7 @@
       <parameter id="mrna_ERBB4" value="0" constant="true"/>
       <parameter id="k63_2" value="100" constant="true"/>
       <parameter id="k64_1" value="0.03319824" constant="true"/>
+      <parameter id="mrna_EGFRvIII" value="0" constant="true"/>
       <parameter id="k64_2" value="100" constant="true"/>
       <parameter id="k65_1" value="0.01428499" constant="true"/>
       <parameter id="mrna_MET" value="0.005692465" constant="true"/>
@@ -5151,7 +5150,6 @@
       <parameter id="mrna_CDK4" value="0.003478728" constant="true"/>
       <parameter id="k32_1" value="0.296215" constant="true"/>
       <parameter id="mrna_CDK6" value="0.002213736" constant="true"/>
-      <parameter id="mrna_EGFRvIII" constant="true"/>
     </listOfParameters>
     <listOfReactions>
       <reaction id="vbR" reversible="false" fast="false">
@@ -6632,7 +6630,7 @@
       </reaction>
       <reaction id="vTL58" reversible="false" fast="false">
         <listOfProducts>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="EIF4E"/>
@@ -9692,14 +9690,14 @@
       </reaction>
       <reaction id="vTLCd54" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k197 </ci>
-              <ci> E1 </ci>
+              <ci> EGFR </ci>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
           </math>
@@ -15914,7 +15912,7 @@
       <reaction id="vR1" reversible="false" fast="false">
         <listOfReactants>
           <speciesReference species="E" stoichiometry="1" constant="true"/>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="EE1" stoichiometry="1" constant="true"/>
@@ -15925,7 +15923,7 @@
               <times/>
               <ci> k508 </ci>
               <ci> E </ci>
-              <ci> E1 </ci>
+              <ci> EGFR </ci>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
           </math>
@@ -15937,7 +15935,7 @@
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="E" stoichiometry="1" constant="true"/>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -15991,7 +15989,7 @@
       </reaction>
       <reaction id="vR5" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
           <speciesReference species="EE1" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
@@ -16002,7 +16000,7 @@
             <apply>
               <times/>
               <ci> k512 </ci>
-              <ci> E1 </ci>
+              <ci> EGFR </ci>
               <ci> EE1 </ci>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
@@ -16014,7 +16012,7 @@
           <speciesReference species="EE1E1" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
           <speciesReference species="EE1" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
@@ -16459,7 +16457,7 @@
       </reaction>
       <reaction id="vR29" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
           <speciesReference species="HE3" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
@@ -16470,7 +16468,7 @@
             <apply>
               <times/>
               <ci> k536 </ci>
-              <ci> E1 </ci>
+              <ci> EGFR </ci>
               <ci> HE3 </ci>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
@@ -16482,7 +16480,7 @@
           <speciesReference species="E1HE3" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
           <speciesReference species="HE3" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
@@ -16888,7 +16886,7 @@
       </reaction>
       <reaction id="vR51" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
           <speciesReference species="HE4" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
@@ -16899,7 +16897,7 @@
             <apply>
               <times/>
               <ci> k558 </ci>
-              <ci> E1 </ci>
+              <ci> EGFR </ci>
               <ci> HE4 </ci>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
@@ -16911,7 +16909,7 @@
           <speciesReference species="E1HE4" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
           <speciesReference species="HE4" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
@@ -17200,7 +17198,7 @@
       </reaction>
       <reaction id="vR67" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
           <speciesReference species="ppERK" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
@@ -17211,7 +17209,7 @@
             <apply>
               <times/>
               <ci> k574 </ci>
-              <ci> E1 </ci>
+              <ci> EGFR </ci>
               <ci> ppERK </ci>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
@@ -17223,7 +17221,7 @@
           <speciesReference species="pE1" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -17823,7 +17821,7 @@
           <speciesReference species="E1_ppERK" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
           <speciesReference species="ppERK" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
@@ -17934,8 +17932,8 @@
       </reaction>
       <reaction id="vR105" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="E1E1" stoichiometry="1" constant="true"/>
@@ -17945,8 +17943,8 @@
             <apply>
               <times/>
               <ci> k612 </ci>
-              <ci> E1 </ci>
-              <ci> E1 </ci>
+              <ci> EGFR </ci>
+              <ci> EGFR </ci>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
           </math>
@@ -17957,8 +17955,8 @@
           <speciesReference species="E1E1" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -17973,7 +17971,7 @@
       </reaction>
       <reaction id="vR107" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
           <speciesReference species="E2" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
@@ -17984,7 +17982,7 @@
             <apply>
               <times/>
               <ci> k614 </ci>
-              <ci> E1 </ci>
+              <ci> EGFR </ci>
               <ci> E2 </ci>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
@@ -17996,7 +17994,7 @@
           <speciesReference species="E1E2" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
           <speciesReference species="E2" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
@@ -18012,7 +18010,7 @@
       </reaction>
       <reaction id="vR109" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
           <speciesReference species="E3" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
@@ -18023,7 +18021,7 @@
             <apply>
               <times/>
               <ci> k616 </ci>
-              <ci> E1 </ci>
+              <ci> EGFR </ci>
               <ci> E3 </ci>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
@@ -18035,7 +18033,7 @@
           <speciesReference species="E1E3" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
           <speciesReference species="E3" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
@@ -18051,7 +18049,7 @@
       </reaction>
       <reaction id="vR111" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
           <speciesReference species="E4" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
@@ -18062,7 +18060,7 @@
             <apply>
               <times/>
               <ci> k618 </ci>
-              <ci> E1 </ci>
+              <ci> EGFR </ci>
               <ci> E4 </ci>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
@@ -18074,7 +18072,7 @@
           <speciesReference species="E1E4" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="E1" stoichiometry="1" constant="true"/>
+          <speciesReference species="EGFR" stoichiometry="1" constant="true"/>
           <speciesReference species="E4" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>

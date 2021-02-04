@@ -135,7 +135,7 @@ for rowNum, ratelaw in enumerate(ratelaw_data):
                 
                 
         elif 'mrna_' in ratelaw[1]:      
-            pattern_kTL = 'k\D*\d*\w+|mrna_[A-Z0-9]+'
+            pattern_kTL = 'k\D*\d*\w+|mrna_[A-Za-z0-9]+'
             matches_kTL = re.compile(pattern_kTL).finditer(ratelaw[1])
             paramnames_vTL = []
             for ematch in matches_kTL:

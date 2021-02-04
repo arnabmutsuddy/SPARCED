@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import os
 
 def RunPrep(flagD,Vn,model,input_data_folder):
     kGsRead = pd.read_csv(os.path.join(input_data_folder,'OmicsData.txt'),header=0,index_col=0,sep="\t")
@@ -10,6 +11,7 @@ def RunPrep(flagD,Vn,model,input_data_folder):
     kTCleak = np.float64(kGsRead.values[:,4])
     kTCmaxs = np.float64(kGsRead.values[:,5])
     kTCd = np.float64(kGsRead.values[:,6])
+    geneIDs = np.array(kGsRead.index)
 
     # Read-in the activators matrix and assign concentrations of activators
     TARsRead = pd.read_csv(os.path.join(input_data_folder,'GeneReg.txt'),header=0,index_col=0,sep="\t")
@@ -89,4 +91,4 @@ def RunPrep(flagD,Vn,model,input_data_folder):
     tck50as = tck50as*(1/mpc2nmcf_Vn)
     tck50rs = tck50rs*(1/mpc2nmcf_Vn)
     
-    return genedata, mExp_mpc, GenePositionMatrix, AllGenesVec, kTCmaxs, kTCleak, kTCleak2, kGin_1, kGac_1, kTCd, TARs0, tcnas, tcnrs, tck50as, tck50rs, spIDs 
+    return genedata, mExp_mpc, GenePositionMatrix, AllGenesVec, kTCmaxs, kTCleak, kTCleak2, kGin_1, kGac_1, kTCd, TARs0, tcnas, tcnrs, tck50as, tck50rs, spIDs, geneIDs 

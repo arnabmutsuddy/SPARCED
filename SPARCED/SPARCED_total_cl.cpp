@@ -10,7 +10,6 @@ namespace amici {
 namespace model_SPARCED {
 
 void total_cl_SPARCED(realtype *total_cl, const realtype *x_rdata){
-    total_cl[0] = EGFR;
 }
 
 } // namespace amici

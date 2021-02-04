@@ -173,7 +173,7 @@ void x_rdata_SPARCED(realtype *x_rdata, const realtype *x, const realtype *tcl){
     x_rdata[159] = F;
     x_rdata[160] = I;
     x_rdata[161] = INS;
-    x_rdata[162] = tcl_EGFR;
+    x_rdata[162] = EGFR;
     x_rdata[163] = pE1;
     x_rdata[164] = E2;
     x_rdata[165] = pE2;
@@ -784,7 +784,6 @@ void x_rdata_SPARCED(realtype *x_rdata, const realtype *x, const realtype *tcl){
     x_rdata[770] = AKTi_AKT;
     x_rdata[771] = mT;
     x_rdata[772] = EIF4E_mT;
-    x_rdata[773] = E1;
 }
 
 } // namespace amici

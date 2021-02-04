@@ -1,5 +1,3 @@
-import libsbml
-import importlib
 import amici
 import numpy as np
 import re
@@ -15,7 +13,9 @@ def RunSPARCED(flagD,th,spdata,genedata,Vn,Vc,model,input_data_folder):
     tout_all = np.arange(0,th*3600+1,30)    
     mpc2nM_Vc = (1E9/(Vc*6.023E+23))
     
-    genedata, mExp_mpc, GenePositionMatrix, AllGenesVec, kTCmaxs, kTCleak, kTCleak2, kGin_1, kGac_1, kTCd, TARs0, tcnas, tcnrs, tck50as, tck50rs, spIDs = RunPrep(flagD,Vn,model)
+    genedata, mExp_mpc, GenePositionMatrix, AllGenesVec, kTCmaxs, kTCleak, kTCleak2, kGin_1, kGac_1, kTCd, TARs0, tcnas, tcnrs, tck50as, tck50rs, spIDs, geneIDs = RunPrep(flagD,Vn,model,input_data_folder)
+    
+    mrna_IDs_sge = ['mrna_'+x for x in geneIDs]
     
     paramIds = np.array(model.getFixedParameterIds())
     params = np.array(model.getFixedParameters())
@@ -44,8 +44,9 @@ def RunSPARCED(flagD,th,spdata,genedata,Vn,Vc,model,input_data_folder):
     solver.setMaxSteps = 1e10
     
     for qq in range(NSteps):
-        genedata,xmN,AllGenesVec = SGEmodule(flagD,ts,xoutG_all[qq,:],xoutS_all[qq,:],Vn,Vc,kTCmaxs,kTCleak,kTCd,AllGenesVec,GenePositionMatrix,kGin_1,kGac_1,tcnas,tck50as,tcnrs,tck50rs,spIDs)
-        params[mrna_i] = np.dot(xmN,mpc2nM_Vc)
+        genedata,xmN_nM,AllGenesVec = SGEmodule(flagD,ts,xoutG_all[qq,:],xoutS_all[qq,:],Vn,Vc,kTCmaxs,kTCleak,kTCd,AllGenesVec,GenePositionMatrix,kGin_1,kGac_1,tcnas,tck50as,tcnrs,tck50rs,spIDs,mrna_IDs_sge)
+        xmN_nM = xmN_nM.reindex(index=mrnaIds)
+        params[mrna_i] = xmN_nM.values
         model.setFixedParameters(params)
         model.setInitialStates(xoutS_all[qq,:])
         rdata = amici.runAmiciSimulation(model, solver)  # Run simulation
