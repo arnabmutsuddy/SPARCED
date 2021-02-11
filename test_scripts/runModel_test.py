@@ -228,7 +228,7 @@ timecourse('Mei')
 
 # %%
 
-timecourse_mrna('CCND3')
+timecourse_mrna('CCND2')
 
 
 # %%
