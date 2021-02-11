@@ -2,7 +2,7 @@
 
 import re
 import matplotlib as mpl
-from modules.RunSPARCED import RunSPARCED
+
 import argparse
 import scipy.stats
 from datetime import datetime
@@ -18,6 +18,7 @@ import sys
 
 sys.path.append(os.getcwd()[0:os.getcwd().rfind('/')]+'/sparced/bin')
 
+from modules.RunSPARCED import RunSPARCED
 
 # %%
 
@@ -30,20 +31,13 @@ model_name = sbml_file[0:-4]
 model_output_dir = model_name
 
 
-parser = argparse.ArgumentParser(
-    description='Provide arguments to build the SPARCED model')
-parser.add_argument('--deterministic', metavar='flagD', type=int,
-                    help='1 for deterministic run, 0 for stochastic', default=1)
-parser.add_argument('--time', metavar='time', type=int,
-                    help='experiment run time (in hours)', default=48)
-parser.add_argument('--Vn', metavar='Vn',
-                    help='the volume of the nucleus in liters', default=1.7500E-12)
-parser.add_argument('--Vc', metavar='Vc',
-                    help='the volume of the cytoplasm in liters', default=5.2500E-12)
-parser.add_argument('--folder', metavar='folder',
-                    help='input data folder path', default='input_files')
-parser.add_argument('--outfile', metavar='outfile',
-                    help='the prefix for the name of the output files', default='output')
+parser = argparse.ArgumentParser(description='Provide arguments to build the SPARCED model')
+parser.add_argument('--deterministic', metavar='flagD', type=int, help='1 for deterministic run, 0 for stochastic', default=1)
+parser.add_argument('--time', metavar='time', type=int, help='experiment run time (in hours)', default=48)
+parser.add_argument('--Vn', metavar='Vn', help='the volume of the nucleus in liters', default=1.7500E-12)
+parser.add_argument('--Vc', metavar='Vc', help='the volume of the cytoplasm in liters', default=5.2500E-12)
+parser.add_argument('--folder', metavar='folder', help='input data folder path', default='input_files')
+parser.add_argument('--outfile', metavar='outfile', help='the prefix for the name of the output files', default='output')
 args = parser.parse_args()
 
 input_data_folder = args.folder
@@ -58,8 +52,7 @@ Vc = float(args.Vc)
 outfile = args.outfile
 ts = 30
 
-STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0,
-            1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
+STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 
@@ -100,8 +93,8 @@ for p in ks_actual:
 # %% reaction rate constant modification
 
 
-model.setFixedParameterById('k424', 0.001)  # kon, Mdi
-model.setFixedParameterById('k425', 0.0001)  # koff, Mdi
+model.setFixedParameterById('k424', 0.0001)  # kon, Mdi
+model.setFixedParameterById('k425', 0.00001)  # koff, Mdi
 # model.setFixedParameterById('k426',0.001) #kon, Mei
 # model.setFixedParameterById('k427',0.0001) #koff, Mei
 # model.setFixedParameterById('k428',0.001) #kon, Mai
@@ -111,13 +104,13 @@ model.setFixedParameterById('k425', 0.0001)  # koff, Mdi
 model.setFixedParameterById('k31_1', model.getFixedParameterById('k31_1')*2)
 model.setFixedParameterById('k32_1', model.getFixedParameterById('k32_1')*2)
 
-# model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')/550)
-# model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/550)
-# model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/550)
+# model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')/100)
+# model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/100)
+# model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/100)
 
-model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')/500000)
-model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/500000)
-model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/500000)
+model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')/50)
+model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/50)
+model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/50)
 
 
 # %%
@@ -222,14 +215,19 @@ def timecourse_mrna(gene_symbol, x_g=xoutG_all[:, 282:], tout_all=tout_all):
 timecourse('Cd')
 timecourse('Cdk46', x_s=xoutS_all, tout_all=tout_all)
 timecourse('Mdi', x_s=xoutS_all, tout_all=tout_all)
+timecourse('Md', x_s=xoutS_all, tout_all=tout_all)
 timecourse('ppERK')
 timecourse('Mei')
+timecourse('pRB')
+timecourse('pRBp')
+timecourse('pRBpp')
+timecoruse('E2F')
 # xoutS_all[:,list(species_all).index('E')]
 
 # %%
-
+timecourse_mrna('CCND1')
 timecourse_mrna('CCND2')
-
+timecourse_mrna('CCND3')
 
 # %%
 elif flagD == 1:
