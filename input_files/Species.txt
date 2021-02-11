@@ -774,4 +774,4 @@ mT	Cytoplasm	37.68814	mT3, T1, T2
 EIF4E_mT	Cytoplasm	88.81107	EIF4E	
 Cdk1	Nucleus	0		
 Cdk2	Nucleus	0		
-Cdk46	Nucleus	0		
+Cdk46	Nucleus	143.98		

@@ -422,6 +422,14 @@ vC101	Nucleus	0.0005902778
 vC102	Nucleus	1.133333E-06						
 vC103	Nucleus	0.0009444444						
 vC104	Nucleus	0.000289731						
+vC105	Nucleus	0						
+vC106	Nucleus	0						
+vC107	Nucleus	0						
+vC108	Nucleus	0						
+vC109	Nucleus	0						
+vC110	Nucleus	0						
+vC111	Nucleus	0						
+vC112	Nucleus	0						
 vA1	Cytoplasm	0.00126483						
 vA2	Cytoplasm	0.001						
 vA3	Cytoplasm	1E-06						

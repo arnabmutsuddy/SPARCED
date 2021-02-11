@@ -721,6 +721,7 @@ void x0_SPARCED(realtype *x0, const realtype t, const realtype *p, const realtyp
     x0[766] = 9.0304939999999991;
     x0[771] = 37.688139999999997;
     x0[772] = 88.811070000000001;
+    x0[775] = 143.97999999999999;
 }
 
 } // namespace amici
