@@ -221,7 +221,7 @@ timecourse('Mei')
 timecourse('pRB')
 timecourse('pRBp')
 timecourse('pRBpp')
-timecoruse('E2F')
+timecourse('E2F')
 # xoutS_all[:,list(species_all).index('E')]
 
 # %%
