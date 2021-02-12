@@ -40,8 +40,13 @@ def RunSPARCED(flagD,th,spdata,genedata,Vn,Vc,model,input_data_folder):
     xoutG_all = np.zeros(shape=(NSteps+1,len(genedata)))
     xoutG_all[0,:] = genedata
     
+    xoutObs_all = np.zeros(shape=(NSteps+1,len(model.getObservableIds())))
+    
+    
     solver = model.getSolver() # Create solver instance
     solver.setMaxSteps = 1e10
+    
+    xoutObs_all[0,:] = amici.runAmiciSimulation(model, solver)['y'][0,:]
     
     for qq in range(NSteps):
         genedata,xmN_nM,AllGenesVec = SGEmodule(flagD,ts,xoutG_all[qq,:],xoutS_all[qq,:],Vn,Vc,kTCmaxs,kTCleak,kTCd,AllGenesVec,GenePositionMatrix,kGin_1,kGac_1,tcnas,tck50as,tcnrs,tck50rs,spIDs,mrna_IDs_sge)
@@ -52,6 +57,7 @@ def RunSPARCED(flagD,th,spdata,genedata,Vn,Vc,model,input_data_folder):
         rdata = amici.runAmiciSimulation(model, solver)  # Run simulation
         xoutS_all[qq+1,:] = rdata['x'][-1,:]
         xoutG_all[qq+1,:] = genedata
+        xoutObs_all[qq+1,:] = rdata['y'][-1,:]
         if rdata['x'][-1,103] < rdata['x'][-1,105]:
             print('Apoptosis happened')
             break
@@ -59,4 +65,4 @@ def RunSPARCED(flagD,th,spdata,genedata,Vn,Vc,model,input_data_folder):
     xoutG_all = xoutG_all[~np.all(xoutG_all == 0, axis=1)]
     tout_all = tout_all[0:len(xoutS_all)]
     
-    return xoutS_all, xoutG_all, tout_all
+    return xoutS_all, xoutG_all, xoutObs_all, tout_all

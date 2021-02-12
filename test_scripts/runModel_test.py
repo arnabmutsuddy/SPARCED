@@ -93,8 +93,8 @@ for p in ks_actual:
 # %% reaction rate constant modification
 
 
-model.setFixedParameterById('k424', 0.0001)  # kon, Mdi
-model.setFixedParameterById('k425', 0.00001)  # koff, Mdi
+model.setFixedParameterById('k424', 0.001)  # kon, Mdi
+model.setFixedParameterById('k425', 0.0001)  # koff, Mdi
 # model.setFixedParameterById('k426',0.001) #kon, Mei
 # model.setFixedParameterById('k427',0.0001) #koff, Mei
 # model.setFixedParameterById('k428',0.001) #kon, Mai
@@ -112,6 +112,9 @@ model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')/50)
 model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/50)
 model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/50)
 
+model.setFixedParameterById('k432', 1.47e-4)
+model.setFixedParameterById('k433', 1.47e-4)
+
 
 # %%
 #model_module = importlib.import_module(model_name)
@@ -123,7 +126,7 @@ solver.setMaxSteps = 1e10
 model.setTimepoints(np.linspace(0, ts))  # np.linspace(0, 30) # set timepoints
 
 
-xoutS_all, xoutG_all, tout_all = RunSPARCED(flagD, th, species_initializations, [], Vn, Vc, model, input_data_folder)
+xoutS_all, xoutG_all, xoutObs_all, tout_all = RunSPARCED(flagD, th, species_initializations, [], Vn, Vc, model, input_data_folder)
 
 # if flagWr==1:
 #     columnsS=[ele for ele in model.getStateIds()]
@@ -187,6 +190,8 @@ species_all = species_input.index
 genes_all = pd.read_csv('input_files/GeneReg.txt',
                         sep='\t', header=0, index_col=0).index
 
+obs_all = model.getObservableIds()
+
 mpl.rcParams['figure.dpi'] = 300
 
 
@@ -209,13 +214,22 @@ def timecourse_mrna(gene_symbol, x_g=xoutG_all[:, 282:], tout_all=tout_all):
     plt.ylim(0, max(x_t)*1.25)
     plt.show
 
-
+def timecourse_obs(obs_id, x_o = xoutObs_all, tout_all=tout_all):
+    x_t = x_o[:, list(obs_all).index(obs_id)]
+    plt.scatter(tout_all/3600, x_t)
+    plt.ylabel('obs_'+str(obs_id))
+    plt.xlabel('time(h)')
+    plt.ylim(0, max(x_t)*1.25)
+    plt.show
 # %%
 
 timecourse('Cd')
 timecourse('Cdk46', x_s=xoutS_all, tout_all=tout_all)
 timecourse('Mdi', x_s=xoutS_all, tout_all=tout_all)
 timecourse('Md', x_s=xoutS_all, tout_all=tout_all)
+timecourse('Mdp27')
+timecourse('Mdp21')
+
 timecourse('ppERK')
 timecourse('Mei')
 timecourse('pRB')
@@ -223,7 +237,8 @@ timecourse('pRBp')
 timecourse('pRBpp')
 timecourse('E2F')
 # xoutS_all[:,list(species_all).index('E')]
-
+timecourse_obs('Cd')
+timecourse('p53ac')
 # %%
 timecourse_mrna('CCND1')
 timecourse_mrna('CCND2')
