@@ -9,7 +9,7 @@ std::array<const char*, 0> parameterNames = {
     
 };
 
-std::array<const char*, 2893> fixedParameterNames = {
+std::array<const char*, 2897> fixedParameterNames = {
     "k1_1",
 "k1_2",
 "k1_3",
@@ -2903,6 +2903,10 @@ std::array<const char*, 2893> fixedParameterNames = {
 "k2473",
 "k2474",
 "k2475",
+"Cd_Cdk46_p21",
+"Ce_Cdk2_p21",
+"Ca_Cdk2_p21",
+"Cb_Cdk1_p21",
 };
 
 std::array<const char*, 776> stateNames = {
@@ -2965,7 +2969,7 @@ std::array<const char*, 776> stateNames = {
 "Ca",
 "Ca_Cdk2",
 "Ma",
-"Map27",
+"Ca_Cdk2_p27",
 "p27",
 "Cdh1i",
 "Cdh1a",
@@ -2980,7 +2984,7 @@ std::array<const char*, 776> stateNames = {
 "Pb",
 "Wee1",
 "Wee1p",
-"Mbp27",
+"Cb_Cdk1_p27",
 "Chk1",
 "pRB_E2F",
 "pRBp_E2F",
@@ -3796,7 +3800,7 @@ std::array<const char*, 0> parameterIds = {
     
 };
 
-std::array<const char*, 2893> fixedParameterIds = {
+std::array<const char*, 2897> fixedParameterIds = {
     "k1_1",
 "k1_2",
 "k1_3",
@@ -6690,6 +6694,10 @@ std::array<const char*, 2893> fixedParameterIds = {
 "k2473",
 "k2474",
 "k2475",
+"Cd_Cdk46_p21",
+"Ce_Cdk2_p21",
+"Ca_Cdk2_p21",
+"Cb_Cdk1_p21",
 };
 
 std::array<const char*, 776> stateIds = {
@@ -6752,7 +6760,7 @@ std::array<const char*, 776> stateIds = {
 "Ca",
 "Ca_Cdk2",
 "Ma",
-"Map27",
+"Ca_Cdk2_p27",
 "p27",
 "Cdh1i",
 "Cdh1a",
@@ -6767,7 +6775,7 @@ std::array<const char*, 776> stateIds = {
 "Pb",
 "Wee1",
 "Wee1p",
-"Mbp27",
+"Cb_Cdk1_p27",
 "Chk1",
 "pRB_E2F",
 "pRBp_E2F",

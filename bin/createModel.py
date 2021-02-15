@@ -217,7 +217,7 @@ fileModel.write("\n")
 fileModel.write("\nend")
 # Close the file
 fileModel.close()
-#%%
+
 if loadFile("SPARCED.txt") == 1:
     print("Success loading antimony file")
 else:

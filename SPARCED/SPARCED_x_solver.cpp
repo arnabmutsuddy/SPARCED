@@ -69,7 +69,7 @@ void x_solver_SPARCED(realtype *x_solver, const realtype *x_rdata){
     x_solver[56] = Ca;
     x_solver[57] = Ca_Cdk2;
     x_solver[58] = Ma;
-    x_solver[59] = Map27;
+    x_solver[59] = Ca_Cdk2_p27;
     x_solver[60] = p27;
     x_solver[61] = Cdh1i;
     x_solver[62] = Cdh1a;
@@ -84,7 +84,7 @@ void x_solver_SPARCED(realtype *x_solver, const realtype *x_rdata){
     x_solver[71] = Pb;
     x_solver[72] = Wee1;
     x_solver[73] = Wee1p;
-    x_solver[74] = Mbp27;
+    x_solver[74] = Cb_Cdk1_p27;
     x_solver[75] = Chk1;
     x_solver[76] = pRB_E2F;
     x_solver[77] = pRBp_E2F;
