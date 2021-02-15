@@ -133,7 +133,7 @@
       <species id="Md" compartment="Nucleus" initialConcentration="3.854192" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000110092 ENSG00000118971 ENSG00000112576 ENSG00000135446 ENSG00000105810</annotation>
       </species>
-      <species id="Mdp27" compartment="Nucleus" initialConcentration="0.7878773" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Cd_Cdk46_p27" compartment="Nucleus" initialConcentration="0.7878773" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000110092 ENSG00000118971 ENSG00000112576 ENSG00000135446 ENSG00000105810 ENSG00000111276</annotation>
       </species>
       <species id="Ce" compartment="Nucleus" initialConcentration="0.2552851" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
@@ -148,7 +148,7 @@
       <species id="Skp2" compartment="Nucleus" initialConcentration="11.40893" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000145604</annotation>
       </species>
-      <species id="Mep27" compartment="Nucleus" initialConcentration="1.122686" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Ce_Cdk2_p27" compartment="Nucleus" initialConcentration="1.122686" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000105173 ENSG00000175305 ENSG00000123374 ENSG00000111276</annotation>
       </species>
       <species id="Pe" compartment="Nucleus" initialConcentration="141.2865" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
@@ -172,7 +172,7 @@
       <species id="Ma" compartment="Nucleus" initialConcentration="5.230808" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000145386 ENSG00000123374</annotation>
       </species>
-      <species id="Map27" compartment="Nucleus" initialConcentration="1.283144" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Ca_Cdk2_p27" compartment="Nucleus" initialConcentration="1.283144" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000145386 ENSG00000123374 ENSG00000111276 ENSG00000111276</annotation>
       </species>
       <species id="p27" compartment="Nucleus" initialConcentration="20.44209" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
@@ -217,7 +217,7 @@
       <species id="Wee1p" compartment="Nucleus" initialConcentration="16.74047" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000166483</annotation>
       </species>
-      <species id="Mbp27" compartment="Nucleus" initialConcentration="0.08392431" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Cb_Cdk1_p27" compartment="Nucleus" initialConcentration="0.08392431" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000134057 ENSG00000170312 ENSG00000111276</annotation>
       </species>
       <species id="Chk1" compartment="Nucleus" initialConcentration="0.1497549" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
@@ -232,16 +232,16 @@
       <species id="p21" compartment="Nucleus" initialConcentration="20.87113" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000124762</annotation>
       </species>
-      <species id="Mdp21" compartment="Nucleus" initialConcentration="0.482648" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Cd_Cdk46_p21" compartment="Nucleus" initialConcentration="0.482648" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000110092 ENSG00000118971 ENSG00000112576 ENSG00000135446 ENSG00000124762</annotation>
       </species>
-      <species id="Mep21" compartment="Nucleus" initialConcentration="0.2292498" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Ce_Cdk2_p21" compartment="Nucleus" initialConcentration="0.2292498" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000105173 ENSG00000175305 ENSG00000123374 ENSG00000124762</annotation>
       </species>
-      <species id="Map21" compartment="Nucleus" initialConcentration="0.2620149" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Ca_Cdk2_p21" compartment="Nucleus" initialConcentration="0.2620149" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000145386 ENSG00000123374 ENSG00000124762</annotation>
       </species>
-      <species id="Mbp21" compartment="Nucleus" initialConcentration="0.01713714" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Cb_Cdk1_p21" compartment="Nucleus" initialConcentration="0.01713714" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000134057 ENSG00000170312 ENSG00000124762</annotation>
       </species>
       <species id="L" compartment="Extracellular" initialConcentration="2.20993e-17" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
@@ -12112,7 +12112,7 @@
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Md"/>
-          <modifierSpeciesReference species="Mdp27"/>
+          <modifierSpeciesReference species="Cd_Cdk46_p27"/>
         </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -12131,7 +12131,7 @@
               <apply>
                 <plus/>
                 <ci> Md </ci>
-                <ci> Mdp27 </ci>
+                <ci> Cd_Cdk46_p27 </ci>
               </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
@@ -12427,8 +12427,8 @@
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Md"/>
-          <modifierSpeciesReference species="Mdp27"/>
-          <modifierSpeciesReference species="Mdp21"/>
+          <modifierSpeciesReference species="Cd_Cdk46_p27"/>
+          <modifierSpeciesReference species="Cd_Cdk46_p21"/>
         </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -12443,8 +12443,8 @@
                   <plus/>
                   <ci> Cd_Cdk46 </ci>
                   <ci> Md </ci>
-                  <ci> Mdp27 </ci>
-                  <ci> Mdp21 </ci>
+                  <ci> Cd_Cdk46_p27 </ci>
+                  <ci> Cd_Cdk46_p21 </ci>
                 </apply>
               </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
@@ -12566,7 +12566,7 @@
           <speciesReference species="p27" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="Mdp27" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46_p27" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -12582,7 +12582,7 @@
       </reaction>
       <reaction id="vC26" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Mdp27" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46_p27" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="Md" stoichiometry="1" constant="true"/>
@@ -12593,7 +12593,7 @@
             <apply>
               <times/>
               <ci> k345 </ci>
-              <ci> Mdp27 </ci>
+              <ci> Cd_Cdk46_p27 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -12622,12 +12622,12 @@
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Me"/>
-          <modifierSpeciesReference species="Mep27"/>
+          <modifierSpeciesReference species="Ce_Cdk2_p27"/>
           <modifierSpeciesReference species="Ca_Cdk2"/>
           <modifierSpeciesReference species="Ma"/>
-          <modifierSpeciesReference species="Map27"/>
-          <modifierSpeciesReference species="Mep21"/>
-          <modifierSpeciesReference species="Map21"/>
+          <modifierSpeciesReference species="Ca_Cdk2_p27"/>
+          <modifierSpeciesReference species="Ce_Cdk2_p21"/>
+          <modifierSpeciesReference species="Ca_Cdk2_p21"/>
         </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -12642,12 +12642,12 @@
                   <plus/>
                   <ci> Ce_Cdk2 </ci>
                   <ci> Me </ci>
-                  <ci> Mep27 </ci>
-                  <ci> Mep21 </ci>
+                  <ci> Ce_Cdk2_p27 </ci>
+                  <ci> Ce_Cdk2_p21 </ci>
                   <ci> Ca_Cdk2 </ci>
                   <ci> Ma </ci>
-                  <ci> Map27 </ci>
-                  <ci> Map21 </ci>
+                  <ci> Ca_Cdk2_p27 </ci>
+                  <ci> Ca_Cdk2_p21 </ci>
                 </apply>
               </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
@@ -12778,7 +12778,7 @@
           <speciesReference species="p27" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="Mep27" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ce_Cdk2_p27" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -12794,7 +12794,7 @@
       </reaction>
       <reaction id="vC34" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Mep27" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ce_Cdk2_p27" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="Me" stoichiometry="1" constant="true"/>
@@ -12805,7 +12805,7 @@
             <apply>
               <times/>
               <ci> k353 </ci>
-              <ci> Mep27 </ci>
+              <ci> Ce_Cdk2_p27 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -13015,11 +13015,11 @@
         <listOfModifiers>
           <modifierSpeciesReference species="Ce_Cdk2"/>
           <modifierSpeciesReference species="Me"/>
-          <modifierSpeciesReference species="Mep27"/>
+          <modifierSpeciesReference species="Ce_Cdk2_p27"/>
           <modifierSpeciesReference species="Ma"/>
-          <modifierSpeciesReference species="Map27"/>
-          <modifierSpeciesReference species="Mep21"/>
-          <modifierSpeciesReference species="Map21"/>
+          <modifierSpeciesReference species="Ca_Cdk2_p27"/>
+          <modifierSpeciesReference species="Ce_Cdk2_p21"/>
+          <modifierSpeciesReference species="Ca_Cdk2_p21"/>
         </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -13034,12 +13034,12 @@
                   <plus/>
                   <ci> Ce_Cdk2 </ci>
                   <ci> Me </ci>
-                  <ci> Mep27 </ci>
-                  <ci> Mep21 </ci>
+                  <ci> Ce_Cdk2_p27 </ci>
+                  <ci> Ce_Cdk2_p21 </ci>
                   <ci> Ca_Cdk2 </ci>
                   <ci> Ma </ci>
-                  <ci> Map27 </ci>
-                  <ci> Map21 </ci>
+                  <ci> Ca_Cdk2_p27 </ci>
+                  <ci> Ca_Cdk2_p21 </ci>
                 </apply>
               </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
@@ -13185,7 +13185,7 @@
           <speciesReference species="p27" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="Map27" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ca_Cdk2_p27" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -13201,7 +13201,7 @@
       </reaction>
       <reaction id="vC51" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Map27" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ca_Cdk2_p27" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="Ma" stoichiometry="1" constant="true"/>
@@ -13212,7 +13212,7 @@
             <apply>
               <times/>
               <ci> k370 </ci>
-              <ci> Map27 </ci>
+              <ci> Ca_Cdk2_p27 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -13568,8 +13568,8 @@
         </listOfProducts>
         <listOfModifiers>
           <modifierSpeciesReference species="Mb"/>
-          <modifierSpeciesReference species="Mbp27"/>
-          <modifierSpeciesReference species="Mbp21"/>
+          <modifierSpeciesReference species="Cb_Cdk1_p27"/>
+          <modifierSpeciesReference species="Cb_Cdk1_p21"/>
         </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -13584,8 +13584,8 @@
                   <plus/>
                   <ci> Cb_Cdk1 </ci>
                   <ci> Mb </ci>
-                  <ci> Mbp27 </ci>
-                  <ci> Mbp21 </ci>
+                  <ci> Cb_Cdk1_p27 </ci>
+                  <ci> Cb_Cdk1_p21 </ci>
                 </apply>
               </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
@@ -13744,7 +13744,7 @@
           <speciesReference species="Mb" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="Mbp27" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cb_Cdk1_p27" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -13760,7 +13760,7 @@
       </reaction>
       <reaction id="vC74" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Mbp27" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cb_Cdk1_p27" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="p27" stoichiometry="1" constant="true"/>
@@ -13771,7 +13771,7 @@
             <apply>
               <times/>
               <ci> k393 </ci>
-              <ci> Mbp27 </ci>
+              <ci> Cb_Cdk1_p27 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -14219,7 +14219,7 @@
           <speciesReference species="p21" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="Mdp21" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46_p21" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -14235,7 +14235,7 @@
       </reaction>
       <reaction id="vC97" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Mdp21" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46_p21" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="Md" stoichiometry="1" constant="true"/>
@@ -14246,7 +14246,7 @@
             <apply>
               <times/>
               <ci> k416 </ci>
-              <ci> Mdp21 </ci>
+              <ci> Cd_Cdk46_p21 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -14258,7 +14258,7 @@
           <speciesReference species="p21" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="Mep21" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ce_Cdk2_p21" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -14274,7 +14274,7 @@
       </reaction>
       <reaction id="vC99" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Mep21" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ce_Cdk2_p21" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="Me" stoichiometry="1" constant="true"/>
@@ -14285,7 +14285,7 @@
             <apply>
               <times/>
               <ci> k418 </ci>
-              <ci> Mep21 </ci>
+              <ci> Ce_Cdk2_p21 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -14297,7 +14297,7 @@
           <speciesReference species="p21" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="Map21" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ca_Cdk2_p21" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -14313,7 +14313,7 @@
       </reaction>
       <reaction id="vC101" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Map21" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ca_Cdk2_p21" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="Ma" stoichiometry="1" constant="true"/>
@@ -14324,7 +14324,7 @@
             <apply>
               <times/>
               <ci> k420 </ci>
-              <ci> Map21 </ci>
+              <ci> Ca_Cdk2_p21 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -14336,7 +14336,7 @@
           <speciesReference species="p21" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="Mbp21" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cb_Cdk1_p21" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -14352,7 +14352,7 @@
       </reaction>
       <reaction id="vC103" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Mbp21" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cb_Cdk1_p21" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="Mb" stoichiometry="1" constant="true"/>
@@ -14363,7 +14363,7 @@
             <apply>
               <times/>
               <ci> k422 </ci>
-              <ci> Mbp21 </ci>
+              <ci> Cb_Cdk1_p21 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -14572,14 +14572,14 @@
       </reaction>
       <reaction id="vCd3" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Mdp27" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46_p27" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k434 </ci>
-              <ci> Mdp27 </ci>
+              <ci> Cd_Cdk46_p27 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -14617,14 +14617,14 @@
       </reaction>
       <reaction id="vCd6" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Mep27" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ce_Cdk2_p27" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k437 </ci>
-              <ci> Mep27 </ci>
+              <ci> Ce_Cdk2_p27 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -14677,14 +14677,14 @@
       </reaction>
       <reaction id="vCd10" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Map27" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ca_Cdk2_p27" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k441 </ci>
-              <ci> Map27 </ci>
+              <ci> Ca_Cdk2_p27 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -14827,14 +14827,14 @@
       </reaction>
       <reaction id="vCd20" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Mbp27" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cb_Cdk1_p27" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k451 </ci>
-              <ci> Mbp27 </ci>
+              <ci> Cb_Cdk1_p27 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -14872,14 +14872,14 @@
       </reaction>
       <reaction id="vCd23" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Mdp21" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46_p21" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k454 </ci>
-              <ci> Mdp21 </ci>
+              <ci> Cd_Cdk46_p21 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -14887,14 +14887,14 @@
       </reaction>
       <reaction id="vCd24" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Mep21" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ce_Cdk2_p21" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k455 </ci>
-              <ci> Mep21 </ci>
+              <ci> Ce_Cdk2_p21 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -14902,14 +14902,14 @@
       </reaction>
       <reaction id="vCd25" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Map21" stoichiometry="1" constant="true"/>
+          <speciesReference species="Ca_Cdk2_p21" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k456 </ci>
-              <ci> Map21 </ci>
+              <ci> Ca_Cdk2_p21 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -14917,14 +14917,14 @@
       </reaction>
       <reaction id="vCd26" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="Mbp21" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cb_Cdk1_p21" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k457 </ci>
-              <ci> Mbp21 </ci>
+              <ci> Cb_Cdk1_p21 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
