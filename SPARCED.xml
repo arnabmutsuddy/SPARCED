@@ -223,10 +223,10 @@
       <species id="Chk1" compartment="Nucleus" initialConcentration="0.1497549" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000149554</annotation>
       </species>
-      <species id="pRBc1" compartment="Nucleus" initialConcentration="8950.101" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="pRB_E2F" compartment="Nucleus" initialConcentration="8950.101" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000139687 ENSG00000101412 ENSG00000007968 ENSG00000112242</annotation>
       </species>
-      <species id="pRBc2" compartment="Nucleus" initialConcentration="0.2997245" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="pRBp_E2F" compartment="Nucleus" initialConcentration="0.2997245" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000139687 ENSG00000101412 ENSG00000007968 ENSG00000112242</annotation>
       </species>
       <species id="p21" compartment="Nucleus" initialConcentration="20.87113" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
@@ -12070,7 +12070,7 @@
           <speciesReference species="E2F" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="pRBc1" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRB_E2F" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -12086,7 +12086,7 @@
       </reaction>
       <reaction id="vC3" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="pRBc1" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRB_E2F" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="pRB" stoichiometry="1" constant="true"/>
@@ -12097,7 +12097,7 @@
             <apply>
               <times/>
               <ci> k322 </ci>
-              <ci> pRBc1 </ci>
+              <ci> pRB_E2F </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -12241,7 +12241,7 @@
           <speciesReference species="E2F" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="pRBc2" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRBp_E2F" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -12257,7 +12257,7 @@
       </reaction>
       <reaction id="vC10" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="pRBc2" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRBp_E2F" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="pRBp" stoichiometry="1" constant="true"/>
@@ -12268,7 +12268,7 @@
             <apply>
               <times/>
               <ci> k329 </ci>
-              <ci> pRBc2 </ci>
+              <ci> pRBp_E2F </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -14842,14 +14842,14 @@
       </reaction>
       <reaction id="vCd21" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="pRBc1" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRB_E2F" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k452 </ci>
-              <ci> pRBc1 </ci>
+              <ci> pRB_E2F </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -14857,14 +14857,14 @@
       </reaction>
       <reaction id="vCd22" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="pRBc2" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRBp_E2F" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k453 </ci>
-              <ci> pRBc2 </ci>
+              <ci> pRBp_E2F </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>

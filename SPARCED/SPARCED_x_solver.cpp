@@ -86,8 +86,8 @@ void x_solver_SPARCED(realtype *x_solver, const realtype *x_rdata){
     x_solver[73] = Wee1p;
     x_solver[74] = Mbp27;
     x_solver[75] = Chk1;
-    x_solver[76] = pRBc1;
-    x_solver[77] = pRBc2;
+    x_solver[76] = pRB_E2F;
+    x_solver[77] = pRBp_E2F;
     x_solver[78] = p21;
     x_solver[79] = Mdp21;
     x_solver[80] = Mep21;

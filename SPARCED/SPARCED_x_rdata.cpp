@@ -87,8 +87,8 @@ void x_rdata_SPARCED(realtype *x_rdata, const realtype *x, const realtype *tcl){
     x_rdata[73] = Wee1p;
     x_rdata[74] = Mbp27;
     x_rdata[75] = Chk1;
-    x_rdata[76] = pRBc1;
-    x_rdata[77] = pRBc2;
+    x_rdata[76] = pRB_E2F;
+    x_rdata[77] = pRBp_E2F;
     x_rdata[78] = p21;
     x_rdata[79] = Mdp21;
     x_rdata[80] = Mep21;
