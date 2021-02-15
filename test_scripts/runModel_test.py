@@ -79,7 +79,9 @@ model_param = np.array(model.getFixedParameterIds())
 
 # %% turn off irrelevant CC reactions
 
-ks = ['k'+str(n) for n in range(320, 432)]
+#ks = ['k'+str(n) for n in range(320, 432)]
+
+ks = ['k'+str(n) for n in range(337, 432)] # turn on E2F, pRB reactions
 
 ks_actual = []
 for p in model_param:
@@ -116,7 +118,7 @@ model.setFixedParameterById('k432', 1.47e-4)
 model.setFixedParameterById('k433', 1.47e-4)
 
 
-# %%
+#%% Deterministic Run
 #model_module = importlib.import_module(model_name)
 #model = model_module.getModel()
 flagD = 1
@@ -231,6 +233,7 @@ timecourse('Mdp27')
 timecourse('Mdp21')
 
 timecourse('ppERK')
+timecourse('ppAKT')
 timecourse('Mei')
 timecourse('pRB')
 timecourse('pRBp')
