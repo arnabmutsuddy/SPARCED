@@ -227,14 +227,14 @@ def timecourse_obs(obs_id, x_o = xoutObs_all, tout_all=tout_all):
 
 timecourse('Cd')
 timecourse('Cdk46', x_s=xoutS_all, tout_all=tout_all)
-timecourse('Mdi', x_s=xoutS_all, tout_all=tout_all)
+timecourse('Cd_Cdk46', x_s=xoutS_all, tout_all=tout_all)
 timecourse('Md', x_s=xoutS_all, tout_all=tout_all)
 timecourse('Mdp27')
 timecourse('Mdp21')
 
 timecourse('ppERK')
 timecourse('ppAKT')
-timecourse('Mei')
+timecourse('Ce_Cdk2')
 timecourse('pRB')
 timecourse('pRBp')
 timecourse('pRBpp')
