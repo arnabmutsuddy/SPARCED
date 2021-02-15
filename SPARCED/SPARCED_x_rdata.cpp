@@ -70,7 +70,7 @@ void x_rdata_SPARCED(realtype *x_rdata, const realtype *x, const realtype *tcl){
     x_rdata[56] = Ca;
     x_rdata[57] = Ca_Cdk2;
     x_rdata[58] = Ma;
-    x_rdata[59] = Ca_Cdk2_p27;
+    x_rdata[59] = Map27;
     x_rdata[60] = p27;
     x_rdata[61] = Cdh1i;
     x_rdata[62] = Cdh1a;
@@ -85,7 +85,7 @@ void x_rdata_SPARCED(realtype *x_rdata, const realtype *x, const realtype *tcl){
     x_rdata[71] = Pb;
     x_rdata[72] = Wee1;
     x_rdata[73] = Wee1p;
-    x_rdata[74] = Cb_Cdk1_p27;
+    x_rdata[74] = Mbp27;
     x_rdata[75] = Chk1;
     x_rdata[76] = pRB_E2F;
     x_rdata[77] = pRBp_E2F;

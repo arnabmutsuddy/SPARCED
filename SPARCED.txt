@@ -63,7 +63,7 @@ model SPARCED()
   Species Ca in Nucleus;
   Species Ca_Cdk2 in Nucleus;
   Species Ma in Nucleus;
-  Species Ca_Cdk2_p27 in Nucleus;
+  Species Map27 in Nucleus;
   Species p27 in Nucleus;
   Species Cdh1i in Nucleus;
   Species Cdh1a in Nucleus;
@@ -78,7 +78,7 @@ model SPARCED()
   Species Pb in Nucleus;
   Species Wee1 in Nucleus;
   Species Wee1p in Nucleus;
-  Species Cb_Cdk1_p27 in Nucleus;
+  Species Mbp27 in Nucleus;
   Species Chk1 in Nucleus;
   Species pRB_E2F in Nucleus;
   Species pRBp_E2F in Nucleus;
@@ -1120,7 +1120,7 @@ model SPARCED()
   vC16: E2F => ; (k335*E2F)*1.750000e-12;
   vC17: E2Fp => ; (k336*E2Fp)*1.750000e-12;
   vC18:  => Cd; (k337)*1.750000e-12;
-  vC19: Cd => Cd_Cdk46; (k338_1*Cd*(k338_2-(Cd_Cdk46+Md+Mdp27+Cd_Cdk46_p21)))*1.750000e-12;
+  vC19: Cd => Cd_Cdk46; (k338_1*Cd*(k338_2-(Cd_Cdk46+Md+Mdp27+Mdp21)))*1.750000e-12;
   vC20: Cd_Cdk46 => Cd; (k339*Cd_Cdk46)*1.750000e-12;
   vC21: Cd => ; (k340_1*(Cd/(k340_2+Cd)))*1.750000e-12;
   vC22: Cd => ; (k341*Cd)*1.750000e-12;
@@ -1129,7 +1129,7 @@ model SPARCED()
   vC25: Md + p27 => Mdp27; (k344*Md*p27)*1.750000e-12;
   vC26: Mdp27 => Md + p27; (k345*Mdp27)*1.750000e-12;
   vC27:  => Ce; (k346)*1.750000e-12;
-  vC28: Ce => Ce_Cdk2; (k347_1*Ce*(k347_2-(Ce_Cdk2+Me+Mep27+Ce_Cdk2_p21+Ca_Cdk2+Ma+Ca_Cdk2_p27+Ca_Cdk2_p21)))*1.750000e-12;
+  vC28: Ce => Ce_Cdk2; (k347_1*Ce*(k347_2-(Ce_Cdk2+Me+Mep27+Mep21+Ca_Cdk2+Ma+Map27+Map21)))*1.750000e-12;
   vC29: Ce_Cdk2 => Ce; (k348*Ce_Cdk2)*1.750000e-12;
   vC30: Ce => ; (k349_1*(Skp2/(k349_2+Skp2))*(Ce/(k349_3+Ce)))*1.750000e-12;
   vC31: Me => Ce_Cdk2; (k350_1*(Wee1+k350_2)*(Me/(k350_3+Me)))*1.750000e-12;
@@ -1145,14 +1145,14 @@ model SPARCED()
   vC41: Pei => ; (k360*Pei)*1.750000e-12;
   vC42: Pe => ; (k361*Pe)*1.750000e-12;
   vC43:  => Ca; (k362)*1.750000e-12;
-  vC44: Ca => Ca_Cdk2; (k363_1*Ca*(k363_2-(Ce_Cdk2+Me+Mep27+Ce_Cdk2_p21+Ca_Cdk2+Ma+Ca_Cdk2_p27+Ca_Cdk2_p21)))*1.750000e-12;
+  vC44: Ca => Ca_Cdk2; (k363_1*Ca*(k363_2-(Ce_Cdk2+Me+Mep27+Mep21+Ca_Cdk2+Ma+Map27+Map21)))*1.750000e-12;
   vC45: Ca_Cdk2 => Ca; (k364*Ca_Cdk2)*1.750000e-12;
   vC46: Ca => ; (k365_1*(Ca/(k365_2+Ca))*(Cdc20a/(k365_3+Cdc20a)))*1.750000e-12;
   vC47: Ca => ; (k366*Ca)*1.750000e-12;
   vC48: Ma => Ca_Cdk2; (k367_1*(Wee1+k367_2)*(Ma/(k367_3+Ma)))*1.750000e-12;
   vC49: Ca_Cdk2 => Ma; (k368_1*Pa*(Ca_Cdk2/(k368_2+Ca_Cdk2)))*1.750000e-12;
-  vC50: Ma + p27 => Ca_Cdk2_p27; (k369*Ma*p27)*1.750000e-12;
-  vC51: Ca_Cdk2_p27 => Ma + p27; (k370*Ca_Cdk2_p27)*1.750000e-12;
+  vC50: Ma + p27 => Map27; (k369*Ma*p27)*1.750000e-12;
+  vC51: Map27 => Ma + p27; (k370*Map27)*1.750000e-12;
   vC52: p27 => p27p; (k371_1*Me*(p27/(p27+k371_2)))*1.750000e-12;
   vC53: p27p => p27; (k372_1*(p27p/(p27p+k372_2)))*1.750000e-12;
   vC54: p27p => ; (k373_1*(Skp2/(Skp2+k373_2))*(p27p/(p27p+k373_3)))*1.750000e-12;
@@ -1168,14 +1168,14 @@ model SPARCED()
   vC64: Pai => ; (k383*Pai)*1.750000e-12;
   vC65: Pa => ; (k384*Pa)*1.750000e-12;
   vC66:  => Cb; (k385)*1.750000e-12;
-  vC67: Cb => Cb_Cdk1; (k386_1*Cb*(k386_2-(Cb_Cdk1+Mb+Cb_Cdk1_p27+Cb_Cdk1_p21)))*1.750000e-12;
+  vC67: Cb => Cb_Cdk1; (k386_1*Cb*(k386_2-(Cb_Cdk1+Mb+Mbp27+Mbp21)))*1.750000e-12;
   vC68: Cb_Cdk1 => Cb; (k387*Cb_Cdk1)*1.750000e-12;
   vC69: Cb => ; (k388_1*(Cb/(k388_2+Cb))*((Cdc20a/(k388_3+Cdc20a))+(Cdh1a/(k388_4+Cdh1a))))*1.750000e-12;
   vC70: Cb => ; (k389*Cb)*1.750000e-12;
   vC71: Mb => Cb_Cdk1; (k390_1*(Wee1+k390_2)*(Mb/(k390_3+Mb)))*1.750000e-12;
   vC72: Cb_Cdk1 => Mb; (k391_1*Pb*(Cb_Cdk1/(k391_2+Cb_Cdk1)))*1.750000e-12;
-  vC73: p27 + Mb => Cb_Cdk1_p27; (k392*p27*Mb)*1.750000e-12;
-  vC74: Cb_Cdk1_p27 => p27 + Mb; (k393*Cb_Cdk1_p27)*1.750000e-12;
+  vC73: p27 + Mb => Mbp27; (k392*p27*Mb)*1.750000e-12;
+  vC74: Mbp27 => p27 + Mb; (k393*Mbp27)*1.750000e-12;
   vC75:  => Cdc20i; (k394)*1.750000e-12;
   vC76: Cdc20i => Cdc20a; (k395_1*Mb*(Cdc20i/(k395_2+Cdc20i)))*1.750000e-12;
   vC77: Cdc20a => Cdc20i; (k396_1*(Cdc20a/(k396_2+Cdc20a)))*1.750000e-12;
@@ -1223,7 +1223,7 @@ model SPARCED()
   vCd7: Pe => ; (k438*Pe)*1.750000e-12;
   vCd8: Ca_Cdk2 => ; (k439*Ca_Cdk2)*1.750000e-12;
   vCd9: Ma => ; (k440*Ma)*1.750000e-12;
-  vCd10: Ca_Cdk2_p27 => ; (k441*Ca_Cdk2_p27)*1.750000e-12;
+  vCd10: Map27 => ; (k441*Map27)*1.750000e-12;
   vCd11: Cdh1i => ; (k442*Cdh1i)*1.750000e-12;
   vCd12: E2Fp => ; (k443*E2Fp)*1.750000e-12;
   vCd13: p27p => ; (k444*p27p)*1.750000e-12;
@@ -1233,7 +1233,7 @@ model SPARCED()
   vCd17: Cdc20a => ; (k448*Cdc20a)*1.750000e-12;
   vCd18: Pb => ; (k449*Pb)*1.750000e-12;
   vCd19: Wee1p => ; (k450*Wee1p)*1.750000e-12;
-  vCd20: Cb_Cdk1_p27 => ; (k451*Cb_Cdk1_p27)*1.750000e-12;
+  vCd20: Mbp27 => ; (k451*Mbp27)*1.750000e-12;
   vCd21: pRB_E2F => ; (k452*pRB_E2F)*1.750000e-12;
   vCd22: pRBp_E2F => ; (k453*pRBp_E2F)*1.750000e-12;
   vCd23: Mdp21 => ; (k454*Mdp21)*1.750000e-12;
@@ -3329,7 +3329,7 @@ model SPARCED()
   Ca = 4.029370e+00;
   Ca_Cdk2 = 1.403820e+01;
   Ma = 5.230808e+00;
-  Ca_Cdk2_p27 = 1.283144e+00;
+  Map27 = 1.283144e+00;
   p27 = 2.044209e+01;
   Cdh1i = 5.978504e-01;
   Cdh1a = 1.088043e+02;
@@ -3344,7 +3344,7 @@ model SPARCED()
   Pb = 9.402992e+00;
   Wee1 = 2.651906e+01;
   Wee1p = 1.674047e+01;
-  Cb_Cdk1_p27 = 8.392431e-02;
+  Mbp27 = 8.392431e-02;
   Chk1 = 1.497549e-01;
   pRB_E2F = 8.950101e+03;
   pRBp_E2F = 2.997245e-01;

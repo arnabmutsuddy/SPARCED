@@ -2891,7 +2891,3 @@
 #define k2473 k[2890]
 #define k2474 k[2891]
 #define k2475 k[2892]
-#define Cd_Cdk46_p21 k[2893]
-#define Ce_Cdk2_p21 k[2894]
-#define Ca_Cdk2_p21 k[2895]
-#define Cb_Cdk1_p21 k[2896]
