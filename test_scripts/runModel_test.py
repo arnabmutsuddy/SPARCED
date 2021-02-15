@@ -247,6 +247,8 @@ timecourse_mrna('CCND1')
 timecourse_mrna('CCND2')
 timecourse_mrna('CCND3')
 
+timecourse_mrna('RB1')
+
 # %%
 elif flagD == 1:
     flagWr = 1
