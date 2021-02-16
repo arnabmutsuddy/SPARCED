@@ -16,11 +16,11 @@ namespace model_SPARCED {
 
 extern std::array<const char*, 0> parameterNames;
 extern std::array<const char*, 2893> fixedParameterNames;
-extern std::array<const char*, 781> stateNames;
+extern std::array<const char*, 785> stateNames;
 extern std::array<const char*, 105> observableNames;
 extern std::array<const char*, 0> parameterIds;
 extern std::array<const char*, 2893> fixedParameterIds;
-extern std::array<const char*, 781> stateIds;
+extern std::array<const char*, 785> stateIds;
 extern std::array<const char*, 105> observableIds;
 
 extern void Jy_SPARCED(realtype *nllh, const int iy, const realtype *p,
@@ -100,8 +100,8 @@ class Model_SPARCED : public amici::Model_ODE {
      */
     Model_SPARCED()
         : amici::Model_ODE(
-              781,                                // nx_rdata
-              781,                            // nxtrue_rdata
+              785,                                // nx_rdata
+              785,                            // nxtrue_rdata
               776,                               // nx_solver
               776,                           // nxtrue_solver
               0,                        // nx_solver_reinit
@@ -111,7 +111,7 @@ class Model_SPARCED : public amici::Model_ODE {
               0,                                  // nztrue
               0,                                  // nevent
               1,                              // nobjective
-              2480,                                      // nw
+              2484,                                      // nw
               3039,                                   // ndwdx
               0,                                   // ndwdp
               0,                                   // ndwdw

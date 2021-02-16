@@ -785,6 +785,10 @@ model SPARCED()
   Species Cd_Cdk46_pRB_E2F in Nucleus;
   Species Ce_Cdk2_pRBp in Nucleus;
   Species Ce_Cdk2_pRBp_E2F in Nucleus;
+  Species Cd_Cdk46_pRBp in Nucleus;
+  Species Cd_Cdk46_pRBp_E2F in Nucleus;
+  Species Ce_Cdk2_pRBpp in Nucleus;
+  Species Ce_Cdk2_pRBpp_E2F in Nucleus;
 
 
   # Reactions:
@@ -4056,6 +4060,10 @@ model SPARCED()
   Cd_Cdk46_pRB_E2F = 0.000000e+00;
   Ce_Cdk2_pRBp = 0.000000e+00;
   Ce_Cdk2_pRBp_E2F = 0.000000e+00;
+  Cd_Cdk46_pRBp = 0.000000e+00;
+  Cd_Cdk46_pRBp_E2F = 0.000000e+00;
+  Ce_Cdk2_pRBpp = 0.000000e+00;
+  Ce_Cdk2_pRBpp_E2F = 0.000000e+00;
 
   # Parameter initializations:
   k1_1 = 4.200500e-03;
