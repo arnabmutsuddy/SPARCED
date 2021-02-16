@@ -10,13 +10,6 @@ namespace amici {
 namespace model_SPARCED {
 
 void total_cl_SPARCED(realtype *total_cl, const realtype *x_rdata){
-    total_cl[0] = Ce_Cdk2_pRBpp_E2F;
-    total_cl[1] = Ce_Cdk2_pRBpp;
-    total_cl[2] = Cd_Cdk46_pRBp_E2F;
-    total_cl[3] = Cd_Cdk46_pRBp;
-    total_cl[4] = Ce_Cdk2_pRBp_E2F;
-    total_cl[5] = Ce_Cdk2_pRBp;
-    total_cl[6] = pRBpp_E2F;
 }
 
 } // namespace amici

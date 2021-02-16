@@ -786,8 +786,15 @@ void x_solver_SPARCED(realtype *x_solver, const realtype *x_rdata){
     x_solver[773] = Cdk1;
     x_solver[774] = Cdk2;
     x_solver[775] = Cdk46;
-    x_solver[776] = Cd_Cdk46_pRB;
-    x_solver[777] = Cd_Cdk46_pRB_E2F;
+    x_solver[776] = pRBpp_E2F;
+    x_solver[777] = Cd_Cdk46_pRB;
+    x_solver[778] = Cd_Cdk46_pRB_E2F;
+    x_solver[779] = Ce_Cdk2_pRBp;
+    x_solver[780] = Ce_Cdk2_pRBp_E2F;
+    x_solver[781] = Cd_Cdk46_pRBp;
+    x_solver[782] = Cd_Cdk46_pRBp_E2F;
+    x_solver[783] = Ce_Cdk2_pRBpp;
+    x_solver[784] = Ce_Cdk2_pRBpp_E2F;
 }
 
 } // namespace amici
