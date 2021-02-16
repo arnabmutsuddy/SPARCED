@@ -46,6 +46,7 @@ def RunSPARCED(flagD,th,spdata,genedata,Vn,Vc,model,input_data_folder):
     solver = model.getSolver() # Create solver instance
     solver.setMaxSteps = 1e10
     
+    model.setInitialStates(xoutS_all[0,:])
     xoutObs_all[0,:] = amici.runAmiciSimulation(model, solver)['y'][0,:]
     
     for qq in range(NSteps):

@@ -124,9 +124,57 @@ model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')/10)
 # model.setFixedParameterById('k432', 1.47e-4)
 # model.setFixedParameterById('k433', 1.47e-4)
 
+#%% rate constants - half lives
+
 model.setFixedParameterById('k154', 2.14e-5) # pRB half life
 model.setFixedParameterById('k155', 1.65e-4) # E2F half life
 model.setFixedParameterById('k452', 1.65e-4) # pRB_E2F half life
+
+model.setFixedParameterById('k432', 1.47e-4) # Cd_Cdk46, vCd1
+model.setFixedParameterById('k433', 1.47e-4) # Md, vCd2 (obsolete)
+model.setFixedParameterById('k434', 1.47e-4) # Cd_Cdk46_p27, vCd3
+model.setFixedParameterById('k435', 3.85e-5) # Ce_Cdk2, vCd4
+model.setFixedParameterById('k436', 3.85e-5) # Me, vCd5 (obsolete)
+model.setFixedParameterById('k437', 3.85e-5) # Ce_Cdk2_p27, vCd6
+model.setFixedParameterById('k438', 3.21e-5) # Pe, vCd7
+model.setFixedParameterById('k439', 7.70e-5) # Ca_Cdk2, vCd8
+model.setFixedParameterById('k440', 7.70e-5) # Ma, vCd9 (obsolete)
+model.setFixedParameterById('k441', 7.70e-5) # Ca_Cdk2_p27, vCd10
+model.setFixedParameterById('k442', 2.35e-5) # Cdh1i, vCd11
+model.setFixedParameterById('k443', 1.65e-4) # E2Fp, vCd12
+model.setFixedParameterById('k444', 3.21e-5) # p27p, vCd13
+model.setFixedParameterById('k445', 3.85e-4) # Pa, vCd14
+model.setFixedParameterById('k446', 1.28e-4) # Cb_Cdk1, vCd15
+model.setFixedParameterById('k447', 1.28e-4) # Mb, vCd16
+model.setFixedParameterById('k448', 3.85e-4) # Cdc20a, vCd17
+model.setFixedParameterById('k449', 1.93e-4) # Pb, vCd18
+model.setFixedParameterById('k450', 2.75e-5) # Wee1p, vCd19
+model.setFixedParameterById('k451', 1.28e-4) # Cb_Cdk1_p27, vCd20
+model.setFixedParameterById('k452', 1.65e-4) # pRB_E2F, vCd21
+model.setFixedParameterById('k453', 1.65e-4) # pRB_E2Fp, vCd22
+model.setFixedParameterById('k454', 3.85e-4) # Cd_Cdk46_p21, vCd23
+model.setFixedParameterById('k455', 3.85e-4) # Ce_Cdk2_p21, vCd24
+model.setFixedParameterById('k456', 3.85e-4) # Ca_Cdk2_p21, vCd25
+model.setFixedParameterById('k457', 3.85e-4) # Cb_Cdk1_p21, vCd26
+model.setFixedParameterById('k458', 1.65e-4) # pRBpp_E2F, vCd27
+model.setFixedParameterById('k459', 1.47e-4) # Cd_Cdk46_pRB, vCd28
+model.setFixedParameterById('k460', 1.65e-4) # Cd_Cdk46_pRB_E2F, vCd29
+model.setFixedParameterById('k461', 3.85e-5) # Ce_Cdk2_pRBp, vCd30
+model.setFixedParameterById('k462', 1.65e-4) # Ce_Cdk2_pRBp_E2F, vCd31
+model.setFixedParameterById('k463', 1.47e-4) # Cd_Cdk46_pRBp, vCd32
+model.setFixedParameterById('k464', 1.65e-4) # Cd_Cdk46_pRBp_E2F, vCd33
+model.setFixedParameterById('k465', 3.85e-5) # Ce_Cdk2_pRBpp, vCd34
+model.setFixedParameterById('k466', 1.65e-4) # Ce_Cdk2_pRBpp_E2F, vCd35
+
+
+
+
+
+
+
+
+
+
 
 
 #%% modify initial conditions
@@ -213,7 +261,24 @@ timecourse('ppAKT')
 timecourse('pRB')
 timecourse('E2F')
 
+
+timecourse_obs('RB')
+
+timecourse('pRB')
+timecourse('pRBp')
+timecourse('pRBpp')
 timecourse('pRB_E2F')
+timecourse('pRBp_E2F')
+timecourse('pRBpp_E2F')
+timecourse('Cd_Cdk46_pRB')
+timecourse('Cd_Cdk46_pRB_E2F')
+timecourse('Ce_Cdk2_pRBp')
+timecourse('Ce_Cdk2_pRBp_E2F')
+timecourse('Cd_Cdk46_pRBp')
+timecourse('Cd_Cdk46_pRBp_E2F')
+timecourse('Ce_Cdk2_pRBpp')
+timecourse('Cd_Cdk2_pRBpp_E2F')
+
 
 timecourse('Cd')
 timecourse('Cdk46')
@@ -246,6 +311,12 @@ timecourse_mrna('RB1')
 timecourse_mrna('E2F1')
 timecourse_mrna('E2F2')
 timecourse_mrna('E2F3')
+
+#%% stoichiometric matrix/observables check
+
+stm = pd.read_csv('input_files/StoicMat.txt', sep='\t', header=0, index_col=0)
+
+obsm = pd.read_csv('input_files/Observables.txt', sep='\t', header=0, index_col=0)
 
 # %% stochastic test
 # flagD = 0
