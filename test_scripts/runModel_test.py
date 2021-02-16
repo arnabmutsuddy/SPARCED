@@ -116,10 +116,27 @@ model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')/50)
 model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/50)
 model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/50)
 
+model.setFixedParameterById('k8_1',model.getFixedParameterById('k8_1')/50)
+model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')/10)
+model.setFixedParameterById('k10_1',model.getFixedParameterById('k10_1')/10)
+model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')/10)
+
 # model.setFixedParameterById('k432', 1.47e-4)
 # model.setFixedParameterById('k433', 1.47e-4)
-#%%
-model.setFixedParameterById('k154', 2.14e-5)
+
+model.setFixedParameterById('k154', 2.14e-5) # pRB half life
+model.setFixedParameterById('k155', 1.65e-4) # E2F half life
+model.setFixedParameterById('k452', 1.65e-4) # pRB_E2F half life
+
+
+#%% modify initial conditions
+species_all = [species_sheet[n][0] for n in range(1,len(species_sheet))]
+
+species_initializations[species_all.index('pRB')] = 21.484-0.2182*0.90
+species_initializations[species_all.index('pRB_E2F')] = 0.2182*0.90
+species_initializations[species_all.index('E2F')] = 0.2182*0.10
+
+
 
 
 #%% Deterministic Run
@@ -190,15 +207,25 @@ def timecourse_obs(obs_id, x_o = xoutObs_all, tout_all=tout_all):
     plt.show
 # %%
 
+timecourse('ppERK')
+timecourse('ppAKT')
+
+timecourse('pRB')
+timecourse('E2F')
+
+timecourse('pRB_E2F')
+
 timecourse('Cd')
-timecourse('Cdk46', x_s=xoutS_all, tout_all=tout_all)
-timecourse('Cd_Cdk46', x_s=xoutS_all, tout_all=tout_all)
-timecourse('Md', x_s=xoutS_all, tout_all=tout_all)
+timecourse('Cdk46')
+timecourse('Cd_Cdk46')
+
+timecourse('Cd_Cdk46_pRB')
+timecourse('Cd_Cdk46_pRB_E2F')
+
+
 timecourse('Cd_Cdk46_p27')
 timecourse('Cd_Cdk46_p21')
 
-timecourse('ppERK')
-timecourse('ppAKT')
 timecourse('Ce_Cdk2')
 timecourse('pRB')
 timecourse('pRBp')
@@ -206,6 +233,9 @@ timecourse('pRBpp')
 timecourse('E2F')
 # xoutS_all[:,list(species_all).index('E')]
 timecourse_obs('Cd')
+timecourse_obs('RB')
+timecourse_obs('E2F')
+
 timecourse('p53ac')
 # %%
 timecourse_mrna('CCND1')
@@ -213,7 +243,9 @@ timecourse_mrna('CCND2')
 timecourse_mrna('CCND3')
 
 timecourse_mrna('RB1')
-
+timecourse_mrna('E2F1')
+timecourse_mrna('E2F2')
+timecourse_mrna('E2F3')
 
 # %% stochastic test
 # flagD = 0
