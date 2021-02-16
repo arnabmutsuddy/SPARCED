@@ -9,7 +9,7 @@ std::array<const char*, 0> parameterNames = {
     
 };
 
-std::array<const char*, 2893> fixedParameterNames = {
+std::array<const char*, 2889> fixedParameterNames = {
     "k1_1",
 "k1_2",
 "k1_3",
@@ -625,18 +625,14 @@ std::array<const char*, 2893> fixedParameterNames = {
 "k319_4",
 "k319_5",
 "k319_6",
-"k320_1",
+"k320",
 "k321",
 "k322",
-"k323_1",
-"k323_2",
-"k324_1",
-"k324_2",
+"k323",
+"k324",
 "k325",
-"k326_1",
-"k326_2",
-"k327_1",
-"k327_2",
+"k326",
+"k327",
 "k328",
 "k329",
 "k330",
@@ -3805,7 +3801,7 @@ std::array<const char*, 0> parameterIds = {
     
 };
 
-std::array<const char*, 2893> fixedParameterIds = {
+std::array<const char*, 2889> fixedParameterIds = {
     "k1_1",
 "k1_2",
 "k1_3",
@@ -4421,18 +4417,14 @@ std::array<const char*, 2893> fixedParameterIds = {
 "k319_4",
 "k319_5",
 "k319_6",
-"k320_1",
+"k320",
 "k321",
 "k322",
-"k323_1",
-"k323_2",
-"k324_1",
-"k324_2",
+"k323",
+"k324",
 "k325",
-"k326_1",
-"k326_2",
-"k327_1",
-"k327_2",
+"k326",
+"k327",
 "k328",
 "k329",
 "k330",

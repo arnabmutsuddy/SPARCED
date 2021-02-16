@@ -774,3 +774,5 @@
 #define Cdk1 x[773]
 #define Cdk2 x[774]
 #define Cdk46 x[775]
+#define Cd_Cdk46_pRB x[776]
+#define Cd_Cdk46_pRB_E2F x[777]

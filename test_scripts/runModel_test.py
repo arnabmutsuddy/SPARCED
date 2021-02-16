@@ -81,7 +81,9 @@ model_param = np.array(model.getFixedParameterIds())
 
 #ks = ['k'+str(n) for n in range(320, 432)]
 
-ks = ['k'+str(n) for n in range(337, 432)] # turn on E2F, pRB reactions
+#ks = ['k'+str(n) for n in range(337, 432)] # turn on E2F, pRB reactions
+
+ks = ['k'+str(n) for n in range(328, 432)]
 
 ks_actual = []
 for p in model_param:
@@ -95,8 +97,8 @@ for p in ks_actual:
 # %% reaction rate constant modification
 
 
-model.setFixedParameterById('k424', 0.001)  # kon, Mdi
-model.setFixedParameterById('k425', 0.0001)  # koff, Mdi
+# model.setFixedParameterById('k424', 0.001)  # kon, Mdi
+# model.setFixedParameterById('k425', 0.0001)  # koff, Mdi
 # model.setFixedParameterById('k426',0.001) #kon, Mei
 # model.setFixedParameterById('k427',0.0001) #koff, Mei
 # model.setFixedParameterById('k428',0.001) #kon, Mai
@@ -114,8 +116,10 @@ model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')/50)
 model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/50)
 model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/50)
 
-model.setFixedParameterById('k432', 1.47e-4)
-model.setFixedParameterById('k433', 1.47e-4)
+# model.setFixedParameterById('k432', 1.47e-4)
+# model.setFixedParameterById('k433', 1.47e-4)
+#%%
+model.setFixedParameterById('k154', 2.14e-5)
 
 
 #%% Deterministic Run
@@ -143,45 +147,6 @@ xoutS_all, xoutG_all, xoutObs_all, tout_all = RunSPARCED(flagD, th, species_init
 #     condsGDF.to_excel(nmxlsfile+'G_0.xlsx')
 #     condsGDF = None
 
-# %% stochastic test
-flagD = 0
-
-
-flagWr = 0
-nmxlsfile = outfile
-
-sys.path.insert(0, os.path.abspath(model_output_dir))
-species_sheet = np.array([np.array(line.strip().split("\t")) for line in open(
-    os.path.join(input_data_folder, 'Species.txt'), encoding='latin-1')])
-
-species_initializations = []
-for row in species_sheet[1:]:
-    species_initializations.append(float(row[2]))
-
-species_initializations = np.array(species_initializations)
-species_initializations[np.argwhere(species_initializations <= 1e-6)] = 0.0
-
-model_module = importlib.import_module(model_name)
-model = model_module.getModel()
-solver = model.getSolver()          # Create solver instance
-solver.setMaxSteps = 1e10
-model.setTimepoints(np.linspace(0, ts))  # np.linspace(0, 30) # set timepoints
-
-xoutS_all, xoutG_all, tout_all = RunSPARCED(
-    flagD, th, species_initializations, [], Vn, Vc, model, input_data_folder)
-
-if flagWr == 1:
-    columnsS = [ele for ele in model.getStateIds()]
-    columnsG = columnsS[773:914]
-    resa = [sub.replace('m_', 'ag_') for sub in columnsG]
-    resi = [sub.replace('m_', 'ig_') for sub in columnsG]
-    columnsG2 = np.concatenate((resa, resi), axis=None)
-    condsSDF = pd.DataFrame(data=xoutS_all, columns=columnsS)
-    condsSDF.to_excel(nmxlsfile+'S_0.xlsx')
-    condsSDF = None
-    condsGDF = pd.DataFrame(data=xoutG_all, columns=columnsG2)
-    condsGDF.to_excel(nmxlsfile+'G_0.xlsx')
-    condsGDF = None
 
 # %% test - plot trajectories
 # xoutS_all[1960,:]
@@ -248,6 +213,49 @@ timecourse_mrna('CCND2')
 timecourse_mrna('CCND3')
 
 timecourse_mrna('RB1')
+
+
+# %% stochastic test
+# flagD = 0
+
+
+# flagWr = 0
+# nmxlsfile = outfile
+
+# sys.path.insert(0, os.path.abspath(model_output_dir))
+# species_sheet = np.array([np.array(line.strip().split("\t")) for line in open(
+#     os.path.join(input_data_folder, 'Species.txt'), encoding='latin-1')])
+
+# species_initializations = []
+# for row in species_sheet[1:]:
+#     species_initializations.append(float(row[2]))
+
+# species_initializations = np.array(species_initializations)
+# species_initializations[np.argwhere(species_initializations <= 1e-6)] = 0.0
+
+# model_module = importlib.import_module(model_name)
+# model = model_module.getModel()
+# solver = model.getSolver()          # Create solver instance
+# solver.setMaxSteps = 1e10
+# model.setTimepoints(np.linspace(0, ts))  # np.linspace(0, 30) # set timepoints
+
+# xoutS_all, xoutG_all, tout_all = RunSPARCED(
+#     flagD, th, species_initializations, [], Vn, Vc, model, input_data_folder)
+
+# if flagWr == 1:
+#     columnsS = [ele for ele in model.getStateIds()]
+#     columnsG = columnsS[773:914]
+#     resa = [sub.replace('m_', 'ag_') for sub in columnsG]
+#     resi = [sub.replace('m_', 'ig_') for sub in columnsG]
+#     columnsG2 = np.concatenate((resa, resi), axis=None)
+#     condsSDF = pd.DataFrame(data=xoutS_all, columns=columnsS)
+#     condsSDF.to_excel(nmxlsfile+'S_0.xlsx')
+#     condsSDF = None
+#     condsGDF = pd.DataFrame(data=xoutG_all, columns=columnsG2)
+#     condsGDF.to_excel(nmxlsfile+'G_0.xlsx')
+#     condsGDF = None
+
+
 
 # %%
 elif flagD == 1:
