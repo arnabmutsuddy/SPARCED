@@ -2921,18 +2921,14 @@
       <parameter id="k319_4" value="5000" constant="true"/>
       <parameter id="k319_5" value="5" constant="true"/>
       <parameter id="k319_6" value="20" constant="true"/>
-      <parameter id="k320_1" value="0" constant="true"/>
-      <parameter id="k321" value="2.361111e-06" constant="true"/>
-      <parameter id="k322" value="0.002361111" constant="true"/>
-      <parameter id="k323_1" value="0.01038889" constant="true"/>
-      <parameter id="k323_2" value="10" constant="true"/>
-      <parameter id="k324_1" value="0.9444444" constant="true"/>
-      <parameter id="k324_2" value="10" constant="true"/>
-      <parameter id="k325" value="4.722222e-05" constant="true"/>
-      <parameter id="k326_1" value="0.004722222" constant="true"/>
-      <parameter id="k326_2" value="10" constant="true"/>
-      <parameter id="k327_1" value="0.9444444" constant="true"/>
-      <parameter id="k327_2" value="10" constant="true"/>
+      <parameter id="k320" value="0.001" constant="true"/>
+      <parameter id="k321" value="0.0001" constant="true"/>
+      <parameter id="k322" value="0.001" constant="true"/>
+      <parameter id="k323" value="0.0001" constant="true"/>
+      <parameter id="k324" value="0.001" constant="true"/>
+      <parameter id="k325" value="0.0001" constant="true"/>
+      <parameter id="k326" value="0.001" constant="true"/>
+      <parameter id="k327" value="0.0001" constant="true"/>
       <parameter id="k328" value="1.180556e-06" constant="true"/>
       <parameter id="k329" value="0.002361111" constant="true"/>
       <parameter id="k330" value="0.0002833333" constant="true"/>
@@ -12060,20 +12056,6 @@
         </kineticLaw>
       </reaction>
       <reaction id="vC1" reversible="false" fast="false">
-        <listOfProducts>
-          <speciesReference species="pRB" stoichiometry="1" constant="true"/>
-        </listOfProducts>
-        <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <apply>
-              <times/>
-              <ci> k320_1 </ci>
-              <cn type="e-notation"> 1.75 <sep/> -12 </cn>
-            </apply>
-          </math>
-        </kineticLaw>
-      </reaction>
-      <reaction id="vC2" reversible="false" fast="false">
         <listOfReactants>
           <speciesReference species="pRB" stoichiometry="1" constant="true"/>
           <speciesReference species="E2F" stoichiometry="1" constant="true"/>
@@ -12085,7 +12067,7 @@
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
-              <ci> k321 </ci>
+              <ci> k320 </ci>
               <ci> pRB </ci>
               <ci> E2F </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
@@ -12093,7 +12075,7 @@
           </math>
         </kineticLaw>
       </reaction>
-      <reaction id="vC3" reversible="false" fast="false">
+      <reaction id="vC2" reversible="false" fast="false">
         <listOfReactants>
           <speciesReference species="pRB_E2F" stoichiometry="1" constant="true"/>
         </listOfReactants>
@@ -12105,8 +12087,28 @@
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
-              <ci> k322 </ci>
+              <ci> k321 </ci>
               <ci> pRB_E2F </ci>
+              <cn type="e-notation"> 1.75 <sep/> -12 </cn>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="vC3" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference species="Cd" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cdk46" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cd_Cdk46" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k322 </ci>
+              <ci> Cd </ci>
+              <ci> Cdk46 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -12114,34 +12116,18 @@
       </reaction>
       <reaction id="vC4" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="pRB" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="pRBp" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cdk46" stoichiometry="1" constant="true"/>
         </listOfProducts>
-        <listOfModifiers>
-          <modifierSpeciesReference species="Md"/>
-          <modifierSpeciesReference species="Cd_Cdk46_p27"/>
-        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
-              <ci> k323_1 </ci>
-              <apply>
-                <divide/>
-                <ci> pRB </ci>
-                <apply>
-                  <plus/>
-                  <ci> k323_2 </ci>
-                  <ci> pRB </ci>
-                </apply>
-              </apply>
-              <apply>
-                <plus/>
-                <ci> Md </ci>
-                <ci> Cd_Cdk46_p27 </ci>
-              </apply>
+              <ci> k323 </ci>
+              <ci> Cd_Cdk46 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -12149,25 +12135,19 @@
       </reaction>
       <reaction id="vC5" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="pRBp" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRB" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="pRB" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46_pRB" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
-              <ci> k324_1 </ci>
-              <apply>
-                <divide/>
-                <ci> pRBp </ci>
-                <apply>
-                  <plus/>
-                  <ci> k324_2 </ci>
-                  <ci> pRBp </ci>
-                </apply>
-              </apply>
+              <ci> k324 </ci>
+              <ci> pRB </ci>
+              <ci> Cd_Cdk46 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -12175,14 +12155,18 @@
       </reaction>
       <reaction id="vC6" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="pRB" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46_pRB" stoichiometry="1" constant="true"/>
         </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="pRB" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46" stoichiometry="1" constant="true"/>
+        </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k325 </ci>
-              <ci> pRB </ci>
+              <ci> Cd_Cdk46_pRB </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -12190,29 +12174,19 @@
       </reaction>
       <reaction id="vC7" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="pRBp" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRB_E2F" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="pRBpp" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46_pRB_E2F" stoichiometry="1" constant="true"/>
         </listOfProducts>
-        <listOfModifiers>
-          <modifierSpeciesReference species="Me"/>
-        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
-              <ci> k326_1 </ci>
-              <apply>
-                <divide/>
-                <ci> pRBp </ci>
-                <apply>
-                  <plus/>
-                  <ci> k326_2 </ci>
-                  <ci> pRBp </ci>
-                </apply>
-              </apply>
-              <ci> Me </ci>
+              <ci> k326 </ci>
+              <ci> Cd_Cdk46 </ci>
+              <ci> pRB_E2F </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -12220,25 +12194,18 @@
       </reaction>
       <reaction id="vC8" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="pRBpp" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46_pRB_E2F" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="pRBp" stoichiometry="1" constant="true"/>
+          <speciesReference species="Cd_Cdk46" stoichiometry="1" constant="true"/>
+          <speciesReference species="pRB_E2F" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
-              <ci> k327_1 </ci>
-              <apply>
-                <divide/>
-                <ci> pRBpp </ci>
-                <apply>
-                  <plus/>
-                  <ci> k327_2 </ci>
-                  <ci> pRBpp </ci>
-                </apply>
-              </apply>
+              <ci> k327 </ci>
+              <ci> Cd_Cdk46_pRB_E2F </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>

@@ -318,26 +318,26 @@ vD63	Nucleus	kD63*BRCA2*damageDSB	5E-05
 vD64	Nucleus	kD64*MSH6*damageSSB	1E-05					
 vD65	Nucleus	kD65*MGMT*damageSSB	1E-05					
 vD66	Nucleus	(kD66_1+kD66_2*(kD66_3/(kD66_3+kD66_4)))*(((Ma+Me)^kD66_5)/(((Ma+Me)^kD66_5)+(kD66_6^kD66_5)))	1E-06	0.005	0	5000	5	20
-vC1	Nucleus	kC1	0					
-vC2	Nucleus	2.361111E-06						
-vC3	Nucleus	0.002361111						
-vC4	Nucleus	kC4_1*(pRB/(kC4_2+pRB))*(Md+Cd_Cdk46_p27)	0.01038889	10				
-vC5	Nucleus	kC5_1*(pRBp/(kC5_2+pRBp))	0.9444444	10				
-vC6	Nucleus	4.722222E-05						
-vC7	Nucleus	kC7_1*(pRBp/(kC7_2+pRBp))*Me	0.004722222	10				
-vC8	Nucleus	kC8_1*(pRBpp/(kC8_2+pRBpp))	0.9444444	10				
-vC9	Nucleus	1.180556E-06						
-vC10	Nucleus	0.002361111						
-vC11	Nucleus	0.0002833333						
-vC12	Nucleus	0.0001888889						
+vC1	Nucleus	0.001						
+vC2	Nucleus	0.0001						
+vC3	Nucleus	0.001						
+vC4	Nucleus	0.0001						
+vC5	Nucleus	0.001						
+vC6	Nucleus	0.0001						
+vC7	Nucleus	0.001						
+vC8	Nucleus	0.0001						
+vC9	Nucleus	0						
+vC10	Nucleus	0						
+vC11	Nucleus	0						
+vC12	Nucleus	0						
 vC13	Nucleus	0						
-vC14	Nucleus	kC14_1*Ma*(E2F/(E2F+kc14_2))	0.01888889	500				
-vC15	Nucleus	kC15_1*(E2Fp/(E2Fp+kC15_2))	0.3541667	500				
-vC16	Nucleus	9.444444E-06						
-vC17	Nucleus	0.005194444						
+vC14	Nucleus	kC14_1*Ma*(E2F/(E2F+kc14_2))	0	0				
+vC15	Nucleus	kC15_1*(E2Fp/(E2Fp+kC15_2))	0	0				
+vC16	Nucleus	0						
+vC17	Nucleus	0						
 vC18	Nucleus	0						
-vC19	Nucleus	kC19_1*Cd*(kC19_2-(Cd_Cdk46+Md+Cd_Cdk46_p27+Cd_Cdk46_p21))	8.263889E-06	150				
-vC20	Nucleus	0.0004722222						
+vC19	Nucleus	kC19_1*Cd*(kC19_2-(Cd_Cdk46+Md+Cd_Cdk46_p27+Cd_Cdk46_p21))	0	0				
+vC20	Nucleus	0						
 vC21	Nucleus	kC21_1*(Cd/(kC21_2+Cd))	2.361111	10				
 vC22	Nucleus	2.361111E-05						
 vC23	Nucleus	kC23_1*(Md/(kC23_2+Md))	0.09444444	10				
