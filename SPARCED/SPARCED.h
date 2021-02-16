@@ -16,11 +16,11 @@ namespace model_SPARCED {
 
 extern std::array<const char*, 0> parameterNames;
 extern std::array<const char*, 2893> fixedParameterNames;
-extern std::array<const char*, 776> stateNames;
+extern std::array<const char*, 781> stateNames;
 extern std::array<const char*, 105> observableNames;
 extern std::array<const char*, 0> parameterIds;
 extern std::array<const char*, 2893> fixedParameterIds;
-extern std::array<const char*, 776> stateIds;
+extern std::array<const char*, 781> stateIds;
 extern std::array<const char*, 105> observableIds;
 
 extern void Jy_SPARCED(realtype *nllh, const int iy, const realtype *p,
@@ -86,7 +86,7 @@ extern void xdot_SPARCED(realtype *xdot, const realtype t,
 extern void y_SPARCED(realtype *y, const realtype t, const realtype *x,
                             const realtype *p, const realtype *k,
                             const realtype *h, const realtype *w);
-
+extern void x_rdata_SPARCED(realtype *x_rdata, const realtype *x, const realtype *tcl);
 extern void x_solver_SPARCED(realtype *x_solver, const realtype *x_rdata);
 extern void total_cl_SPARCED(realtype *total_cl, const realtype *x_rdata);
 
@@ -100,8 +100,8 @@ class Model_SPARCED : public amici::Model_ODE {
      */
     Model_SPARCED()
         : amici::Model_ODE(
-              776,                                // nx_rdata
-              776,                            // nxtrue_rdata
+              781,                                // nx_rdata
+              781,                            // nxtrue_rdata
               776,                               // nx_solver
               776,                           // nxtrue_solver
               0,                        // nx_solver_reinit
@@ -111,7 +111,7 @@ class Model_SPARCED : public amici::Model_ODE {
               0,                                  // nztrue
               0,                                  // nevent
               1,                              // nobjective
-              2475,                                      // nw
+              2480,                                      // nw
               3039,                                   // ndwdx
               0,                                   // ndwdp
               0,                                   // ndwdw
@@ -725,7 +725,10 @@ class Model_SPARCED : public amici::Model_ODE {
                     const realtype *x, const realtype *p, const realtype *k,
                     const realtype *h) override {}
 
-    
+    virtual void fx_rdata(realtype *x_rdata, const realtype *x, const realtype *tcl) override {
+        x_rdata_SPARCED( x_rdata,  x,  tcl);
+    }
+
 
     virtual void fx_solver(realtype *x_solver, const realtype *x_rdata) override {
         x_solver_SPARCED( x_solver,  x_rdata);

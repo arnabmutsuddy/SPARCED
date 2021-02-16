@@ -2295,6 +2295,11 @@
       <species id="Cdk1" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
       <species id="Cdk2" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
       <species id="Cdk46" compartment="Nucleus" initialConcentration="143.98" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="pRBpp_E2F" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Cd_Cdk46_pRB" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Cd_Cdk46_pRB_E2F" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Ce_Cdk2_pRBp" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="Ce_Cdk2_pRBp_E2F" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
     </listOfSpecies>
     <listOfParameters>
       <parameter id="k1_1" value="0.0042005" constant="true"/>

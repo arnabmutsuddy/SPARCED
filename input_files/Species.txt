@@ -775,3 +775,8 @@ EIF4E_mT	Cytoplasm	88.81107	EIF4E
 Cdk1	Nucleus	0		
 Cdk2	Nucleus	0		
 Cdk46	Nucleus	143.98		
+pRBpp_E2F	Nucleus	0		
+Cd_Cdk46_pRB	Nucleus	0		
+Cd_Cdk46_pRB_E2F	Nucleus	0		
+Ce_Cdk2_pRBp	Nucleus	0		
+Ce_Cdk2_pRBp_E2F	Nucleus	0		

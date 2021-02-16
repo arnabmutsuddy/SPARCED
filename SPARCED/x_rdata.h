@@ -774,3 +774,8 @@
 #define Cdk1 x_rdata[773]
 #define Cdk2 x_rdata[774]
 #define Cdk46 x_rdata[775]
+#define pRBpp_E2F x_rdata[776]
+#define Cd_Cdk46_pRB x_rdata[777]
+#define Cd_Cdk46_pRB_E2F x_rdata[778]
+#define Ce_Cdk2_pRBp x_rdata[779]
+#define Ce_Cdk2_pRBp_E2F x_rdata[780]

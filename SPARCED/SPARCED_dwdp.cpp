@@ -9,6 +9,7 @@
 #include "k.h"
 #include "w.h"
 #include "x.h"
+#include "dtcldp.h"
 #include "dwdp.h"
 
 namespace amici {

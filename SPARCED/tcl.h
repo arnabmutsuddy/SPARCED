@@ -1,0 +1,5 @@
+#define tcl_Ce_Cdk2_pRBp_E2F tcl[0]
+#define tcl_Ce_Cdk2_pRBp tcl[1]
+#define tcl_Cd_Cdk46_pRB_E2F tcl[2]
+#define tcl_Cd_Cdk46_pRB tcl[3]
+#define tcl_pRBpp_E2F tcl[4]

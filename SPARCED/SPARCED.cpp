@@ -2905,7 +2905,7 @@ std::array<const char*, 2893> fixedParameterNames = {
 "k2475",
 };
 
-std::array<const char*, 776> stateNames = {
+std::array<const char*, 781> stateNames = {
     "Ribosome",
 "p53inac",
 "p53ac",
@@ -3682,6 +3682,11 @@ std::array<const char*, 776> stateNames = {
 "Cdk1",
 "Cdk2",
 "Cdk46",
+"pRBpp_E2F",
+"Cd_Cdk46_pRB",
+"Cd_Cdk46_pRB_E2F",
+"Ce_Cdk2_pRBp",
+"Ce_Cdk2_pRBp_E2F",
 };
 
 std::array<const char*, 105> observableNames = {
@@ -6692,7 +6697,7 @@ std::array<const char*, 2893> fixedParameterIds = {
 "k2475",
 };
 
-std::array<const char*, 776> stateIds = {
+std::array<const char*, 781> stateIds = {
     "Ribosome",
 "p53inac",
 "p53ac",
@@ -7469,6 +7474,11 @@ std::array<const char*, 776> stateIds = {
 "Cdk1",
 "Cdk2",
 "Cdk46",
+"pRBpp_E2F",
+"Cd_Cdk46_pRB",
+"Cd_Cdk46_pRB_E2F",
+"Ce_Cdk2_pRBp",
+"Ce_Cdk2_pRBp_E2F",
 };
 
 std::array<const char*, 105> observableIds = {
