@@ -9,7 +9,7 @@ std::array<const char*, 0> parameterNames = {
     
 };
 
-std::array<const char*, 2898> fixedParameterNames = {
+std::array<const char*, 2902> fixedParameterNames = {
     "k1_1",
 "k1_2",
 "k1_3",
@@ -33,12 +33,16 @@ std::array<const char*, 2898> fixedParameterNames = {
 "k7_2",
 "k8_1",
 "mrna_RB1",
+"k8_2",
 "k9_1",
 "mrna_E2F1",
+"k9_2",
 "k10_1",
 "mrna_E2F2",
+"k10_2",
 "k11_1",
 "mrna_E2F3",
+"k11_2",
 "k12_1",
 "k12_2",
 "k12_3",
@@ -3810,7 +3814,7 @@ std::array<const char*, 0> parameterIds = {
     
 };
 
-std::array<const char*, 2898> fixedParameterIds = {
+std::array<const char*, 2902> fixedParameterIds = {
     "k1_1",
 "k1_2",
 "k1_3",
@@ -3834,12 +3838,16 @@ std::array<const char*, 2898> fixedParameterIds = {
 "k7_2",
 "k8_1",
 "mrna_RB1",
+"k8_2",
 "k9_1",
 "mrna_E2F1",
+"k9_2",
 "k10_1",
 "mrna_E2F2",
+"k10_2",
 "k11_1",
 "mrna_E2F3",
+"k11_2",
 "k12_1",
 "k12_2",
 "k12_3",

@@ -231,7 +231,7 @@ def timecourse(species, x_s=xoutS_all, tout_all=tout_all):
 
     x_t = x_s[:, list(species_all).index(species)]
     plt.scatter(tout_all/3600, x_t)
-    plt.ylabel(str(species))
+    plt.ylabel('species: '+str(species))
     plt.xlabel('time(h)')
     plt.ylim(0, max(x_t)*1.25)
 
@@ -249,7 +249,7 @@ def timecourse_mrna(gene_symbol, x_g=xoutG_all[:, 282:], tout_all=tout_all):
 def timecourse_obs(obs_id, x_o = xoutObs_all, tout_all=tout_all):
     x_t = x_o[:, list(obs_all).index(obs_id)]
     plt.scatter(tout_all/3600, x_t)
-    plt.ylabel('obs_'+str(obs_id))
+    plt.ylabel('obs: '+str(obs_id))
     plt.xlabel('time(h)')
     plt.ylim(0, max(x_t)*1.25)
     plt.show
@@ -263,6 +263,7 @@ timecourse('E2F')
 
 
 timecourse_obs('RB')
+timecourse_obs('E2F')
 
 timecourse('pRB')
 timecourse('pRBp')

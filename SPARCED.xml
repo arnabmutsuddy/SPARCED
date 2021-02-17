@@ -2329,12 +2329,16 @@
       <parameter id="k7_2" value="100" constant="true"/>
       <parameter id="k8_1" value="70.1487" constant="true"/>
       <parameter id="mrna_RB1" value="0.005376217" constant="true"/>
+      <parameter id="k8_2" value="0" constant="true"/>
       <parameter id="k9_1" value="4.391771" constant="true"/>
       <parameter id="mrna_E2F1" value="0.005376217" constant="true"/>
+      <parameter id="k9_2" value="0" constant="true"/>
       <parameter id="k10_1" value="4.391771" constant="true"/>
       <parameter id="mrna_E2F2" value="0.005376217" constant="true"/>
+      <parameter id="k10_2" value="0" constant="true"/>
       <parameter id="k11_1" value="4.391771" constant="true"/>
       <parameter id="mrna_E2F3" value="0.005376217" constant="true"/>
+      <parameter id="k11_2" value="0" constant="true"/>
       <parameter id="k12_1" value="26.9259" constant="true"/>
       <parameter id="k12_2" value="0.01181584" constant="true"/>
       <parameter id="k12_3" value="10" constant="true"/>
@@ -5416,12 +5420,24 @@
         <listOfProducts>
           <speciesReference species="pRB" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k8_1 </ci>
               <ci> mrna_RB1 </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k8_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5431,12 +5447,24 @@
         <listOfProducts>
           <speciesReference species="E2F" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k9_1 </ci>
               <ci> mrna_E2F1 </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k9_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5446,12 +5474,24 @@
         <listOfProducts>
           <speciesReference species="E2F" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k10_1 </ci>
               <ci> mrna_E2F2 </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k10_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5461,12 +5501,24 @@
         <listOfProducts>
           <speciesReference species="E2F" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k11_1 </ci>
               <ci> mrna_E2F3 </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k11_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
