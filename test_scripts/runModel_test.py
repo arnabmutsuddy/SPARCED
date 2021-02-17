@@ -112,9 +112,9 @@ model.setFixedParameterById('k32_1', model.getFixedParameterById('k32_1')*2)
 # model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/100)
 # model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/100)
 
-model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')/50)
-model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/50)
-model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/50)
+# model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')/50)
+# model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/50)
+# model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/50)
 
 model.setFixedParameterById('k8_1',model.getFixedParameterById('k8_1')/50)
 model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')/10)

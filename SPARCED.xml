@@ -2339,24 +2339,15 @@
       <parameter id="k11_1" value="4.391771" constant="true"/>
       <parameter id="mrna_E2F3" value="0.005376217" constant="true"/>
       <parameter id="k11_2" value="0" constant="true"/>
-      <parameter id="k12_1" value="26.9259" constant="true"/>
-      <parameter id="k12_2" value="0.01181584" constant="true"/>
-      <parameter id="k12_3" value="10" constant="true"/>
-      <parameter id="k12_4" value="200" constant="true"/>
+      <parameter id="k12_1" value="0.01181584" constant="true"/>
       <parameter id="mrna_CCND1" value="0.001897488" constant="true"/>
-      <parameter id="k12_5" value="100" constant="true"/>
-      <parameter id="k13_1" value="26.9259" constant="true"/>
-      <parameter id="k13_2" value="0.01181584" constant="true"/>
-      <parameter id="k13_3" value="10" constant="true"/>
-      <parameter id="k13_4" value="200" constant="true"/>
+      <parameter id="k12_2" value="100" constant="true"/>
+      <parameter id="k13_1" value="0.01181584" constant="true"/>
       <parameter id="mrna_CCND2" value="0.000316248" constant="true"/>
-      <parameter id="k13_5" value="100" constant="true"/>
-      <parameter id="k14_1" value="26.9259" constant="true"/>
-      <parameter id="k14_2" value="0.01181584" constant="true"/>
-      <parameter id="k14_3" value="10" constant="true"/>
-      <parameter id="k14_4" value="200" constant="true"/>
+      <parameter id="k13_2" value="100" constant="true"/>
+      <parameter id="k14_1" value="0.01181584" constant="true"/>
       <parameter id="mrna_CCND3" value="0.000632496" constant="true"/>
-      <parameter id="k14_5" value="100" constant="true"/>
+      <parameter id="k14_2" value="100" constant="true"/>
       <parameter id="k15_1" value="0.1274" constant="true"/>
       <parameter id="k15_2" value="10" constant="true"/>
       <parameter id="k15_3" value="200" constant="true"/>
@@ -5529,49 +5520,20 @@
           <speciesReference species="Cd" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <listOfModifiers>
-          <modifierSpeciesReference species="pRB"/>
-          <modifierSpeciesReference species="pRBp"/>
-          <modifierSpeciesReference species="E2F"/>
           <modifierSpeciesReference species="EIF4E"/>
         </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
-              <apply>
-                <plus/>
-                <ci> k12_1 </ci>
-                <apply>
-                  <times/>
-                  <ci> k12_2 </ci>
-                  <ci> E2F </ci>
-                  <apply>
-                    <divide/>
-                    <ci> k12_3 </ci>
-                    <apply>
-                      <plus/>
-                      <ci> k12_3 </ci>
-                      <ci> pRB </ci>
-                    </apply>
-                  </apply>
-                  <apply>
-                    <divide/>
-                    <ci> k12_4 </ci>
-                    <apply>
-                      <plus/>
-                      <ci> k12_4 </ci>
-                      <ci> pRBp </ci>
-                    </apply>
-                  </apply>
-                </apply>
-              </apply>
+              <ci> k12_1 </ci>
               <ci> mrna_CCND1 </ci>
               <apply>
                 <divide/>
                 <ci> EIF4E </ci>
                 <apply>
                   <plus/>
-                  <ci> k12_5 </ci>
+                  <ci> k12_2 </ci>
                   <ci> EIF4E </ci>
                 </apply>
               </apply>
@@ -5585,49 +5547,20 @@
           <speciesReference species="Cd" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <listOfModifiers>
-          <modifierSpeciesReference species="pRB"/>
-          <modifierSpeciesReference species="pRBp"/>
-          <modifierSpeciesReference species="E2F"/>
           <modifierSpeciesReference species="EIF4E"/>
         </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
-              <apply>
-                <plus/>
-                <ci> k13_1 </ci>
-                <apply>
-                  <times/>
-                  <ci> k13_2 </ci>
-                  <ci> E2F </ci>
-                  <apply>
-                    <divide/>
-                    <ci> k13_3 </ci>
-                    <apply>
-                      <plus/>
-                      <ci> k13_3 </ci>
-                      <ci> pRB </ci>
-                    </apply>
-                  </apply>
-                  <apply>
-                    <divide/>
-                    <ci> k13_4 </ci>
-                    <apply>
-                      <plus/>
-                      <ci> k13_4 </ci>
-                      <ci> pRBp </ci>
-                    </apply>
-                  </apply>
-                </apply>
-              </apply>
+              <ci> k13_1 </ci>
               <ci> mrna_CCND2 </ci>
               <apply>
                 <divide/>
                 <ci> EIF4E </ci>
                 <apply>
                   <plus/>
-                  <ci> k13_5 </ci>
+                  <ci> k13_2 </ci>
                   <ci> EIF4E </ci>
                 </apply>
               </apply>
@@ -5641,49 +5574,20 @@
           <speciesReference species="Cd" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <listOfModifiers>
-          <modifierSpeciesReference species="pRB"/>
-          <modifierSpeciesReference species="pRBp"/>
-          <modifierSpeciesReference species="E2F"/>
           <modifierSpeciesReference species="EIF4E"/>
         </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
-              <apply>
-                <plus/>
-                <ci> k14_1 </ci>
-                <apply>
-                  <times/>
-                  <ci> k14_2 </ci>
-                  <ci> E2F </ci>
-                  <apply>
-                    <divide/>
-                    <ci> k14_3 </ci>
-                    <apply>
-                      <plus/>
-                      <ci> k14_3 </ci>
-                      <ci> pRB </ci>
-                    </apply>
-                  </apply>
-                  <apply>
-                    <divide/>
-                    <ci> k14_4 </ci>
-                    <apply>
-                      <plus/>
-                      <ci> k14_4 </ci>
-                      <ci> pRBp </ci>
-                    </apply>
-                  </apply>
-                </apply>
-              </apply>
+              <ci> k14_1 </ci>
               <ci> mrna_CCND3 </ci>
               <apply>
                 <divide/>
                 <ci> EIF4E </ci>
                 <apply>
                   <plus/>
-                  <ci> k14_5 </ci>
+                  <ci> k14_2 </ci>
                   <ci> EIF4E </ci>
                 </apply>
               </apply>

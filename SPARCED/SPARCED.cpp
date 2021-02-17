@@ -9,7 +9,7 @@ std::array<const char*, 0> parameterNames = {
     
 };
 
-std::array<const char*, 2902> fixedParameterNames = {
+std::array<const char*, 2893> fixedParameterNames = {
     "k1_1",
 "k1_2",
 "k1_3",
@@ -44,23 +44,14 @@ std::array<const char*, 2902> fixedParameterNames = {
 "mrna_E2F3",
 "k11_2",
 "k12_1",
-"k12_2",
-"k12_3",
-"k12_4",
 "mrna_CCND1",
-"k12_5",
+"k12_2",
 "k13_1",
-"k13_2",
-"k13_3",
-"k13_4",
 "mrna_CCND2",
-"k13_5",
+"k13_2",
 "k14_1",
-"k14_2",
-"k14_3",
-"k14_4",
 "mrna_CCND3",
-"k14_5",
+"k14_2",
 "k15_1",
 "k15_2",
 "k15_3",
@@ -3814,7 +3805,7 @@ std::array<const char*, 0> parameterIds = {
     
 };
 
-std::array<const char*, 2902> fixedParameterIds = {
+std::array<const char*, 2893> fixedParameterIds = {
     "k1_1",
 "k1_2",
 "k1_3",
@@ -3849,23 +3840,14 @@ std::array<const char*, 2902> fixedParameterIds = {
 "mrna_E2F3",
 "k11_2",
 "k12_1",
-"k12_2",
-"k12_3",
-"k12_4",
 "mrna_CCND1",
-"k12_5",
+"k12_2",
 "k13_1",
-"k13_2",
-"k13_3",
-"k13_4",
 "mrna_CCND2",
-"k13_5",
+"k13_2",
 "k14_1",
-"k14_2",
-"k14_3",
-"k14_4",
 "mrna_CCND3",
-"k14_5",
+"k14_2",
 "k15_1",
 "k15_2",
 "k15_3",
