@@ -52,9 +52,9 @@ Vc = float(args.Vc)
 outfile = args.outfile
 ts = 30
 
-STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
+#STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
-# STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
+STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 
 
 species_sheet = np.array([np.array(line.strip().split("\t")) for line in open(
@@ -117,9 +117,9 @@ model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')*100)
 model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')*100)
 
 model.setFixedParameterById('k8_1',model.getFixedParameterById('k8_1')/50)
-model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')/10)
-model.setFixedParameterById('k10_1',model.getFixedParameterById('k10_1')/10)
-model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')/10)
+model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')/20)
+model.setFixedParameterById('k10_1',model.getFixedParameterById('k10_1')/20)
+model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')/20)
 
 # model.setFixedParameterById('k432', 1.47e-4)
 # model.setFixedParameterById('k433', 1.47e-4)
