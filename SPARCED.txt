@@ -785,10 +785,6 @@ model SPARCED()
   Species Cd_Cdk46_pRB_E2F in Nucleus;
   Species Ce_Cdk2_pRBp in Nucleus;
   Species Ce_Cdk2_pRBp_E2F in Nucleus;
-  Species Cd_Cdk46_pRBp in Nucleus;
-  Species Cd_Cdk46_pRBp_E2F in Nucleus;
-  Species Ce_Cdk2_pRBpp in Nucleus;
-  Species Ce_Cdk2_pRBpp_E2F in Nucleus;
 
 
   # Reactions:
@@ -1119,19 +1115,19 @@ model SPARCED()
   vC6: Cd_Cdk46_pRB => pRB + Cd_Cdk46; (k325*Cd_Cdk46_pRB)*1.750000e-12;
   vC7: Cd_Cdk46 + pRB_E2F => Cd_Cdk46_pRB_E2F; (k326*Cd_Cdk46*pRB_E2F)*1.750000e-12;
   vC8: Cd_Cdk46_pRB_E2F => Cd_Cdk46 + pRB_E2F; (k327*Cd_Cdk46_pRB_E2F)*1.750000e-12;
-  vC9: pRBp + E2F => pRBp_E2F; (k328*pRBp*E2F)*1.750000e-12;
-  vC10: pRBp_E2F => pRBp + E2F; (k329*pRBp_E2F)*1.750000e-12;
-  vC11: pRBp => ; (k330*pRBp)*1.750000e-12;
-  vC12: pRBpp => ; (k331*pRBpp)*1.750000e-12;
-  vC13:  => E2F; (k332)*1.750000e-12;
-  vC14: E2F => E2Fp; (k333_1*Ma*(E2F/(E2F+k333_2)))*1.750000e-12;
-  vC15: E2Fp => E2F; (k334_1*(E2Fp/(E2Fp+k334_2)))*1.750000e-12;
-  vC16: E2F => ; (k335*E2F)*1.750000e-12;
-  vC17: E2Fp => ; (k336*E2Fp)*1.750000e-12;
-  vC18:  => Cd; (k337)*1.750000e-12;
-  vC19: Cd => Cd_Cdk46; (k338_1*Cd*(k338_2-(Cd_Cdk46+Md+Cd_Cdk46_p27+Cd_Cdk46_p21)))*1.750000e-12;
-  vC20: Cd_Cdk46 => Cd; (k339*Cd_Cdk46)*1.750000e-12;
-  vC21: Cd => ; (k340_1*(Cd/(k340_2+Cd)))*1.750000e-12;
+  vC9: Cd_Cdk46_pRB => pRBp + Cd_Cdk46; (k328*Cd_Cdk46_pRB)*1.750000e-12;
+  vC10: pRBp + E2F => pRBp_E2F; (k329*pRBp*E2F)*1.750000e-12;
+  vC11: pRBp_E2F => pRBp + E2F; (k330*pRBp_E2F)*1.750000e-12;
+  vC12: Cd_Cdk46_pRB_E2F => Cd_Cdk46 + pRBp_E2F; (k331*Cd_Cdk46_pRB_E2F)*1.750000e-12;
+  vC13: Ce + Cdk2 => Ce_Cdk2; (k332*Ce*Cdk2)*1.750000e-12;
+  vC14: Ce_Cdk2 => Ce + Cdk2; (k333*Ce_Cdk2)*1.750000e-12;
+  vC15: pRBp + Ce_Cdk2 => Ce_Cdk2_pRBp; (k334*pRBp*Ce_Cdk2)*1.750000e-12;
+  vC16: Ce_Cdk2_pRBp => pRBp + Ce_Cdk2; (k335*Ce_Cdk2_pRBp)*1.750000e-12;
+  vC17: Ce_Cdk2_pRBp => pRBpp + Ce_Cdk2; (k336*Ce_Cdk2_pRBp)*1.750000e-12;
+  vC18: Ce_Cdk2 + pRBp_E2F => Ce_Cdk2_pRBp_E2F; (k337*Ce_Cdk2*pRBp_E2F)*1.750000e-12;
+  vC19: Ce_Cdk2_pRBp_E2F => Ce_Cdk2 + pRBp_E2F; (k338*Ce_Cdk2_pRBp_E2F)*1.750000e-12;
+  vC20: Ce_Cdk2_pRBp_E2F => Ce_Cdk2 + pRBpp_E2F; (k339*Ce_Cdk2_pRBp_E2F)*1.750000e-12;
+  vC21: pRBpp_E2F => pRBpp + E2F; (k340*pRBpp_E2F)*1.750000e-12;
   vC22: Cd => ; (k341*Cd)*1.750000e-12;
   vC23: Md => Cd_Cdk46; (k342_1*(Md/(k342_2+Md)))*1.750000e-12;
   vC24: Cd_Cdk46 => Md; (k343_1*(Cd_Cdk46/(k343_2+Cd_Cdk46)))*1.750000e-12;
@@ -1254,10 +1250,6 @@ model SPARCED()
   vCd29: Cd_Cdk46_pRB_E2F => ; (k460*Cd_Cdk46_pRB_E2F)*1.750000e-12;
   vCd30: Ce_Cdk2_pRBp => ; (k461*Ce_Cdk2_pRBp)*1.750000e-12;
   vCd31: Ce_Cdk2_pRBp_E2F => ; (k462*Ce_Cdk2_pRBp_E2F)*1.750000e-12;
-  vCd32: Cd_Cdk46_pRBp => ; (k463*Cd_Cdk46_pRBp)*1.750000e-12;
-  vCd33: Cd_Cdk46_pRBp_E2F => ; (k464*Cd_Cdk46_pRBp_E2F)*1.750000e-12;
-  vCd34: Ce_Cdk2_pRBpp => ; (k465*Ce_Cdk2_pRBpp)*1.750000e-12;
-  vCd35: Ce_Cdk2_pRBpp_E2F => ; (k466*Ce_Cdk2_pRBpp_E2F)*1.750000e-12;
   vA1: L + R => L_R; (k467*L*R)*5.250000e-12;
   vA2: L_R => L + R; (k468*L_R)*5.250000e-12;
   vA3: L_R => Ractive; (k469*L_R)*5.250000e-12;
@@ -4069,10 +4061,6 @@ model SPARCED()
   Cd_Cdk46_pRB_E2F = 0.000000e+00;
   Ce_Cdk2_pRBp = 0.000000e+00;
   Ce_Cdk2_pRBp_E2F = 0.000000e+00;
-  Cd_Cdk46_pRBp = 0.000000e+00;
-  Cd_Cdk46_pRBp_E2F = 0.000000e+00;
-  Ce_Cdk2_pRBpp = 0.000000e+00;
-  Ce_Cdk2_pRBpp_E2F = 0.000000e+00;
 
   # Parameter initializations:
   k1_1 = 4.200500e-03;
@@ -4698,18 +4686,14 @@ model SPARCED()
   k330 = 0.000000e+00;
   k331 = 0.000000e+00;
   k332 = 0.000000e+00;
-  k333_1 = 0.000000e+00;
-  k333_2 = 0.000000e+00;
-  k334_1 = 0.000000e+00;
-  k334_2 = 0.000000e+00;
+  k333 = 0.000000e+00;
+  k334 = 0.000000e+00;
   k335 = 0.000000e+00;
   k336 = 0.000000e+00;
   k337 = 0.000000e+00;
-  k338_1 = 0.000000e+00;
-  k338_2 = 0.000000e+00;
+  k338 = 0.000000e+00;
   k339 = 0.000000e+00;
-  k340_1 = 2.361111e+00;
-  k340_2 = 1.000000e+01;
+  k340 = 0.000000e+00;
   k341 = 2.360000e-05;
   k342_1 = 9.444444e-02;
   k342_2 = 1.000000e+01;

@@ -9,7 +9,7 @@ std::array<const char*, 0> parameterNames = {
     
 };
 
-std::array<const char*, 2893> fixedParameterNames = {
+std::array<const char*, 2889> fixedParameterNames = {
     "k1_1",
 "k1_2",
 "k1_3",
@@ -633,18 +633,14 @@ std::array<const char*, 2893> fixedParameterNames = {
 "k330",
 "k331",
 "k332",
-"k333_1",
-"k333_2",
-"k334_1",
-"k334_2",
+"k333",
+"k334",
 "k335",
 "k336",
 "k337",
-"k338_1",
-"k338_2",
+"k338",
 "k339",
-"k340_1",
-"k340_2",
+"k340",
 "k341",
 "k342_1",
 "k342_2",
@@ -819,10 +815,6 @@ std::array<const char*, 2893> fixedParameterNames = {
 "k460",
 "k461",
 "k462",
-"k463",
-"k464",
-"k465",
-"k466",
 "k467",
 "k468",
 "k469",
@@ -2903,9 +2895,13 @@ std::array<const char*, 2893> fixedParameterNames = {
 "k2482",
 "k2483",
 "k2484",
+"k463",
+"k464",
+"k465",
+"k466",
 };
 
-std::array<const char*, 785> stateNames = {
+std::array<const char*, 781> stateNames = {
     "Ribosome",
 "p53inac",
 "p53ac",
@@ -3687,10 +3683,6 @@ std::array<const char*, 785> stateNames = {
 "Cd_Cdk46_pRB_E2F",
 "Ce_Cdk2_pRBp",
 "Ce_Cdk2_pRBp_E2F",
-"Cd_Cdk46_pRBp",
-"Cd_Cdk46_pRBp_E2F",
-"Ce_Cdk2_pRBpp",
-"Ce_Cdk2_pRBpp_E2F",
 };
 
 std::array<const char*, 105> observableNames = {
@@ -3805,7 +3797,7 @@ std::array<const char*, 0> parameterIds = {
     
 };
 
-std::array<const char*, 2893> fixedParameterIds = {
+std::array<const char*, 2889> fixedParameterIds = {
     "k1_1",
 "k1_2",
 "k1_3",
@@ -4429,18 +4421,14 @@ std::array<const char*, 2893> fixedParameterIds = {
 "k330",
 "k331",
 "k332",
-"k333_1",
-"k333_2",
-"k334_1",
-"k334_2",
+"k333",
+"k334",
 "k335",
 "k336",
 "k337",
-"k338_1",
-"k338_2",
+"k338",
 "k339",
-"k340_1",
-"k340_2",
+"k340",
 "k341",
 "k342_1",
 "k342_2",
@@ -4615,10 +4603,6 @@ std::array<const char*, 2893> fixedParameterIds = {
 "k460",
 "k461",
 "k462",
-"k463",
-"k464",
-"k465",
-"k466",
 "k467",
 "k468",
 "k469",
@@ -6699,9 +6683,13 @@ std::array<const char*, 2893> fixedParameterIds = {
 "k2482",
 "k2483",
 "k2484",
+"k463",
+"k464",
+"k465",
+"k466",
 };
 
-std::array<const char*, 785> stateIds = {
+std::array<const char*, 781> stateIds = {
     "Ribosome",
 "p53inac",
 "p53ac",
@@ -7483,10 +7471,6 @@ std::array<const char*, 785> stateIds = {
 "Cd_Cdk46_pRB_E2F",
 "Ce_Cdk2_pRBp",
 "Ce_Cdk2_pRBp_E2F",
-"Cd_Cdk46_pRBp",
-"Cd_Cdk46_pRBp_E2F",
-"Ce_Cdk2_pRBpp",
-"Ce_Cdk2_pRBpp_E2F",
 };
 
 std::array<const char*, 105> observableIds = {

@@ -331,14 +331,14 @@ vC10	Nucleus	0
 vC11	Nucleus	0						
 vC12	Nucleus	0						
 vC13	Nucleus	0						
-vC14	Nucleus	kC14_1*Ma*(E2F/(E2F+kc14_2))	0	0				
-vC15	Nucleus	kC15_1*(E2Fp/(E2Fp+kC15_2))	0	0				
+vC14	Nucleus	0						
+vC15	Nucleus	0						
 vC16	Nucleus	0						
 vC17	Nucleus	0						
 vC18	Nucleus	0						
-vC19	Nucleus	kC19_1*Cd*(kC19_2-(Cd_Cdk46+Md+Cd_Cdk46_p27+Cd_Cdk46_p21))	0	0				
+vC19	Nucleus	0						
 vC20	Nucleus	0						
-vC21	Nucleus	kC21_1*(Cd/(kC21_2+Cd))	2.361111	10				
+vC21	Nucleus	0						
 vC22	Nucleus	2.36E-05						
 vC23	Nucleus	kC23_1*(Md/(kC23_2+Md))	0.09444444	10				
 vC24	Nucleus	kC24_1*(Cd_Cdk46/(kC24_2+Cd_Cdk46))	0.4722222	10				

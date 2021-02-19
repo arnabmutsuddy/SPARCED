@@ -52,9 +52,9 @@ Vc = float(args.Vc)
 outfile = args.outfile
 ts = 30
 
-STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
+#STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
-#STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
+STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 
 
 species_sheet = np.array([np.array(line.strip().split("\t")) for line in open(
@@ -168,6 +168,23 @@ model.setFixedParameterById('k466', 1.65e-4) # Ce_Cdk2_pRBpp_E2F, vCd35
 
 
 
+
+#%% rate constants - new CC reactions
+
+model.setFixedParameterById('k328', 0.001) # pRB p
+model.setFixedParameterById('k329', 0.0001)
+model.setFixedParameterById('k330', 0.00001)
+model.setFixedParameterById('k331', 0.001) # pRB_E2F p
+
+model.setFixedParameterById('k332', 0.001)
+model.setFixedParameterById('k333', 0.0001)
+model.setFixedParameterById('k334', 0.001)
+model.setFixedParameterById('k335', 0.0001)
+model.setFixedParameterById('k336', 0.001)
+model.setFixedParameterById('k337', 0.001)
+model.setFixedParameterById('k338', 0.0001)
+model.setFixedParameterById('k339', 0.001)
+model.setFixedParameterById('k340', 0.001)
 
 
 
@@ -316,6 +333,11 @@ timecourse_mrna('RB1')
 timecourse_mrna('E2F1')
 timecourse_mrna('E2F2')
 timecourse_mrna('E2F3')
+
+timecourse_mrna('CCNE1')
+timecourse_mrna('CCNE2')
+
+timecourse_mrna('CCNA2')
 
 #%% stoichiometric matrix/observables check
 

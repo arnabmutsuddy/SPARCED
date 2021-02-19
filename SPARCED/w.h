@@ -2478,7 +2478,3 @@
 #define flux_r2477 w[2477]
 #define flux_r2478 w[2478]
 #define flux_r2479 w[2479]
-#define flux_r2480 w[2480]
-#define flux_r2481 w[2481]
-#define flux_r2482 w[2482]
-#define flux_r2483 w[2483]
