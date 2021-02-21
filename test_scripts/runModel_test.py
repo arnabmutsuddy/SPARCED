@@ -166,6 +166,8 @@ model.setFixedParameterById('k464', 1.65e-4) # Cd_Cdk46_pRBp_E2F, vCd33
 model.setFixedParameterById('k465', 3.85e-5) # Ce_Cdk2_pRBpp, vCd34
 model.setFixedParameterById('k466', 1.65e-4) # Ce_Cdk2_pRBpp_E2F, vCd35
 
+model.setFixedParameterById('k467', 2.14e-5) # pRBp half life
+model.setFixedParameterById('k468', 2.14e-5) # pRBpp half life
 
 
 
