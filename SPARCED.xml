@@ -2344,14 +2344,12 @@
       <parameter id="k14_1" value="0.01181584" constant="true"/>
       <parameter id="mrna_CCND3" value="0.000632496" constant="true"/>
       <parameter id="k14_2" value="100" constant="true"/>
-      <parameter id="k15_1" value="0.1274" constant="true"/>
-      <parameter id="k15_2" value="10" constant="true"/>
-      <parameter id="k15_3" value="200" constant="true"/>
+      <parameter id="k15_1" value="10" constant="true"/>
       <parameter id="mrna_CCNE1" value="0.005376217" constant="true"/>
-      <parameter id="k16_1" value="0.1274" constant="true"/>
-      <parameter id="k16_2" value="10" constant="true"/>
-      <parameter id="k16_3" value="200" constant="true"/>
+      <parameter id="k15_2" value="0" constant="true"/>
+      <parameter id="k16_1" value="10" constant="true"/>
       <parameter id="mrna_CCNE2" value="0.005376217" constant="true"/>
+      <parameter id="k16_2" value="0" constant="true"/>
       <parameter id="k17_1" value="13.1753" constant="true"/>
       <parameter id="mrna_SKP2" value="0.005376217" constant="true"/>
       <parameter id="k18_1" value="11.4186" constant="true"/>
@@ -2360,10 +2358,9 @@
       <parameter id="mrna_CDC25B" value="0.005376217" constant="true"/>
       <parameter id="k20_1" value="10.5402" constant="true"/>
       <parameter id="mrna_CDC25C" value="0.005376217" constant="true"/>
-      <parameter id="k21_1" value="0.03294" constant="true"/>
-      <parameter id="k21_2" value="10" constant="true"/>
-      <parameter id="k21_3" value="200" constant="true"/>
+      <parameter id="k21_1" value="10" constant="true"/>
       <parameter id="mrna_CCNA2" value="0.005376217" constant="true"/>
+      <parameter id="k21_2" value="0" constant="true"/>
       <parameter id="k22_1" value="70.2683" constant="true"/>
       <parameter id="k22_2" value="0.0878" constant="true"/>
       <parameter id="k22_3" value="10" constant="true"/>
@@ -5595,35 +5592,23 @@
           <speciesReference species="Ce" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <listOfModifiers>
-          <modifierSpeciesReference species="pRB"/>
-          <modifierSpeciesReference species="pRBp"/>
-          <modifierSpeciesReference species="E2F"/>
+          <modifierSpeciesReference species="EIF4E"/>
         </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k15_1 </ci>
-              <ci> E2F </ci>
+              <ci> mrna_CCNE1 </ci>
               <apply>
                 <divide/>
-                <ci> k15_2 </ci>
+                <ci> EIF4E </ci>
                 <apply>
                   <plus/>
                   <ci> k15_2 </ci>
-                  <ci> pRB </ci>
+                  <ci> EIF4E </ci>
                 </apply>
               </apply>
-              <apply>
-                <divide/>
-                <ci> k15_3 </ci>
-                <apply>
-                  <plus/>
-                  <ci> k15_3 </ci>
-                  <ci> pRBp </ci>
-                </apply>
-              </apply>
-              <ci> mrna_CCNE1 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5634,35 +5619,23 @@
           <speciesReference species="Ce" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <listOfModifiers>
-          <modifierSpeciesReference species="pRB"/>
-          <modifierSpeciesReference species="pRBp"/>
-          <modifierSpeciesReference species="E2F"/>
+          <modifierSpeciesReference species="EIF4E"/>
         </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k16_1 </ci>
-              <ci> E2F </ci>
+              <ci> mrna_CCNE2 </ci>
               <apply>
                 <divide/>
-                <ci> k16_2 </ci>
+                <ci> EIF4E </ci>
                 <apply>
                   <plus/>
                   <ci> k16_2 </ci>
-                  <ci> pRB </ci>
+                  <ci> EIF4E </ci>
                 </apply>
               </apply>
-              <apply>
-                <divide/>
-                <ci> k16_3 </ci>
-                <apply>
-                  <plus/>
-                  <ci> k16_3 </ci>
-                  <ci> pRBp </ci>
-                </apply>
-              </apply>
-              <ci> mrna_CCNE2 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5733,35 +5706,23 @@
           <speciesReference species="Ca" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <listOfModifiers>
-          <modifierSpeciesReference species="pRB"/>
-          <modifierSpeciesReference species="pRBp"/>
-          <modifierSpeciesReference species="E2F"/>
+          <modifierSpeciesReference species="EIF4E"/>
         </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k21_1 </ci>
-              <ci> E2F </ci>
+              <ci> mrna_CCNA2 </ci>
               <apply>
                 <divide/>
-                <ci> k21_2 </ci>
+                <ci> EIF4E </ci>
                 <apply>
                   <plus/>
                   <ci> k21_2 </ci>
-                  <ci> pRB </ci>
+                  <ci> EIF4E </ci>
                 </apply>
               </apply>
-              <apply>
-                <divide/>
-                <ci> k21_3 </ci>
-                <apply>
-                  <plus/>
-                  <ci> k21_3 </ci>
-                  <ci> pRBp </ci>
-                </apply>
-              </apply>
-              <ci> mrna_CCNA2 </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
