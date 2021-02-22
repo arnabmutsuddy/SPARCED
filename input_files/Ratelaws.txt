@@ -339,113 +339,18 @@ vC18	Nucleus	0
 vC19	Nucleus	0						
 vC20	Nucleus	0						
 vC21	Nucleus	0						
-vC22	Nucleus	2.36E-05						
-vC23	Nucleus	kC23_1*(Md/(kC23_2+Md))	0.09444444	10				
-vC24	Nucleus	kC24_1*(Cd_Cdk46/(kC24_2+Cd_Cdk46))	0.4722222	10				
-vC25	Nucleus	7.08E-06						
-vC26	Nucleus	0.000708333						
-vC27	Nucleus	0						
-vC28	Nucleus	kC28_1*Ce*(kC28_2-(Ce_Cdk2+Me+Ce_Cdk2_p27+Ce_Cdk2_p21+Ca_Cdk2+Ma+Ca_Cdk2_p27+Ca_Cdk2_p21))	9.44E-06	200				
-vC29	Nucleus	0.000472222						
-vC30	Nucleus	kC30_1*(Skp2/(kC30_2+Skp2))*(Ce/(kC30_3+Ce))	1.416667	200	10			
-vC31	Nucleus	kC31_1*(Wee1+kC31_2)*(Me/(kC31_3+Me))	0.006611111	50	10			
-vC32	Nucleus	kC32_1*Pe*(Ce_Cdk2/(kC32_2+Ce_Cdk2))	0.009444444	10				
-vC33	Nucleus	9.44E-06						
-vC34	Nucleus	0.000472222						
-vC35	Nucleus	0						
-vC36	Nucleus	kC36_1*(Skp2/(k36_2+Skp2))*(Cdh1a/(kC36_3+Cdh1a))	0.5194444	50	40			
-vC37	Nucleus	2.36E-05						
-vC38	Nucleus	0						
-vC39	Nucleus	kC39_1*(kC39_2+(kC39_3*Chk1))*(Pe/(kC39_4+Pe))	0.3777778	1	0.01	10		
-vC40	Nucleus	kC40_1*(Me+kC40_2)*(Pei/(kC40_3+Pei))	0.02361111	25	10			
-vC41	Nucleus	0.000708333						
-vC42	Nucleus	0.000354167						
-vC43	Nucleus	0						
-vC44	Nucleus	kC44_1*Ca*(kC44_2-(Ce_Cdk2+Me+Ce_Cdk2_p27+Ce_Cdk2_p21+Ca_Cdk2+Ma+Ca_Cdk2_p27+Ca_Cdk2_p21))	9.44E-06	200				
-vC45	Nucleus	0.000472222						
-vC46	Nucleus	kC46_1*(Ca/(kC46_2+Ca))*(Cdc20a/(kC46_3+Cdc20a))	1.180556	110	200			
-vC47	Nucleus	2.36E-05						
-vC48	Nucleus	kC48_1*(Wee1+kC48_2)*(Ma/(kC48_3+Ma))	0.008736111	50	10			
-vC49	Nucleus	kC49_1*Pa*(Ca_Cdk2/(kC49_2+Ca_Cdk2))	0.009444444	10				
-vC50	Nucleus	7.08E-06						
-vC51	Nucleus	0.000590278						
-vC52	Nucleus	kC52_1*Me*(p27/(p27+kC52_2))	0.4722222	50				
-vC53	Nucleus	kC53_1*(p27p/(p27p+kC53_2))	0.04722222	50				
-vC54	Nucleus	kC54_1*(Skp2/(Skp2+kC54_2))*(p27p/(p27p+kC54_3))	2.361111	10	10			
-vC55	Nucleus	4.72E-05						
-vC56	Nucleus	kC56_1*(Cdh1a/(kC56_2+Cdh1a))*(Ma+Mb)	0.03777778	1				
-vC57	Nucleus	kC57_1*(Cdh1i/(kC57_2+Cdh1i))	0.5902778	1				
-vC58	Nucleus	0.000944444						
-vC59	Nucleus	0						
-vC60	Nucleus	0.000472222						
-vC61	Nucleus	0						
-vC62	Nucleus	kC62_1*(kC62_2+(kC62_3*Chk1))*(Pa/(kC62_4+Pa))	0.4722222	1	0.01	10		
-vC63	Nucleus	kC63_1*(Ma+kC63_2)*(Pai/(kC63_3+Pai))	0.01888889	20	10			
-vC64	Nucleus	0.000708333						
-vC65	Nucleus	0.000354167						
-vC66	Nucleus	0						
-vC67	Nucleus	kC67_1*Cb*(kC67_2-(Cb_Cdk1+Mb+Cb_Cdk1_p27+Cb_Cdk1_p21))	1.18E-05	50				
-vC68	Nucleus	0.000472222						
-vC69	Nucleus	kC69_1*(Cb/(kC69_2+Cb))*((Cdc20a/(kC69_3+Cdc20a))+(Cdh1a/(kC69_4+Cdh1a)))	0.02833333	0.5	20	10		
-vC70	Nucleus	2.36E-05						
-vC71	Nucleus	kC71_1*(Wee1+kC71_2)*(Mb/(kC71_3+Mb))	0.009916667	50	10			
-vC72	Nucleus	kC72_1*Pb*(Cb_Cdk1/(kC72_2+Cb_Cdk1))	0.01841667	10				
-vC73	Nucleus	5.67E-06						
-vC74	Nucleus	0.000944444						
-vC75	Nucleus	0						
-vC76	Nucleus	kC76_1*Mb*(Cdc20i/(kC76_2+Cdc20i))	0.03777778	10				
-vC77	Nucleus	kC77_1*(Cdc20a/(kC77_2+Cdc20a))	0.3305556	10				
-vC78	Nucleus	0.000661111						
-vC79	Nucleus	0.000236111						
-vC80	Nucleus	0						
-vC81	Nucleus	kC81_1*(kC81_2+(kC81_3*Chk1))*(Pb/(kC81_4+Pb))	0.4722222	1	0.01	10		
-vC82	Nucleus	kC82_1*(Mb+kC82_2)*(Pbi/(kC82_3+Pbi))	0.02361111	11	10			
-vC83	Nucleus	0.000944444						
-vC84	Nucleus	0.000472222						
-vC85	Nucleus	0						
-vC86	Nucleus	kC86_1*(Mb+kC86_2)*(Wee1/(kC86_3+Wee1))	0.005666667	75	10			
-vC87	Nucleus	kC87_1*(Wee1p/(kC87_2+Wee1p))	0.4722222	10				
-vC88	Nucleus	0.000472222						
-vC89	Nucleus	0.000944444						
-vC90	Nucleus	kC90_1*ATRac*((kC90_2-Chk1)/(kC90_3+(kC90_2-Chk1)))	0.01888889	50	50			
-vC91	Nucleus	kC91_1*(Chk1/(kC91_2+Chk1))	0.04722222	50				
-vC92	Nucleus	2.36E-05						
-vC93	Nucleus	0						
-vC94	Nucleus	0						
-vC95	Nucleus	0.000283333						
-vC96	Nucleus	1.42E-06						
-vC97	Nucleus	0.000236111						
-vC98	Nucleus	1.89E-06						
-vC99	Nucleus	0.000472222						
-vC100	Nucleus	1.42E-06						
-vC101	Nucleus	0.000590278						
-vC102	Nucleus	1.13E-06						
-vC103	Nucleus	0.000944444						
-vC104	Nucleus	0.000289731						
-vC105	Nucleus	0						
-vC106	Nucleus	0						
-vC107	Nucleus	0						
-vC108	Nucleus	0						
-vC109	Nucleus	0						
-vC110	Nucleus	0						
-vC111	Nucleus	0						
-vC112	Nucleus	0						
 vCd1	Nucleus	0						
-vCd2	Nucleus	0						
 vCd3	Nucleus	0						
 vCd4	Nucleus	0						
-vCd5	Nucleus	0						
 vCd6	Nucleus	0						
 vCd7	Nucleus	0						
 vCd8	Nucleus	0						
-vCd9	Nucleus	0						
 vCd10	Nucleus	0						
 vCd11	Nucleus	0						
 vCd12	Nucleus	0						
 vCd13	Nucleus	0						
 vCd14	Nucleus	0						
 vCd15	Nucleus	0						
-vCd16	Nucleus	0						
 vCd17	Nucleus	0						
 vCd18	Nucleus	0						
 vCd19	Nucleus	0						
@@ -465,8 +370,8 @@ vCd32	Nucleus	0
 vCd33	Nucleus	0						
 vCd34	Nucleus	0						
 vCd35	Nucleus	0						
-vCd36		0						
-vCd37		0						
+vCd36	Nucleus	0						
+vCd37	Nucleus	0						
 vA1	Cytoplasm	0.00126483						
 vA2	Cytoplasm	0.001						
 vA3	Cytoplasm	1E-06						

@@ -83,7 +83,7 @@ model_param = np.array(model.getFixedParameterIds())
 
 #ks = ['k'+str(n) for n in range(337, 432)] # turn on E2F, pRB reactions
 
-ks = ['k'+str(n) for n in range(328, 432)]
+ks = ['k'+str(n) for n in range(328, 420)]
 
 ks_actual = []
 for p in model_param:
@@ -130,44 +130,44 @@ model.setFixedParameterById('k154', 2.14e-5) # pRB half life
 model.setFixedParameterById('k155', 1.65e-4) # E2F half life
 model.setFixedParameterById('k452', 1.65e-4) # pRB_E2F half life
 
-model.setFixedParameterById('k432', 1.47e-4) # Cd_Cdk46, vCd1
-model.setFixedParameterById('k433', 1.47e-4) # Md, vCd2 (obsolete)
-model.setFixedParameterById('k434', 1.47e-4) # Cd_Cdk46_p27, vCd3
-model.setFixedParameterById('k435', 3.85e-5) # Ce_Cdk2, vCd4
-model.setFixedParameterById('k436', 3.85e-5) # Me, vCd5 (obsolete)
-model.setFixedParameterById('k437', 3.85e-5) # Ce_Cdk2_p27, vCd6
-model.setFixedParameterById('k438', 3.21e-5) # Pe, vCd7
-model.setFixedParameterById('k439', 7.70e-5) # Ca_Cdk2, vCd8
-model.setFixedParameterById('k440', 7.70e-5) # Ma, vCd9 (obsolete)
-model.setFixedParameterById('k441', 7.70e-5) # Ca_Cdk2_p27, vCd10
-model.setFixedParameterById('k442', 2.35e-5) # Cdh1i, vCd11
-model.setFixedParameterById('k443', 1.65e-4) # E2Fp, vCd12
-model.setFixedParameterById('k444', 3.21e-5) # p27p, vCd13
-model.setFixedParameterById('k445', 3.85e-4) # Pa, vCd14
-model.setFixedParameterById('k446', 1.28e-4) # Cb_Cdk1, vCd15
-model.setFixedParameterById('k447', 1.28e-4) # Mb, vCd16
-model.setFixedParameterById('k448', 3.85e-4) # Cdc20a, vCd17
-model.setFixedParameterById('k449', 1.93e-4) # Pb, vCd18
-model.setFixedParameterById('k450', 2.75e-5) # Wee1p, vCd19
-model.setFixedParameterById('k451', 1.28e-4) # Cb_Cdk1_p27, vCd20
-model.setFixedParameterById('k452', 1.65e-4) # pRB_E2F, vCd21
-model.setFixedParameterById('k453', 1.65e-4) # pRB_E2Fp, vCd22
-model.setFixedParameterById('k454', 3.85e-4) # Cd_Cdk46_p21, vCd23
-model.setFixedParameterById('k455', 3.85e-4) # Ce_Cdk2_p21, vCd24
-model.setFixedParameterById('k456', 3.85e-4) # Ca_Cdk2_p21, vCd25
-model.setFixedParameterById('k457', 3.85e-4) # Cb_Cdk1_p21, vCd26
-model.setFixedParameterById('k458', 1.65e-4) # pRBpp_E2F, vCd27
-model.setFixedParameterById('k459', 1.47e-4) # Cd_Cdk46_pRB, vCd28
-model.setFixedParameterById('k460', 1.65e-4) # Cd_Cdk46_pRB_E2F, vCd29
-model.setFixedParameterById('k461', 3.85e-5) # Ce_Cdk2_pRBp, vCd30
-model.setFixedParameterById('k462', 1.65e-4) # Ce_Cdk2_pRBp_E2F, vCd31
-model.setFixedParameterById('k463', 1.47e-4) # Cd_Cdk46_pRBp, vCd32
-model.setFixedParameterById('k464', 1.65e-4) # Cd_Cdk46_pRBp_E2F, vCd33
-model.setFixedParameterById('k465', 3.85e-5) # Ce_Cdk2_pRBpp, vCd34
-model.setFixedParameterById('k466', 1.65e-4) # Ce_Cdk2_pRBpp_E2F, vCd35
+model.setFixedParameterById('k420', 1.47e-4) # Cd_Cdk46, vCd1
+#model.setFixedParameterById('k433', 1.47e-4) # Md, vCd2 (obsolete)
+model.setFixedParameterById('k421', 1.47e-4) # Cd_Cdk46_p27, vCd3
+model.setFixedParameterById('k422', 3.85e-5) # Ce_Cdk2, vCd4
+#model.setFixedParameterById('k436', 3.85e-5) # Me, vCd5 (obsolete)
+model.setFixedParameterById('k423', 3.85e-5) # Ce_Cdk2_p27, vCd6
+model.setFixedParameterById('k424', 3.21e-5) # Pe, vCd7
+model.setFixedParameterById('k425', 7.70e-5) # Ca_Cdk2, vCd8
+#model.setFixedParameterById('k440', 7.70e-5) # Ma, vCd9 (obsolete)
+model.setFixedParameterById('k426', 7.70e-5) # Ca_Cdk2_p27, vCd10
+model.setFixedParameterById('k427', 2.35e-5) # Cdh1i, vCd11
+model.setFixedParameterById('k428', 1.65e-4) # E2Fp, vCd12
+model.setFixedParameterById('k429', 3.21e-5) # p27p, vCd13
+model.setFixedParameterById('k430', 3.85e-4) # Pa, vCd14
+model.setFixedParameterById('k431', 1.28e-4) # Cb_Cdk1, vCd15
+#model.setFixedParameterById('k432', 1.28e-4) # Mb, vCd16
+model.setFixedParameterById('k432', 3.85e-4) # Cdc20a, vCd17
+model.setFixedParameterById('k433', 1.93e-4) # Pb, vCd18
+model.setFixedParameterById('k434', 2.75e-5) # Wee1p, vCd19
+model.setFixedParameterById('k435', 1.28e-4) # Cb_Cdk1_p27, vCd20
+model.setFixedParameterById('k436', 1.65e-4) # pRB_E2F, vCd21
+model.setFixedParameterById('k437', 1.65e-4) # pRB_E2Fp, vCd22
+model.setFixedParameterById('k438', 3.85e-4) # Cd_Cdk46_p21, vCd23
+model.setFixedParameterById('k439', 3.85e-4) # Ce_Cdk2_p21, vCd24
+model.setFixedParameterById('k440', 3.85e-4) # Ca_Cdk2_p21, vCd25
+model.setFixedParameterById('k441', 3.85e-4) # Cb_Cdk1_p21, vCd26
+model.setFixedParameterById('k442', 1.65e-4) # pRBpp_E2F, vCd27
+model.setFixedParameterById('k443', 1.47e-4) # Cd_Cdk46_pRB, vCd28
+model.setFixedParameterById('k444', 1.65e-4) # Cd_Cdk46_pRB_E2F, vCd29
+model.setFixedParameterById('k445', 3.85e-5) # Ce_Cdk2_pRBp, vCd30
+model.setFixedParameterById('k446', 1.65e-4) # Ce_Cdk2_pRBp_E2F, vCd31
+model.setFixedParameterById('k447', 1.47e-4) # Cd_Cdk46_pRBp, vCd32
+model.setFixedParameterById('k448', 1.65e-4) # Cd_Cdk46_pRBp_E2F, vCd33
+model.setFixedParameterById('k449', 3.85e-5) # Ce_Cdk2_pRBpp, vCd34
+model.setFixedParameterById('k450', 1.65e-4) # Ce_Cdk2_pRBpp_E2F, vCd35
 
-model.setFixedParameterById('k467', 2.14e-5) # pRBp half life
-model.setFixedParameterById('k468', 2.14e-5) # pRBpp half life
+model.setFixedParameterById('k451', 2.14e-5) # pRBp half life
+model.setFixedParameterById('k452', 2.14e-5) # pRBpp half life
 
 
 
