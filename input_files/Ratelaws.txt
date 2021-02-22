@@ -398,25 +398,6 @@ vC77	Nucleus	kC77_1*(Cdc20a/(kC77_2+Cdc20a))	0.3305556	10
 vC78	Nucleus	0.000661111						
 vC79	Nucleus	0.000236111						
 vC80	Nucleus	0						
-vC81	Nucleus	kC81_1*(kC81_2+(kC81_3*Chk1))*(Pb/(kC81_4+Pb))	0.4722222	1	0.01	10		
-vC82	Nucleus	kC82_1*(Mb+kC82_2)*(Pbi/(kC82_3+Pbi))	0.02361111	11	10			
-vC83	Nucleus	0.000944444						
-vC84	Nucleus	0.000472222						
-vC85	Nucleus	0						
-vC86	Nucleus	kC86_1*(Mb+kC86_2)*(Wee1/(kC86_3+Wee1))	0.005666667	75	10			
-vC87	Nucleus	kC87_1*(Wee1p/(kC87_2+Wee1p))	0.4722222	10				
-vC88	Nucleus	0.000472222						
-vC89	Nucleus	0.000944444						
-vC90	Nucleus	kC90_1*ATRac*((kC90_2-Chk1)/(kC90_3+(kC90_2-Chk1)))	0.01888889	50	50			
-vC91	Nucleus	kC91_1*(Chk1/(kC91_2+Chk1))	0.04722222	50				
-vC92	Nucleus	2.36E-05						
-vC93	Nucleus	0						
-vC94	Nucleus	0						
-vC95	Nucleus	0.000283333						
-vC96	Nucleus	1.42E-06						
-vC97	Nucleus	0.000236111						
-vC98	Nucleus	1.89E-06						
-vC99	Nucleus	0.000472222						
 vCd1	Nucleus	0						
 vCd2	Nucleus	0						
 vCd3	Nucleus	0						
