@@ -358,26 +358,6 @@ vC37	Nucleus	2.36E-05
 vC38	Nucleus	0						
 vC39	Nucleus	kC39_1*(kC39_2+(kC39_3*Chk1))*(Pe/(kC39_4+Pe))	0.3777778	1	0.01	10		
 vC40	Nucleus	kC40_1*(Me+kC40_2)*(Pei/(kC40_3+Pei))	0.02361111	25	10			
-vC41	Nucleus	0.000708333						
-vC42	Nucleus	0.000354167						
-vC43	Nucleus	0						
-vC44	Nucleus	kC44_1*Ca*(kC44_2-(Ce_Cdk2+Me+Ce_Cdk2_p27+Ce_Cdk2_p21+Ca_Cdk2+Ma+Ca_Cdk2_p27+Ca_Cdk2_p21))	9.44E-06	200				
-vC45	Nucleus	0.000472222						
-vC46	Nucleus	kC46_1*(Ca/(kC46_2+Ca))*(Cdc20a/(kC46_3+Cdc20a))	1.180556	110	200			
-vC47	Nucleus	2.36E-05						
-vC48	Nucleus	kC48_1*(Wee1+kC48_2)*(Ma/(kC48_3+Ma))	0.008736111	50	10			
-vC49	Nucleus	kC49_1*Pa*(Ca_Cdk2/(kC49_2+Ca_Cdk2))	0.009444444	10				
-vC50	Nucleus	7.08E-06						
-vC51	Nucleus	0.000590278						
-vC52	Nucleus	kC52_1*Me*(p27/(p27+kC52_2))	0.4722222	50				
-vC53	Nucleus	kC53_1*(p27p/(p27p+kC53_2))	0.04722222	50				
-vC54	Nucleus	kC54_1*(Skp2/(Skp2+kC54_2))*(p27p/(p27p+kC54_3))	2.361111	10	10			
-vC55	Nucleus	4.72E-05						
-vC56	Nucleus	kC56_1*(Cdh1a/(kC56_2+Cdh1a))*(Ma+Mb)	0.03777778	1				
-vC57	Nucleus	kC57_1*(Cdh1i/(kC57_2+Cdh1i))	0.5902778	1				
-vC58	Nucleus	0.000944444						
-vC59	Nucleus	0						
-vC60	Nucleus	0.000472222						
 vCd1	Nucleus	0						
 vCd2	Nucleus	0						
 vCd3	Nucleus	0						
