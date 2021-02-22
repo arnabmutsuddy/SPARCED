@@ -103,11 +103,11 @@ def SGEmodule(flagD,ts,genedata,spdata,Vn,Vc,kTCmaxs,kTCleak,kTCd,AllGenesVec,Ge
         Nd = Nd.ravel()
         # These genes and mRNAs we don't allow to fluctuate
         #indsD = np.array([5,6,7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29])
-        indsD = np.array([14,15,16,17,19,20,21,22,23,24,25,26,27,28,29]) # RB1, E2F removed fixed mRNA
-        Nb[indsD] = vTC[indsD]*ts
-        Nd[indsD] = vTCd[indsD]*ts
-        xgacN[indsD] = genedata[indsD]
-        xginN[indsD] = genedata[indsD+numberofgenes]
+        #indsD = np.array([14,15,16,17,19,20,21,22,23,24,25,26,27,28,29]) # RB1, E2F removed fixed mRNA
+        # Nb[indsD] = vTC[indsD]*ts
+        # Nd[indsD] = vTCd[indsD]*ts
+        # xgacN[indsD] = genedata[indsD]
+        # xginN[indsD] = genedata[indsD+numberofgenes]
 
     # Finish mRNA
     xmN = xm+Nb-Nd

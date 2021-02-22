@@ -26,8 +26,8 @@ def RunPrep(flagD,Vn,model,input_data_folder):
     
     numberofgenes = int(len(gExp_mpc))
     #indsDm = [5,6,7,8,12,13,14,15,16,17,18,19,20,21,22,23,24]
-    indsDm = [14,15,16,17,19,20,21,22,23,24] # RB1, E2F, CCNE, CCNA removed from fixed mRNA
-    mExp_mpc[indsDm] = 17.0 # modify cell cycle gene mRNA numbers to 17
+    #indsDm = [14,15,16,17,19,20,21,22,23,24] # RB1, E2F, CCNE, CCNA removed from fixed mRNA
+    #mExp_mpc[indsDm] = 17.0 # modify cell cycle gene mRNA numbers to 17
 
     ss = int(sum(gExp_mpc))
     GenePositionMatrix = np.zeros((numberofgenes,ss))

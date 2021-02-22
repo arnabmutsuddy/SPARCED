@@ -52,9 +52,9 @@ Vc = float(args.Vc)
 outfile = args.outfile
 ts = 30
 
-STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
+#STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
-#STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
+STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 
 
 species_sheet = np.array([np.array(line.strip().split("\t")) for line in open(
@@ -112,9 +112,9 @@ model.setFixedParameterById('k32_1', model.getFixedParameterById('k32_1')*2)
 # model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/100)
 # model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/100)
 
-model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')*100)
-model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')*100)
-model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')*100)
+model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')*50)
+model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')*50)
+model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')*50)
 
 model.setFixedParameterById('k8_1',model.getFixedParameterById('k8_1')/50)
 model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')/20)
@@ -175,7 +175,7 @@ model.setFixedParameterById('k468', 2.14e-5) # pRBpp half life
 
 model.setFixedParameterById('k328', 0.001) # pRB p
 model.setFixedParameterById('k329', 0.0001)
-model.setFixedParameterById('k330', 0.00001)
+model.setFixedParameterById('k330', 0.0001)
 model.setFixedParameterById('k331', 0.001) # pRB_E2F p
 
 model.setFixedParameterById('k332', 0.001)
@@ -238,8 +238,7 @@ xoutS_all, xoutG_all, xoutObs_all, tout_all = RunSPARCED(flagD, th, species_init
 species_input = pd.read_csv('input_files/Species.txt', sep='\t', header=0, index_col=0)
 
 species_all = species_input.index
-genes_all = pd.read_csv('input_files/GeneReg.txt',
-                        sep='\t', header=0, index_col=0).index
+genes_all = pd.read_csv('input_files/GeneReg.txt', sep='\t', header=0, index_col=0).index
 
 obs_all = model.getObservableIds()
 
@@ -347,7 +346,210 @@ stm = pd.read_csv('input_files/StoicMat.txt', sep='\t', header=0, index_col=0)
 
 obsm = pd.read_csv('input_files/Observables.txt', sep='\t', header=0, index_col=0)
 
-# %% stochastic test
+#%%
+species_CC_dash = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46', 'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB', 'pRBp', 'pRBpp', 'pRB_E2F', 'E2F', 'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F']
+
+k=0
+
+cc_dash_species, axs_s = plt.subplots(6,3, sharex='col')
+plt.subplots_adjust(hspace = 0.6)
+
+for i in range(6):
+    for j in range(3):
+        if k == len(species_CC_dash):
+            break
+        else:
+            y_val = xoutS_all[:, list(species_all).index(species_CC_dash[k])]
+            axs_s[i,j].plot(tout_all/3600, y_val, 'b-')            
+            axs_s[i,j].set_ylim(0,max(y_val)*1.2)
+            axs_s[i,j].tick_params(axis='both', which='major', labelsize='4')
+            axs_s[i,j].ticklabel_format(useOffset=False, style='plain')
+            axs_s[i,j].title.set_text('species: '+species_CC_dash[k]+' (nM)')
+            axs_s[i,j].title.set_size(5)
+            if i == 5:
+                axs_s[i,j].set_xlabel('time(h)', fontsize=5)
+            k +=1
+        
+#%%
+
+obs_CC_dash = ['ERK', 'AKT', 'Fos', 'Jun', 'Myc', 'Cd', 'Cdk46', 'Cdk1', 'Cdk2', 'RB', 'E2F', 'Ce', 'Ca']
+
+k=0
+obs_all = model.getObservableIds()
+cc_dash_obs, axs_o = plt.subplots(5,3, sharex='col')
+plt.subplots_adjust(hspace = 0.4)
+
+for i in range(5):
+    for j in range(3):
+        if k == len(obs_CC_dash):
+            break
+        else:
+            y_val = xoutObs_all[:, list(obs_all).index(obs_CC_dash[k])]
+            axs_o[i,j].plot(tout_all/3600, y_val, 'g-')            
+            axs_o[i,j].set_ylim(0,max(y_val)*1.2)
+            axs_o[i,j].tick_params(axis='both', which='major', labelsize='4')
+            axs_o[i,j].ticklabel_format(useOffset=False, style='plain')
+            axs_o[i,j].title.set_text('obs: '+obs_CC_dash[k]+' (nM)')
+            axs_o[i,j].title.set_size(5)
+            if i == 5:
+                axs_s[i,j].set_xlabel('time(h)', fontsize=5)
+            k +=1
+
+
+#%%
+mrna_CC = list(genes_all[[5,6,7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]])
+
+#mrna_CC_data = pd.read_csv('input_files/OmicsData.txt', sep='\t', index_col=0, header=0)['Exp RNA'][[14,15,16,17,19,20,21,22,23,24,25,26,27,28,29]]
+
+
+x_m = xoutG_all[:,282:][:, list(genes_all).index(mrna_CC[2])]
+
+
+cc_dash_mrna, axs_m = plt.subplots(8,3, sharex='col')
+plt.subplots_adjust(hspace = 0.8)
+k=0
+for i in range(8):
+    for j in range(3):
+        if k == len(mrna_CC):
+            break
+        else:
+            y_val = xoutG_all[:, 282:][:, list(genes_all).index(mrna_CC[k])]
+            axs_m[i,j].plot(tout_all/3600, y_val,'r-')
+            #axs_m[i,j].axhline(y=mrna_CC_data[k],c='red')
+            axs_m[i,j].set_ylim(0,max(y_val)*1.2)
+            axs_m[i,j].tick_params(axis='both', which='major', labelsize='4')
+            axs_m[i,j].ticklabel_format(useOffset=False, style='plain')
+            axs_m[i,j].title.set_text('mrna: '+mrna_CC[k]+' (mpc)')
+            axs_m[i,j].title.set_size(5)
+            if i == 7:
+                axs_m[i,j].set_xlabel('time(h)', fontsize=5)
+            k +=1
+
+
+
+#%% CC dashboard
+species_input = pd.read_csv('input_files/Species.txt', sep='\t', header=0, index_col=0)
+
+species_all = species_input.index
+genes_all = pd.read_csv('input_files/GeneReg.txt',sep='\t', header=0, index_col=0).index
+
+obs_all = model.getObservableIds()
+
+
+plt.yticks(fontsize=5)
+
+cc_dash, axs = plt.subplots(4,4, sharex='col')
+
+plt.subplots_adjust(hspace = 0.4)
+axs[0,0].plot(tout_all/3600,xoutS_all[:, list(species_all).index('ppERK')], 'g-')
+axs[0,0].tick_params(axis='both', which='major', labelsize='4')
+axs[0,0].title.set_text('species: ppERK')
+axs[0,0].title.set_size(5)
+axs[0,1].plot(tout_all/3600,xoutS_all[:, list(species_all).index('ppAKT')], 'b-')
+axs[0,1].tick_params(axis='both', which='major', labelsize='4')
+axs[0,1].title.set_text('species: ppAKT')
+axs[0,1].title.set_size(5)
+axs[0,2].plot(tout_all/3600,xoutS_all[:, list(species_all).index('pcFos_cJun')], 'c-')
+axs[0,2].tick_params(axis='both', which='major', labelsize='4')
+axs[0,2].title.set_text('species: pcFos_cJun')
+axs[0,2].title.set_size(5)
+axs[0,3].plot(tout_all/3600,xoutS_all[:, list(species_all).index('cMyc')], 'r-')
+axs[0,3].tick_params(axis='both', which='major', labelsize='4')
+axs[0,3].title.set_text('species: cMyc')
+axs[0,3].title.set_size(5)
+axs[1,0].plot(tout_all/3600,xoutS_all[:, list(species_all).index('Cd')], 'r-')
+axs[1,0].tick_params(axis='both', which='major', labelsize='4')
+axs[1,0].title.set_text('species: Cd')
+axs[1,0].title.set_size(5)
+axs[1,1].plot(tout_all/3600,xoutS_all[:, list(species_all).index('Cdk46')], 'm-')
+axs[1,1].tick_params(axis='both', which='major', labelsize='4')
+axs[1,1].title.set_text('species: Cdk46')
+axs[1,1].title.set_size(5)
+axs[1,2].plot(tout_all/3600,xoutS_all[:, list(species_all).index('Cd_Cdk46')], 'y-')
+axs[1,2].tick_params(axis='both', which='major', labelsize='4')
+axs[1,2].title.set_text('species: Cd_Cdk46')
+axs[1,2].title.set_size(5)
+axs[1,3].plot(tout_all/3600,xoutS_all[:, list(species_all).index('Cd_Cdk46_pRB')], 'k-')
+axs[1,3].tick_params(axis='both', which='major', labelsize='4')
+axs[1,3].title.set_text('species: Cd_Cdk46_pRB')
+axs[1,3].title.set_size(5)
+axs[2,0].plot(tout_all/3600,xoutS_all[:, list(species_all).index('Cd_Cdk46_pRB_E2F')], 'g-')
+axs[2,0].tick_params(axis='both', which='major', labelsize='4')
+axs[2,0].title.set_text('species: Cd_Cdk46_pRB_E2F')
+axs[2,0].title.set_size(5)
+axs[2,1].plot(tout_all/3600,xoutS_all[:, list(species_all).index('pRB')], 'b-')
+axs[2,1].tick_params(axis='both', which='major', labelsize='4')
+axs[2,1].title.set_text('species: pRB')
+axs[2,1].title.set_size(5)
+axs[2,2].plot(tout_all/3600,xoutS_all[:, list(species_all).index('pRBp')], 'c-')
+axs[2,2].tick_params(axis='both', which='major', labelsize='4')
+axs[2,2].title.set_text('species: pRBp')
+axs[2,2].title.set_size(5)
+axs[2,3].plot(tout_all/3600,xoutS_all[:, list(species_all).index('pRBpp')], 'r-')
+axs[2,3].tick_params(axis='both', which='major', labelsize='4')
+axs[2,3].title.set_text('species: pRBpp')
+axs[2,3].title.set_size(5)
+axs[3,0].plot(tout_all/3600,xoutS_all[:, list(species_all).index('pRB_E2F')], 'm-')
+axs[3,0].tick_params(axis='both', which='major', labelsize='4')
+axs[3,0].title.set_text('species: pRB_E2F')
+axs[3,0].title.set_size(5)
+axs[3,0].set_xlabel('time(h)',fontsize=5)
+axs[3,1].plot(tout_all/3600,xoutS_all[:, list(species_all).index('pRBp_E2F')], 'y-')
+axs[3,1].tick_params(axis='both', which='major', labelsize='4')
+axs[3,1].title.set_text('species: pRBp_E2F')
+axs[3,1].title.set_size(5)
+axs[3,2].plot(tout_all/3600,xoutS_all[:, list(species_all).index('E2F')], 'k-')
+axs[3,2].tick_params(axis='both', which='major', labelsize='4')
+axs[3,2].title.set_text('species: E2F')
+axs[3,2].title.set_size(5)
+axs[3,3].plot(tout_all/3600,xoutS_all[:, list(species_all).index('Ce')], 'g-')
+axs[3,3].tick_params(axis='both', which='major', labelsize='4')
+axs[3,3].title.set_text('species: Ce')
+axs[3,3].title.set_size(5)
+
+#%% plot - mrnas
+
+
+
+# def timecourse_mrna(gene_symbol, x_g=xoutG_all[:, 282:], tout_all=tout_all):
+#     x_t = x_g[:, list(genes_all).index(gene_symbol)]
+#     plt.scatter(tout_all/3600, x_t)
+#     plt.ylabel('mrna_'+str(gene_symbol)+'_mpc')
+#     plt.xlabel('time(h)')
+#     plt.ylim(0, max(x_t)*1.25)
+#     plt.show
+
+mrna_CC = list(genes_all[[12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]])
+
+mrna_CC_data = pd.read_csv('input_files/OmicsData.txt', sep='\t', index_col=0, header=0)['Exp RNA'][[12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]]
+
+
+x_m = xoutG_all[:,282:][:, list(genes_all).index(mrna_CC[2])]
+
+
+cc_dash_mrna, axs_m = plt.subplots(6,3, sharex='col')
+plt.subplots_adjust(hspace = 0.4)
+k=0
+for i in range(6):
+    for j in range(3):
+        y_val = xoutG_all[:, 282:][:, list(genes_all).index(mrna_CC[k])]
+        axs_m[i,j].plot(tout_all/3600, y_val)
+        axs_m[i,j].axhline(y=mrna_CC_data[k],c='red')
+        axs_m[i,j].set_ylim(0,max(y_val)*1.2)
+        axs_m[i,j].tick_params(axis='both', which='major', labelsize='4')
+        axs_m[i,j].ticklabel_format(useOffset=False, style='plain')
+        axs_m[i,j].title.set_text('mrna: '+mrna_CC[k]+' (mpc)')
+        axs_m[i,j].title.set_size(5)
+        if i == 5:
+            axs_m[i,j].set_xlabel('time(h)', fontsize=5)
+        k +=1
+
+# axs[0,2].figure
+
+# axs[0,1].plot(tout_all/3600,xoutS_all[:, list(species_all).index('ppERK')], 'g-')
+# axs[0,2].plot(tout_all/3600,xoutS_all[:, list(species_all).index('ppERK')], 'g-')
+    # %% stochastic test
+
 # flagD = 0
 
 
