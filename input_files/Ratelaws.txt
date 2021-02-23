@@ -393,8 +393,8 @@ vCd32	Nucleus	0
 vCd33	Nucleus	0						
 vCd34	Nucleus	0						
 vCd35	Nucleus	0						
-vCd36		0						
-vCd37		0						
+vCd36	Nucleus	0						
+vCd37	Nucleus	0						
 vA1	Cytoplasm	0.00126483						
 vA2	Cytoplasm	0.001						
 vA3	Cytoplasm	1E-06						
