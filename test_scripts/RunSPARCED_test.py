@@ -32,6 +32,7 @@ def RunSPARCED(flagD,th,spdata,genedata,Vn,Vc,model,input_data_folder):
     
     mrna_i = np.nonzero(np.isin(paramIds,mrnaIds))[0]
     
+    species_id = list(pd.read_csv(os.path.join(input_data_folder,'Species.txt'),header=0,index_col=0,sep="\t").index)
     
     #params_new = params
     #params_new[mrna_i] = Xm
@@ -62,7 +63,7 @@ def RunSPARCED(flagD,th,spdata,genedata,Vn,Vc,model,input_data_folder):
         rdata = amici.runAmiciSimulation(model, solver)  # Run simulation
         xoutS_all[qq+1,:] = rdata['x'][-1,:]
         xoutG_all[qq+1,:] = genedata
-        if rdata['x'][-1,103] < rdata['x'][-1,105]:
+        if rdata['x'][-1,species_id.index('PARP')] < rdata['x'][-1,species_id.index('cPARP')]:
             print('Apoptosis happened')
             break
     xoutS_all = xoutS_all[~np.all(xoutS_all == 0, axis=1)]

@@ -317,7 +317,7 @@ vD62	Nucleus	kD62*p53ac_MDM4	0
 vD63	Nucleus	kD63*BRCA2*damageDSB	5E-05					
 vD64	Nucleus	kD64*MSH6*damageSSB	1E-05					
 vD65	Nucleus	kD65*MGMT*damageSSB	1E-05					
-vD66	Nucleus	(kD66_1+kD66_2*(kD66_3/(kD66_3+kD66_4)))*(((Ma+Me)^kD66_5)/(((Ma+Me)^kD66_5)+(kD66_6^kD66_5)))	1E-06	0.005	0	5000	5	20
+vD66	Nucleus	(kD66_1+kD66_2*(kD66_3/(kD66_3+kD66_4)))*(((Ca_Cdk2+Ce_Cdk2)^kD66_5)/(((Ca_Cdk2+Ce_Cdk2)^kD66_5)+(kD66_6^kD66_5)))	1E-06	0.005	0	5000	5	20
 vC1	Nucleus	0.001						
 vC2	Nucleus	0.0001						
 vC3	Nucleus	0.001						
@@ -340,21 +340,17 @@ vC19	Nucleus	0
 vC20	Nucleus	0						
 vC21	Nucleus	0						
 vCd1	Nucleus	0						
-vCd2	Nucleus	0						
 vCd3	Nucleus	0						
 vCd4	Nucleus	0						
-vCd5	Nucleus	0						
 vCd6	Nucleus	0						
 vCd7	Nucleus	0						
 vCd8	Nucleus	0						
-vCd9	Nucleus	0						
 vCd10	Nucleus	0						
 vCd11	Nucleus	0						
 vCd12	Nucleus	0						
 vCd13	Nucleus	0						
 vCd14	Nucleus	0						
 vCd15	Nucleus	0						
-vCd16	Nucleus	0						
 vCd17	Nucleus	0						
 vCd18	Nucleus	0						
 vCd19	Nucleus	0						

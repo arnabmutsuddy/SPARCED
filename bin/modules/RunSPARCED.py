@@ -26,6 +26,9 @@ def RunSPARCED(flagD,th,spdata,genedata,Vn,Vc,model,input_data_folder):
     
     mrna_i = np.nonzero(np.isin(paramIds,mrnaIds))[0]
     
+    species_id = list(pd.read_csv(os.path.join(input_data_folder,'Species.txt'),header=0,index_col=0,sep="\t").index)
+
+    
     params[mrna_i] = np.dot(mExp_mpc,mpc2nM_Vc)
     model.setFixedParameters(params)
     
@@ -59,7 +62,7 @@ def RunSPARCED(flagD,th,spdata,genedata,Vn,Vc,model,input_data_folder):
         xoutS_all[qq+1,:] = rdata['x'][-1,:]
         xoutG_all[qq+1,:] = genedata
         xoutObs_all[qq+1,:] = rdata['y'][-1,:]
-        if rdata['x'][-1,103] < rdata['x'][-1,105]:
+        if rdata['x'][-1,species_id.index('PARP')] < rdata['x'][-1,species_id.index('cPARP')]:
             print('Apoptosis happened')
             break
     xoutS_all = xoutS_all[~np.all(xoutS_all == 0, axis=1)]

@@ -56,16 +56,22 @@ STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PD
 # STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 
+STIMligs_id = ['E', 'H', 'HGF', 'P', 'F', 'I', 'INS']
 
 species_sheet = np.array([np.array(line.strip().split("\t")) for line in open(
     os.path.join(input_data_folder, 'Species.txt'), encoding='latin-1')])
+
+species_all = [species_sheet[k][0] for k in range(1,len(species_sheet))]
 
 species_initializations = []
 for row in species_sheet[1:]:
     species_initializations.append(float(row[2]))
 species_initializations = np.array(species_initializations)
 
-species_initializations[155:162] = STIMligs
+
+
+for k in range(len(STIMligs)):
+    species_initializations[species_all.index(STIMligs_id[k])] = STIMligs[k]
 
 # %% model import
 
