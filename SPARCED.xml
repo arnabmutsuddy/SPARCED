@@ -148,13 +148,13 @@
       <species id="Pe" compartment="Nucleus" initialConcentration="141.2865" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000164045</annotation>
       </species>
-      <species id="Pai" compartment="Nucleus" initialConcentration="49.18781" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Pai" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000101224</annotation>
       </species>
-      <species id="Pei" compartment="Nucleus" initialConcentration="16.02343" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Pei" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000164045</annotation>
       </species>
-      <species id="Pbi" compartment="Nucleus" initialConcentration="55.2985" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Pbi" compartment="Nucleus" initialConcentration="7.78" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000158402</annotation>
       </species>
       <species id="Ca" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
@@ -166,13 +166,13 @@
       <species id="Ca_Cdk2_p27" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000145386 ENSG00000123374 ENSG00000111276 ENSG00000111276</annotation>
       </species>
-      <species id="p27" compartment="Nucleus" initialConcentration="20.44209" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="p27" compartment="Nucleus" initialConcentration="3.05" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000111276</annotation>
       </species>
-      <species id="Cdh1i" compartment="Nucleus" initialConcentration="0.5978504" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Cdh1i" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000039068</annotation>
       </species>
-      <species id="Cdh1a" compartment="Nucleus" initialConcentration="108.8043" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Cdh1a" compartment="Nucleus" initialConcentration="111.824" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000039068</annotation>
       </species>
       <species id="E2Fp" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
@@ -181,7 +181,7 @@
       <species id="p27p" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000111276</annotation>
       </species>
-      <species id="Pa" compartment="Nucleus" initialConcentration="41.62437" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Pa" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000101224</annotation>
       </species>
       <species id="Cb" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
@@ -190,25 +190,25 @@
       <species id="Cb_Cdk1" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000134057 ENSG00000170312</annotation>
       </species>
-      <species id="Cdc20i" compartment="Nucleus" initialConcentration="71.16782" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Cdc20i" compartment="Nucleus" initialConcentration="13.43" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000117399</annotation>
       </species>
-      <species id="Cdc20a" compartment="Nucleus" initialConcentration="0.7301153" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Cdc20a" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000117399</annotation>
       </species>
-      <species id="Pb" compartment="Nucleus" initialConcentration="9.402992" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Pb" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000158402</annotation>
       </species>
-      <species id="Wee1" compartment="Nucleus" initialConcentration="26.51906" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Wee1" compartment="Nucleus" initialConcentration="2" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000166483</annotation>
       </species>
-      <species id="Wee1p" compartment="Nucleus" initialConcentration="16.74047" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Wee1p" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000166483</annotation>
       </species>
       <species id="Cb_Cdk1_p27" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000134057 ENSG00000170312 ENSG00000111276</annotation>
       </species>
-      <species id="Chk1" compartment="Nucleus" initialConcentration="0.1497549" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="Chk1" compartment="Nucleus" initialConcentration="3.32" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000149554</annotation>
       </species>
       <species id="pRB_E2F" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
@@ -217,7 +217,7 @@
       <species id="pRBp_E2F" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000139687 ENSG00000101412 ENSG00000007968 ENSG00000112242</annotation>
       </species>
-      <species id="p21" compartment="Nucleus" initialConcentration="20.87113" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+      <species id="p21" compartment="Nucleus" initialConcentration="21.86" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <annotation> ENSG00000124762</annotation>
       </species>
       <species id="Cd_Cdk46_p21" compartment="Nucleus" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
@@ -2340,40 +2340,52 @@
       <parameter id="k16_2" value="0" constant="true"/>
       <parameter id="k17_1" value="13.1753" constant="true"/>
       <parameter id="mrna_SKP2" value="0.005376217" constant="true"/>
+      <parameter id="k17_2" value="0" constant="true"/>
       <parameter id="k18_1" value="11.4186" constant="true"/>
       <parameter id="mrna_CDC25A" value="0.005376217" constant="true"/>
+      <parameter id="k18_2" value="0" constant="true"/>
       <parameter id="k19_1" value="9.2227" constant="true"/>
       <parameter id="mrna_CDC25B" value="0.005376217" constant="true"/>
+      <parameter id="k19_2" value="0" constant="true"/>
       <parameter id="k20_1" value="10.5402" constant="true"/>
       <parameter id="mrna_CDC25C" value="0.005376217" constant="true"/>
+      <parameter id="k20_2" value="0" constant="true"/>
       <parameter id="k21_1" value="10" constant="true"/>
       <parameter id="mrna_CCNA2" value="0.005376217" constant="true"/>
       <parameter id="k21_2" value="0" constant="true"/>
-      <parameter id="k22_1" value="70.2683" constant="true"/>
-      <parameter id="k22_2" value="0.0878" constant="true"/>
-      <parameter id="k22_3" value="10" constant="true"/>
-      <parameter id="k22_4" value="200" constant="true"/>
+      <parameter id="k22_1" value="0.0878" constant="true"/>
       <parameter id="mrna_CDKN1B" value="0.005376217" constant="true"/>
+      <parameter id="k22_2" value="0" constant="true"/>
       <parameter id="k23_1" value="9.6619" constant="true"/>
       <parameter id="mrna_CDH1" value="0.005376217" constant="true"/>
+      <parameter id="k23_2" value="0" constant="true"/>
       <parameter id="k24_1" value="4.3918" constant="true"/>
       <parameter id="mrna_CCNB1" value="0.005376217" constant="true"/>
+      <parameter id="k24_2" value="0" constant="true"/>
       <parameter id="k25_1" value="8.7835" constant="true"/>
       <parameter id="mrna_CDC20" value="0.005376217" constant="true"/>
+      <parameter id="k25_2" value="0" constant="true"/>
       <parameter id="k26_1" value="5.2701" constant="true"/>
       <parameter id="mrna_WEE1" value="0.005376217" constant="true"/>
+      <parameter id="k26_2" value="0" constant="true"/>
       <parameter id="k27_1" value="0.008744" constant="true"/>
       <parameter id="mrna_CHEK1" value="0.005376217" constant="true"/>
+      <parameter id="k27_2" value="0" constant="true"/>
       <parameter id="k28_1" value="0.5312" constant="true"/>
       <parameter id="mrna_CDKN1A" value="0.003794976" constant="true"/>
+      <parameter id="k28_2" value="0" constant="true"/>
       <parameter id="k29_1" value="0.2635" constant="true"/>
       <parameter id="mrna_CDK1" value="0.01391491" constant="true"/>
+      <parameter id="k29_2" value="0" constant="true"/>
       <parameter id="k30_1" value="0.1792" constant="true"/>
       <parameter id="mrna_CDK2" value="0.000632496" constant="true"/>
+      <parameter id="k30_2" value="0" constant="true"/>
       <parameter id="k31_1" value="0.0082295" constant="true"/>
       <parameter id="mrna_CDK4" value="0.003478728" constant="true"/>
+      <parameter id="k31_2" value="0" constant="true"/>
       <parameter id="k32_1" value="0.296215" constant="true"/>
       <parameter id="mrna_CDK6" value="0.002213736" constant="true"/>
+      <parameter id="k32_2" value="0" constant="true"/>
       <parameter id="k33_1" value="0" constant="true"/>
       <parameter id="mrna_TNFSF10" value="0" constant="true"/>
       <parameter id="k33_2" value="100" constant="true"/>
@@ -5482,12 +5494,24 @@
         <listOfProducts>
           <speciesReference species="Skp2" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k17_1 </ci>
               <ci> mrna_SKP2 </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k17_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5497,12 +5521,24 @@
         <listOfProducts>
           <speciesReference species="Pei" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k18_1 </ci>
               <ci> mrna_CDC25A </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k18_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5512,12 +5548,24 @@
         <listOfProducts>
           <speciesReference species="Pai" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k19_1 </ci>
               <ci> mrna_CDC25B </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k19_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5527,12 +5575,24 @@
         <listOfProducts>
           <speciesReference species="Pbi" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k20_1 </ci>
               <ci> mrna_CDC25C </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k20_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5570,42 +5630,23 @@
           <speciesReference species="p27" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <listOfModifiers>
-          <modifierSpeciesReference species="pRB"/>
-          <modifierSpeciesReference species="pRBp"/>
-          <modifierSpeciesReference species="E2F"/>
+          <modifierSpeciesReference species="EIF4E"/>
         </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
+              <ci> k22_1 </ci>
+              <ci> mrna_CDKN1B </ci>
               <apply>
-                <plus/>
-                <ci> k22_1 </ci>
+                <divide/>
+                <ci> EIF4E </ci>
                 <apply>
-                  <times/>
+                  <plus/>
                   <ci> k22_2 </ci>
-                  <ci> E2F </ci>
-                  <apply>
-                    <divide/>
-                    <ci> k22_3 </ci>
-                    <apply>
-                      <plus/>
-                      <ci> k22_3 </ci>
-                      <ci> pRB </ci>
-                    </apply>
-                  </apply>
-                  <apply>
-                    <divide/>
-                    <ci> k22_4 </ci>
-                    <apply>
-                      <plus/>
-                      <ci> k22_4 </ci>
-                      <ci> pRBp </ci>
-                    </apply>
-                  </apply>
+                  <ci> EIF4E </ci>
                 </apply>
               </apply>
-              <ci> mrna_CDKN1B </ci>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5615,12 +5656,24 @@
         <listOfProducts>
           <speciesReference species="Cdh1a" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k23_1 </ci>
               <ci> mrna_CDH1 </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k23_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5630,12 +5683,24 @@
         <listOfProducts>
           <speciesReference species="Cb" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k24_1 </ci>
               <ci> mrna_CCNB1 </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k24_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5645,12 +5710,24 @@
         <listOfProducts>
           <speciesReference species="Cdc20i" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k25_1 </ci>
               <ci> mrna_CDC20 </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k25_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5660,12 +5737,24 @@
         <listOfProducts>
           <speciesReference species="Wee1" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k26_1 </ci>
               <ci> mrna_WEE1 </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k26_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 1.75 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5675,12 +5764,24 @@
         <listOfProducts>
           <speciesReference species="Chk1" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k27_1 </ci>
               <ci> mrna_CHEK1 </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k27_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5690,12 +5791,24 @@
         <listOfProducts>
           <speciesReference species="p21" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k28_1 </ci>
               <ci> mrna_CDKN1A </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k28_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5705,12 +5818,24 @@
         <listOfProducts>
           <speciesReference species="Cdk1" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k29_1 </ci>
               <ci> mrna_CDK1 </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k29_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5720,12 +5845,24 @@
         <listOfProducts>
           <speciesReference species="Cdk2" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k30_1 </ci>
               <ci> mrna_CDK2 </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k30_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5735,12 +5872,24 @@
         <listOfProducts>
           <speciesReference species="Cdk46" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k31_1 </ci>
               <ci> mrna_CDK4 </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k31_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
           </math>
@@ -5750,12 +5899,24 @@
         <listOfProducts>
           <speciesReference species="Cdk46" stoichiometry="1" constant="true"/>
         </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="EIF4E"/>
+        </listOfModifiers>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
             <apply>
               <times/>
               <ci> k32_1 </ci>
               <ci> mrna_CDK6 </ci>
+              <apply>
+                <divide/>
+                <ci> EIF4E </ci>
+                <apply>
+                  <plus/>
+                  <ci> k32_2 </ci>
+                  <ci> EIF4E </ci>
+                </apply>
+              </apply>
               <cn type="e-notation"> 5.25 <sep/> -12 </cn>
             </apply>
           </math>

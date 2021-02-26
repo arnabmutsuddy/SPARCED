@@ -52,9 +52,9 @@ Vc = float(args.Vc)
 outfile = args.outfile
 ts = 30
 
-STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
+# STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
-# STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
+STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 
 STIMligs_id = ['E', 'H', 'HGF', 'P', 'F', 'I', 'INS']
 
@@ -113,15 +113,15 @@ model_param = np.array(model.getFixedParameterIds())
 # model.setFixedParameterById('k431',0.0001) #koff, Mbi
 model.setFixedParameterById('k17_1', model.getFixedParameterById('k17_1')/12) #Skp2
 model.setFixedParameterById('k20_1', model.getFixedParameterById('k20_1')/25) #Pbi
-model.setFixedParameterById('k22_1', model.getFixedParameterById('k22_1')/250) #p27
+model.setFixedParameterById('k22_1', model.getFixedParameterById('k22_1')*1.5*1.25) #p27
 model.setFixedParameterById('k23_1', model.getFixedParameterById('k23_1')/15) #Cdh1a
 model.setFixedParameterById('k25_1', model.getFixedParameterById('k25_1')/6) #Cdc20
 model.setFixedParameterById('k26_1', model.getFixedParameterById('k26_1')/200) #Wee1
-model.setFixedParameterById('k28_1', model.getFixedParameterById('k28_1')*1.2) #p21
+model.setFixedParameterById('k28_1', model.getFixedParameterById('k28_1')*1.2*1.1) #p21
 
 
 model.setFixedParameterById('k31_1', model.getFixedParameterById('k31_1')*1.5) #Cdk46
-model.setFixedParameterById('k32_1', model.getFixedParameterById('k32_1')*1.5) #Cdk46
+model.setFixedParameterById('k32_1', model.getFixedParameterById('k32_1')*1.5*1.1) #Cdk46
 
 # model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')/100)
 # model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/100)
@@ -131,13 +131,22 @@ model.setFixedParameterById('k32_1', model.getFixedParameterById('k32_1')*1.5) #
 # model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')*50)
 # model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')*50)
 
-model.setFixedParameterById('k8_1',model.getFixedParameterById('k8_1')/450)
-model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')/100)
-model.setFixedParameterById('k10_1',model.getFixedParameterById('k10_1')/100)
-model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')/100)
+model.setFixedParameterById('k8_1',model.getFixedParameterById('k8_1')/450*1.1) #Rb
+model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')/100/1.1)
+model.setFixedParameterById('k10_1',model.getFixedParameterById('k10_1')/100/1.1)
+model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')/100/1.1)
 
 # model.setFixedParameterById('k432', 1.47e-4)
 # model.setFixedParameterById('k433', 1.47e-4)
+
+# Cyclins
+model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')/100/50) #CCNE1
+model.setFixedParameterById('k16_1',model.getFixedParameterById('k16_1')/100/50) #CCNE2
+model.setFixedParameterById('k21_1',model.getFixedParameterById('k21_1')/100/50) #CCNA2
+model.setFixedParameterById('k24_1',model.getFixedParameterById('k24_1')/100/50) #CCNB2
+
+
+
 
 #%% Rate constants - half lives
 
