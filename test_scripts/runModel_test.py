@@ -52,9 +52,9 @@ Vc = float(args.Vc)
 outfile = args.outfile
 ts = 30
 
-# STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
+STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
-STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
+# STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 
 STIMligs_id = ['E', 'H', 'HGF', 'P', 'F', 'I', 'INS']
 
@@ -111,17 +111,17 @@ model_param = np.array(model.getFixedParameterIds())
 # model.setFixedParameterById('k429',0.0001) #koff, Mai
 # model.setFixedParameterById('k430',0.001) #kon, Mbi
 # model.setFixedParameterById('k431',0.0001) #koff, Mbi
-model.setFixedParameterById('k17_1', model.getFixedParameterById('k17_1')/12) #Skp2
-model.setFixedParameterById('k20_1', model.getFixedParameterById('k20_1')/25) #Pbi
-model.setFixedParameterById('k22_1', model.getFixedParameterById('k22_1')*1.5*1.25) #p27
-model.setFixedParameterById('k23_1', model.getFixedParameterById('k23_1')/15) #Cdh1a
-model.setFixedParameterById('k25_1', model.getFixedParameterById('k25_1')/6) #Cdc20
-model.setFixedParameterById('k26_1', model.getFixedParameterById('k26_1')/200) #Wee1
-model.setFixedParameterById('k28_1', model.getFixedParameterById('k28_1')*1.2*1.1) #p21
+# model.setFixedParameterById('k17_1', model.getFixedParameterById('k17_1')/12) #Skp2
+# model.setFixedParameterById('k20_1', model.getFixedParameterById('k20_1')/25) #Pbi
+# model.setFixedParameterById('k22_1', model.getFixedParameterById('k22_1')*1.5*1.25) #p27
+# model.setFixedParameterById('k23_1', model.getFixedParameterById('k23_1')/15) #Cdh1a
+# model.setFixedParameterById('k25_1', model.getFixedParameterById('k25_1')/6) #Cdc20
+# model.setFixedParameterById('k26_1', model.getFixedParameterById('k26_1')/200) #Wee1
+# model.setFixedParameterById('k28_1', model.getFixedParameterById('k28_1')*1.2*1.1) #p21
 
 
-model.setFixedParameterById('k31_1', model.getFixedParameterById('k31_1')*1.5) #Cdk46
-model.setFixedParameterById('k32_1', model.getFixedParameterById('k32_1')*1.5*1.1) #Cdk46
+# model.setFixedParameterById('k31_1', model.getFixedParameterById('k31_1')*1.5) #Cdk46
+# model.setFixedParameterById('k32_1', model.getFixedParameterById('k32_1')*1.5*1.1) #Cdk46
 
 # model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')/100)
 # model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/100)
@@ -131,70 +131,70 @@ model.setFixedParameterById('k32_1', model.getFixedParameterById('k32_1')*1.5*1.
 # model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')*50)
 # model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')*50)
 
-model.setFixedParameterById('k8_1',model.getFixedParameterById('k8_1')/450*1.1) #Rb
-model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')/100/1.1)
-model.setFixedParameterById('k10_1',model.getFixedParameterById('k10_1')/100/1.1)
-model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')/100/1.1)
+# model.setFixedParameterById('k8_1',model.getFixedParameterById('k8_1')/450*1.1) #Rb
+# model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')/100/1.1)
+# model.setFixedParameterById('k10_1',model.getFixedParameterById('k10_1')/100/1.1)
+# model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')/100/1.1)
 
 # model.setFixedParameterById('k432', 1.47e-4)
 # model.setFixedParameterById('k433', 1.47e-4)
 
 # Cyclins
-model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')/100/50) #CCNE1
-model.setFixedParameterById('k16_1',model.getFixedParameterById('k16_1')/100/50) #CCNE2
-model.setFixedParameterById('k21_1',model.getFixedParameterById('k21_1')/100/50) #CCNA2
-model.setFixedParameterById('k24_1',model.getFixedParameterById('k24_1')/100/50) #CCNB2
+# model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')/100/50) #CCNE1
+# model.setFixedParameterById('k16_1',model.getFixedParameterById('k16_1')/100/50) #CCNE2
+# model.setFixedParameterById('k21_1',model.getFixedParameterById('k21_1')/100/50) #CCNA2
+# model.setFixedParameterById('k24_1',model.getFixedParameterById('k24_1')/100/50) #CCNB2
 
 
 
 
 #%% Rate constants - half lives
 
-# vTLCd
-model.setFixedParameterById('k154', 2.14e-5) # pRB half life
-model.setFixedParameterById('k155', 1.65e-4) # E2F half life
+# # vTLCd
+# model.setFixedParameterById('k154', 2.14e-5) # pRB half life
+# model.setFixedParameterById('k155', 1.65e-4) # E2F half life
 
 
-# vCd
-model.setFixedParameterById('k341', 1.47e-4) # Cd_Cdk46, vCd1
-#model.setFixedParameterById('k433', 1.47e-4) # Md, vCd2 (obsolete)
-model.setFixedParameterById('k342', 1.47e-4) # Cd_Cdk46_p27, vCd3
-model.setFixedParameterById('k343', 3.85e-5) # Ce_Cdk2, vCd4
-#model.setFixedParameterById('k436', 3.85e-5) # Me, vCd5 (obsolete)
-model.setFixedParameterById('k344', 3.85e-5) # Ce_Cdk2_p27, vCd6
-model.setFixedParameterById('k345', 3.21e-5) # Pe, vCd7
-model.setFixedParameterById('k346', 7.70e-5) # Ca_Cdk2, vCd8
-# model.setFixedParameterById('k440', 7.70e-5) # Ma, vCd9 (obsolete)
-model.setFixedParameterById('k347', 7.70e-5) # Ca_Cdk2_p27, vCd10
-model.setFixedParameterById('k348', 2.35e-5) # Cdh1i, vCd11
-model.setFixedParameterById('k349', 1.65e-4) # E2Fp, vCd12
-model.setFixedParameterById('k350', 3.21e-5) # p27p, vCd13
-model.setFixedParameterById('k351', 3.85e-4) # Pa, vCd14
-model.setFixedParameterById('k352', 1.28e-4) # Cb_Cdk1, vCd15
-# model.setFixedParameterById('k353', 1.28e-4) # Mb, vCd16
-model.setFixedParameterById('k353', 3.85e-4) # Cdc20a, vCd17
-model.setFixedParameterById('k354', 1.93e-4) # Pb, vCd18
-model.setFixedParameterById('k355', 2.75e-5) # Wee1p, vCd19
-model.setFixedParameterById('k356', 1.28e-4) # Cb_Cdk1_p27, vCd20
-model.setFixedParameterById('k357', 1.65e-4) # pRB_E2F, vCd21
-model.setFixedParameterById('k358', 1.65e-4) # pRB_E2Fp, vCd22
-model.setFixedParameterById('k359', 3.85e-4) # Cd_Cdk46_p21, vCd23
-model.setFixedParameterById('k360', 3.85e-4) # Ce_Cdk2_p21, vCd24
-model.setFixedParameterById('k361', 3.85e-4) # Ca_Cdk2_p21, vCd25
-model.setFixedParameterById('k362', 3.85e-4) # Cb_Cdk1_p21, vCd26
-model.setFixedParameterById('k363', 1.65e-4) # pRBpp_E2F, vCd27
-model.setFixedParameterById('k364', 1.47e-4) # Cd_Cdk46_pRB, vCd28
-model.setFixedParameterById('k365', 1.65e-4) # Cd_Cdk46_pRB_E2F, vCd29
-model.setFixedParameterById('k366', 3.85e-5) # Ce_Cdk2_pRBp, vCd30
-model.setFixedParameterById('k367', 1.65e-4) # Ce_Cdk2_pRBp_E2F, vCd31
+# # vCd
+# model.setFixedParameterById('k341', 1.47e-4) # Cd_Cdk46, vCd1
+# #model.setFixedParameterById('k433', 1.47e-4) # Md, vCd2 (obsolete)
+# model.setFixedParameterById('k342', 1.47e-4) # Cd_Cdk46_p27, vCd3
+# model.setFixedParameterById('k343', 3.85e-5) # Ce_Cdk2, vCd4
+# #model.setFixedParameterById('k436', 3.85e-5) # Me, vCd5 (obsolete)
+# model.setFixedParameterById('k344', 3.85e-5) # Ce_Cdk2_p27, vCd6
+# model.setFixedParameterById('k345', 3.21e-5) # Pe, vCd7
+# model.setFixedParameterById('k346', 7.70e-5) # Ca_Cdk2, vCd8
+# # model.setFixedParameterById('k440', 7.70e-5) # Ma, vCd9 (obsolete)
+# model.setFixedParameterById('k347', 7.70e-5) # Ca_Cdk2_p27, vCd10
+# model.setFixedParameterById('k348', 2.35e-5) # Cdh1i, vCd11
+# model.setFixedParameterById('k349', 1.65e-4) # E2Fp, vCd12
+# model.setFixedParameterById('k350', 3.21e-5) # p27p, vCd13
+# model.setFixedParameterById('k351', 3.85e-4) # Pa, vCd14
+# model.setFixedParameterById('k352', 1.28e-4) # Cb_Cdk1, vCd15
+# # model.setFixedParameterById('k353', 1.28e-4) # Mb, vCd16
+# model.setFixedParameterById('k353', 3.85e-4) # Cdc20a, vCd17
+# model.setFixedParameterById('k354', 1.93e-4) # Pb, vCd18
+# model.setFixedParameterById('k355', 2.75e-5) # Wee1p, vCd19
+# model.setFixedParameterById('k356', 1.28e-4) # Cb_Cdk1_p27, vCd20
+# model.setFixedParameterById('k357', 1.65e-4) # pRB_E2F, vCd21
+# model.setFixedParameterById('k358', 1.65e-4) # pRB_E2Fp, vCd22
+# model.setFixedParameterById('k359', 3.85e-4) # Cd_Cdk46_p21, vCd23
+# model.setFixedParameterById('k360', 3.85e-4) # Ce_Cdk2_p21, vCd24
+# model.setFixedParameterById('k361', 3.85e-4) # Ca_Cdk2_p21, vCd25
+# model.setFixedParameterById('k362', 3.85e-4) # Cb_Cdk1_p21, vCd26
+# model.setFixedParameterById('k363', 1.65e-4) # pRBpp_E2F, vCd27
+# model.setFixedParameterById('k364', 1.47e-4) # Cd_Cdk46_pRB, vCd28
+# model.setFixedParameterById('k365', 1.65e-4) # Cd_Cdk46_pRB_E2F, vCd29
+# model.setFixedParameterById('k366', 3.85e-5) # Ce_Cdk2_pRBp, vCd30
+# model.setFixedParameterById('k367', 1.65e-4) # Ce_Cdk2_pRBp_E2F, vCd31
 
-# model.setFixedParameterById('k368', 1.47e-4) # Cd_Cdk46_pRBp, vCd32
-# model.setFixedParameterById('k369', 1.65e-4) # Cd_Cdk46_pRBp_E2F, vCd33
-# model.setFixedParameterById('k370', 3.85e-5) # Ce_Cdk2_pRBpp, vCd34
-# model.setFixedParameterById('k371', 1.65e-4) # Ce_Cdk2_pRBpp_E2F, vCd35
+# # model.setFixedParameterById('k368', 1.47e-4) # Cd_Cdk46_pRBp, vCd32
+# # model.setFixedParameterById('k369', 1.65e-4) # Cd_Cdk46_pRBp_E2F, vCd33
+# # model.setFixedParameterById('k370', 3.85e-5) # Ce_Cdk2_pRBpp, vCd34
+# # model.setFixedParameterById('k371', 1.65e-4) # Ce_Cdk2_pRBpp_E2F, vCd35
 
-model.setFixedParameterById('k368', 2.14e-5) # pRBp half life
-model.setFixedParameterById('k369', 2.14e-5) # pRBpp half life
+# model.setFixedParameterById('k368', 2.14e-5) # pRBp half life
+# model.setFixedParameterById('k369', 2.14e-5) # pRBpp half life
 
 
 
@@ -224,11 +224,11 @@ model.setFixedParameterById('k340', 0.001)
 
 
 #%% initial conditions
-species_all = [species_sheet[n][0] for n in range(1,len(species_sheet))]
+# species_all = [species_sheet[n][0] for n in range(1,len(species_sheet))]
 
-species_initializations[species_all.index('pRB')] = 21.484-0.2182*0.90
-species_initializations[species_all.index('pRB_E2F')] = 0.2182*0.90
-species_initializations[species_all.index('E2F')] = 0.2182*0.10
+# species_initializations[species_all.index('pRB')] = 21.484-0.2182*0.90
+# species_initializations[species_all.index('pRB_E2F')] = 0.2182*0.90
+# species_initializations[species_all.index('E2F')] = 0.2182*0.10
 
 
 
@@ -271,7 +271,87 @@ obs_all = model.getObservableIds()
 
 mpl.rcParams['figure.dpi'] = 300
 
+#%%
+species_CC_dash = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46', 'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB', 'pRBp', 'pRBpp', 'pRB_E2F', 'E2F', 'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F']
 
+k=0
+
+cc_dash_species, axs_s = plt.subplots(6,3, sharex='col')
+plt.subplots_adjust(hspace = 0.6)
+
+for i in range(6):
+    for j in range(3):
+        if k == len(species_CC_dash):
+            break
+        else:
+            y_val = xoutS_all[:, list(species_all).index(species_CC_dash[k])]
+            axs_s[i,j].plot(tout_all/3600, y_val, 'b-')            
+            axs_s[i,j].set_ylim(0,max(y_val)*1.2)
+            axs_s[i,j].tick_params(axis='both', which='major', labelsize='4')
+            axs_s[i,j].ticklabel_format(useOffset=False, style='plain')
+            axs_s[i,j].title.set_text('species: '+species_CC_dash[k]+' (nM)')
+            axs_s[i,j].title.set_size(5)
+            if i == 5:
+                axs_s[i,j].set_xlabel('time(h)', fontsize=5)
+            k +=1
+        
+#%%
+
+obs_CC_dash = ['ERK', 'AKT', 'Fos', 'Jun', 'Myc', 'Cd', 'Cdk46', 'Cdk1', 'Cdk2', 'RB', 'E2F', 'Ce', 'Ca', 'Cb', 'Skp2', 'Pai', 'Pei', 'Pbi', 'p27', 'Cdh1a', 'Cdc20', 'Wee1', 'Chk1', 'p21',]
+
+k=0
+obs_all = model.getObservableIds()
+cc_dash_obs, axs_o = plt.subplots(8,3, sharex='col', figsize = (5,7))
+plt.subplots_adjust(hspace = 0.8, wspace=0.25)
+
+for i in range(8):
+    for j in range(3):
+        if k == len(obs_CC_dash):
+            break
+        else:
+            y_val = xoutObs_all[:, list(obs_all).index(obs_CC_dash[k])]
+            axs_o[i,j].plot(tout_all/3600, y_val, 'g-')            
+            axs_o[i,j].set_ylim(0,max(y_val)*1.2)
+            axs_o[i,j].tick_params(axis='both', which='major', labelsize='4')
+            axs_o[i,j].ticklabel_format(useOffset=False, style='plain')
+            axs_o[i,j].title.set_text('obs: '+obs_CC_dash[k]+' (nM)')
+            axs_o[i,j].title.set_size(5)
+            if i == 7:
+                axs_o[i,j].set_xlabel('time(h)', fontsize=5)
+            k +=1
+
+
+#%%
+mrna_CC = list(genes_all[[5,6,7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]])
+
+#mrna_CC_data = pd.read_csv('input_files/OmicsData.txt', sep='\t', index_col=0, header=0)['Exp RNA'][[14,15,16,17,19,20,21,22,23,24,25,26,27,28,29]]
+
+
+x_m = xoutG_all[:,282:][:, list(genes_all).index(mrna_CC[2])]
+
+
+cc_dash_mrna, axs_m = plt.subplots(8,3, sharex='col')
+plt.subplots_adjust(hspace = 0.8)
+k=0
+for i in range(8):
+    for j in range(3):
+        if k == len(mrna_CC):
+            break
+        else:
+            y_val = xoutG_all[:, 282:][:, list(genes_all).index(mrna_CC[k])]
+            axs_m[i,j].plot(tout_all/3600, y_val,'r-')
+            #axs_m[i,j].axhline(y=mrna_CC_data[k],c='red')
+            axs_m[i,j].set_ylim(0,max(y_val)*1.2)
+            axs_m[i,j].tick_params(axis='both', which='major', labelsize='4')
+            axs_m[i,j].ticklabel_format(useOffset=False, style='plain')
+            axs_m[i,j].title.set_text('mrna: '+mrna_CC[k]+' (mpc)')
+            axs_m[i,j].title.set_size(5)
+            if i == 7:
+                axs_m[i,j].set_xlabel('time(h)', fontsize=5)
+            k +=1
+
+
+#%%
 def timecourse(species, x_s=xoutS_all, tout_all=tout_all):
 
     x_t = x_s[:, list(species_all).index(species)]
