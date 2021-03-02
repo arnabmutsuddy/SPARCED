@@ -775,3 +775,4 @@
 #define xdot774 xdot[774]
 #define xdot775 xdot[775]
 #define xdot776 xdot[776]
+#define xdot777 xdot[777]

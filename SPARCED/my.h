@@ -103,3 +103,4 @@
 #define mEIF4EBP1 my[102]
 #define mSOS my[103]
 #define mEIF4E my[104]
+#define mp18 my[105]

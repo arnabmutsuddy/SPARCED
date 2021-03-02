@@ -103,3 +103,4 @@
 #define EIF4EBP1 y[102]
 #define SOS y[103]
 #define EIF4E y[104]
+#define p18 y[105]

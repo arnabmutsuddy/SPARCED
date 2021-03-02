@@ -2385,3 +2385,5 @@
 #define flux_r2384 w[2384]
 #define flux_r2385 w[2385]
 #define flux_r2386 w[2386]
+#define flux_r2387 w[2387]
+#define flux_r2388 w[2388]

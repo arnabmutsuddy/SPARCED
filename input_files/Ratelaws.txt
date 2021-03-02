@@ -142,6 +142,7 @@ vTL138	Cytoplasm	kTL138_1*mrna_BRCA2*(EIF4E/(kTL138_2+EIF4E))	0.04751087	0.00063
 vTL139	Cytoplasm	kTL139_1*mrna_MGMT*(EIF4E/(kTL139_2+EIF4E))	0.202338923	0.00158124	100			
 vTL140	Cytoplasm	kTL140_1*mrna_INSR*(EIF4E/(kTL140_2+EIF4E))	0.013971778	0.001897488	100			
 vTL141	Cytoplasm	kTL141_1*mrna_INS*(EIF4E/(kTL141_2+EIF4E))	0.071223884	0	100			
+vTL142	Cytoplasm	kTL142_1*mrna_CDKN2C*(EIF4E/(kTL142_2+EIF4E))	0.071223884	0.005376216566653	0			
 vTLCd1	Nucleus	0						
 vTLCd2	Nucleus	0						
 vTLCd3	Nucleus	0						
@@ -247,6 +248,7 @@ vTLCd102	Cytoplasm	1.67E-06
 vTLCd103	Nucleus	8.8E-06						
 vTLCd104	Nucleus	4.1E-06						
 vTLCd105	Nucleus	2.77E-05						
+vTLCd106	Nucleus	1.925E-05						
 vE1	Cytoplasm	0.001						
 vE2	Cytoplasm	0.1						
 vE3	Cytoplasm	kE3	0.000210658					

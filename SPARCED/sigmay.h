@@ -103,3 +103,4 @@
 #define sigma_EIF4EBP1 sigmay[102]
 #define sigma_SOS sigmay[103]
 #define sigma_EIF4E sigmay[104]
+#define sigma_p18 sigmay[105]

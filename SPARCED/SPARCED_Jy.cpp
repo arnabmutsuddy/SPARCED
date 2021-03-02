@@ -330,6 +330,9 @@ void Jy_SPARCED(realtype *Jy, const int iy, const realtype *p, const realtype *k
         case 104:
             Jy[0] = 0.5*std::log(2*amici::pi*std::pow(sigma_EIF4E, 2)) + 0.5*std::pow(EIF4E - mEIF4E, 2)/std::pow(sigma_EIF4E, 2);
             break;
+        case 105:
+            Jy[0] = 0.5*std::log(2*amici::pi*std::pow(sigma_p18, 2)) + 0.5*std::pow(-mp18 + p18, 2)/std::pow(sigma_p18, 2);
+            break;
     }
 }
 
