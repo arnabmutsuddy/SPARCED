@@ -271,7 +271,7 @@ obs_all = model.getObservableIds()
 
 mpl.rcParams['figure.dpi'] = 300
 
-#%%
+#%%#
 species_CC_dash = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46', 'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB', 'pRBp', 'pRBpp', 'pRB_E2F', 'E2F', 'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F']
 
 k=0
