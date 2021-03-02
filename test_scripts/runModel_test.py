@@ -200,20 +200,20 @@ model_param = np.array(model.getFixedParameterIds())
 
 #%% Rate constants - CC
 
-model.setFixedParameterById('k328', 0.001) # pRB p
-model.setFixedParameterById('k329', 0.0001)
-model.setFixedParameterById('k330', 0.0001)
-model.setFixedParameterById('k331', 0.001) # pRB_E2F p
+# model.setFixedParameterById('k328', 0.001) # pRB p
+# model.setFixedParameterById('k329', 0.0001)
+# model.setFixedParameterById('k330', 0.0001)
+# model.setFixedParameterById('k331', 0.001) # pRB_E2F p
 
-model.setFixedParameterById('k332', 0.001)
-model.setFixedParameterById('k333', 0.0001)
-model.setFixedParameterById('k334', 0.001)
-model.setFixedParameterById('k335', 0.0001)
-model.setFixedParameterById('k336', 0.001)
-model.setFixedParameterById('k337', 0.001)
-model.setFixedParameterById('k338', 0.0001)
-model.setFixedParameterById('k339', 0.001)
-model.setFixedParameterById('k340', 0.001)
+# model.setFixedParameterById('k332', 0.001)
+# model.setFixedParameterById('k333', 0.0001)
+# model.setFixedParameterById('k334', 0.001)
+# model.setFixedParameterById('k335', 0.0001)
+# model.setFixedParameterById('k336', 0.001)
+# model.setFixedParameterById('k337', 0.001)
+# model.setFixedParameterById('k338', 0.0001)
+# model.setFixedParameterById('k339', 0.001)
+# model.setFixedParameterById('k340', 0.001)
 
 
 
@@ -272,14 +272,14 @@ obs_all = model.getObservableIds()
 mpl.rcParams['figure.dpi'] = 300
 
 #%%
-species_CC_dash = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46', 'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB', 'pRBp', 'pRBpp', 'pRB_E2F', 'E2F', 'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F']
+species_CC_dash = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46', 'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB', 'pRBp', 'pRBpp', 'pRB_E2F', 'E2F', 'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F', 'Ca', 'Ca_Cdk2', 'p27', 'p27p', 'Cd_Cdk46_p27', 'Ce_Cdk2_p27', 'Ca_Cdk2_p27', 'Cb_Cdk1_p27']
 
 k=0
 
-cc_dash_species, axs_s = plt.subplots(6,3, sharex='col')
-plt.subplots_adjust(hspace = 0.6)
+cc_dash_species, axs_s = plt.subplots(9,3, sharex='col', figsize = (5,7))
+plt.subplots_adjust(hspace = 0.6, wspace= 0.25)
 
-for i in range(6):
+for i in range(9):
     for j in range(3):
         if k == len(species_CC_dash):
             break
@@ -291,7 +291,7 @@ for i in range(6):
             axs_s[i,j].ticklabel_format(useOffset=False, style='plain')
             axs_s[i,j].title.set_text('species: '+species_CC_dash[k]+' (nM)')
             axs_s[i,j].title.set_size(5)
-            if i == 5:
+            if i == 8:
                 axs_s[i,j].set_xlabel('time(h)', fontsize=5)
             k +=1
         
@@ -330,7 +330,7 @@ mrna_CC = list(genes_all[[5,6,7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,2
 x_m = xoutG_all[:,282:][:, list(genes_all).index(mrna_CC[2])]
 
 
-cc_dash_mrna, axs_m = plt.subplots(8,3, sharex='col')
+cc_dash_mrna, axs_m = plt.subplots(8,3, sharex='col', figsize = (5,7))
 plt.subplots_adjust(hspace = 0.8)
 k=0
 for i in range(8):
