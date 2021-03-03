@@ -333,6 +333,12 @@ void dJydsigmay_SPARCED(realtype *dJydsigmay, const int iy, const realtype *p, c
         case 105:
             dJydsigmay[105] = 1.0/sigma_p18 - 1.0*std::pow(-mp18 + p18, 2)/std::pow(sigma_p18, 3);
             break;
+        case 106:
+            dJydsigmay[106] = 1.0/sigma_p19 - 1.0*std::pow(-mp19 + p19, 2)/std::pow(sigma_p19, 3);
+            break;
+        case 107:
+            dJydsigmay[107] = 1.0/sigma_p57 - 1.0*std::pow(-mp57 + p57, 2)/std::pow(sigma_p57, 3);
+            break;
     }
 }
 

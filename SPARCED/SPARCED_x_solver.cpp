@@ -788,6 +788,8 @@ void x_solver_SPARCED(realtype *x_solver, const realtype *x_rdata){
     x_solver[775] = Ce_Cdk2_pRBp;
     x_solver[776] = Ce_Cdk2_pRBp_E2F;
     x_solver[777] = p18;
+    x_solver[778] = p19;
+    x_solver[779] = p57;
 }
 
 } // namespace amici

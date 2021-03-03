@@ -776,3 +776,5 @@
 #define Ce_Cdk2_pRBp x_rdata[775]
 #define Ce_Cdk2_pRBp_E2F x_rdata[776]
 #define p18 x_rdata[777]
+#define p19 x_rdata[778]
+#define p57 x_rdata[779]

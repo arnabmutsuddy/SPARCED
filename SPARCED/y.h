@@ -104,3 +104,5 @@
 #define SOS y[103]
 #define EIF4E y[104]
 #define p18 y[105]
+#define p19 y[106]
+#define p57 y[107]

@@ -777,3 +777,5 @@ Cd_Cdk46_pRB_E2F	Nucleus	0
 Ce_Cdk2_pRBp	Nucleus	0		
 Ce_Cdk2_pRBp_E2F	Nucleus	0		
 p18	Nucleus	0		
+p19	Nucleus	0		
+p57	Nucleus	0		
