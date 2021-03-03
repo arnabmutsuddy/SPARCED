@@ -52,9 +52,9 @@ Vc = float(args.Vc)
 outfile = args.outfile
 ts = 30
 
-STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
+# STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
-# STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
+STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 
 STIMligs_id = ['E', 'H', 'HGF', 'P', 'F', 'I', 'INS']
 
@@ -145,7 +145,7 @@ model_param = np.array(model.getFixedParameterIds())
 # model.setFixedParameterById('k21_1',model.getFixedParameterById('k21_1')/100/50) #CCNA2
 # model.setFixedParameterById('k24_1',model.getFixedParameterById('k24_1')/100/50) #CCNB2
 
-
+model.setFixedParameterById('k144_1',0.14244776) #CDKN2C
 
 
 #%% Rate constants - half lives
@@ -230,6 +230,8 @@ model.setFixedParameterById('k340', 0.001)
 # species_initializations[species_all.index('pRB_E2F')] = 0.2182*0.90
 # species_initializations[species_all.index('E2F')] = 0.2182*0.10
 
+species_initializations[species_all.index('p18')] = 40.7
+
 
 
 
@@ -266,6 +268,7 @@ species_input = pd.read_csv('input_files/Species.txt', sep='\t', header=0, index
 
 species_all = species_input.index
 genes_all = pd.read_csv('input_files/GeneReg.txt', sep='\t', header=0, index_col=0).index
+numberofgenes = int(len(genes_all))
 
 obs_all = model.getObservableIds()
 
@@ -297,14 +300,14 @@ for i in range(6):
         
 #%%
 
-obs_CC_dash = ['ERK', 'AKT', 'Fos', 'Jun', 'Myc', 'Cd', 'Cdk46', 'Cdk1', 'Cdk2', 'RB', 'E2F', 'Ce', 'Ca', 'Cb', 'Skp2', 'Pai', 'Pei', 'Pbi', 'p27', 'Cdh1a', 'Cdc20', 'Wee1', 'Chk1', 'p21',]
+obs_CC_dash = ['ERK', 'AKT', 'Fos', 'Jun', 'Myc', 'Cd', 'Cdk46', 'Cdk1', 'Cdk2', 'RB', 'E2F', 'Ce', 'Ca', 'Cb', 'Skp2', 'Pai', 'Pei', 'Pbi', 'p27', 'Cdh1a', 'Cdc20', 'Wee1', 'Chk1', 'p21', 'p18', 'p19', 'p57']
 
 k=0
 obs_all = model.getObservableIds()
-cc_dash_obs, axs_o = plt.subplots(8,3, sharex='col', figsize = (5,7))
+cc_dash_obs, axs_o = plt.subplots(9,3, sharex='col', figsize = (5,7))
 plt.subplots_adjust(hspace = 0.8, wspace=0.25)
 
-for i in range(8):
+for i in range(9):
     for j in range(3):
         if k == len(obs_CC_dash):
             break
@@ -316,29 +319,29 @@ for i in range(8):
             axs_o[i,j].ticklabel_format(useOffset=False, style='plain')
             axs_o[i,j].title.set_text('obs: '+obs_CC_dash[k]+' (nM)')
             axs_o[i,j].title.set_size(5)
-            if i == 7:
+            if i == 8:
                 axs_o[i,j].set_xlabel('time(h)', fontsize=5)
             k +=1
 
 
 #%%
-mrna_CC = list(genes_all[[5,6,7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]])
+mrna_CC = list(genes_all[[5,6,7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,141,142,143]])
 
 #mrna_CC_data = pd.read_csv('input_files/OmicsData.txt', sep='\t', index_col=0, header=0)['Exp RNA'][[14,15,16,17,19,20,21,22,23,24,25,26,27,28,29]]
 
 
-x_m = xoutG_all[:,282:][:, list(genes_all).index(mrna_CC[2])]
+#x_m = xoutG_all[:,282:][:, list(genes_all).index(mrna_CC[2])]
 
 
-cc_dash_mrna, axs_m = plt.subplots(8,3, sharex='col')
+cc_dash_mrna, axs_m = plt.subplots(9,3, sharex='col')
 plt.subplots_adjust(hspace = 0.8)
 k=0
-for i in range(8):
+for i in range(9):
     for j in range(3):
         if k == len(mrna_CC):
             break
         else:
-            y_val = xoutG_all[:, 282:][:, list(genes_all).index(mrna_CC[k])]
+            y_val = xoutG_all[:, (numberofgenes*2):][:, list(genes_all).index(mrna_CC[k])]
             axs_m[i,j].plot(tout_all/3600, y_val,'r-')
             #axs_m[i,j].axhline(y=mrna_CC_data[k],c='red')
             axs_m[i,j].set_ylim(0,max(y_val)*1.2)
@@ -346,7 +349,7 @@ for i in range(8):
             axs_m[i,j].ticklabel_format(useOffset=False, style='plain')
             axs_m[i,j].title.set_text('mrna: '+mrna_CC[k]+' (mpc)')
             axs_m[i,j].title.set_size(5)
-            if i == 7:
+            if i == 8:
                 axs_m[i,j].set_xlabel('time(h)', fontsize=5)
             k +=1
 
