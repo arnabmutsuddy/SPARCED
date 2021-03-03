@@ -791,6 +791,12 @@ void x_rdata_SPARCED(realtype *x_rdata, const realtype *x, const realtype *tcl){
     x_rdata[777] = p18;
     x_rdata[778] = p19;
     x_rdata[779] = p57;
+    x_rdata[780] = Cd_Cdk46_p18;
+    x_rdata[781] = Cd_Cdk46_p19;
+    x_rdata[782] = Cd_Cdk46_p57;
+    x_rdata[783] = Ce_Cdk2_p57;
+    x_rdata[784] = Ca_Cdk2_p57;
+    x_rdata[785] = Cb_Cdk1_p57;
 }
 
 } // namespace amici

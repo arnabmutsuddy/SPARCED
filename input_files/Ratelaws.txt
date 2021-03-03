@@ -374,6 +374,12 @@ vCd30	Nucleus	3.85E-05
 vCd31	Nucleus	0.000165						
 vCd36	Nucleus	2.14E-05						
 vCd37	Nucleus	2.14E-05						
+vCd38	Nucleus	0.000146946564885						
+vCd39	Nucleus	0.000146946564885						
+vCd40	Nucleus	0.000146946564885						
+vCd41	Nucleus	3.85E-05						
+vCd42	Nucleus	7.7E-05						
+vCd43	Nucleus	0.000128333333333						
 vA1	Cytoplasm	0.00126483						
 vA2	Cytoplasm	0.001						
 vA3	Cytoplasm	1E-06						
