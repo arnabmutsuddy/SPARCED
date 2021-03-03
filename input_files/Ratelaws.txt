@@ -7,30 +7,30 @@ vTL3	Nucleus	kTL3_1*Wip1pro*mrna_PPM1D*(EIF4E/(kTL3_2+EIF4E))	0.156386132	0.0006
 vTL4	Cytoplasm	kTL4_1*mrna_ATM*(EIF4E/(kTL4_2+EIF4E))	0.00453508	0.000948744	100			
 vTL5	Cytoplasm	kTL5_1*mrna_ATR*(EIF4E/(kTL5_2+EIF4E))	0.021778227	0.000632496	100			
 vTL6	Nucleus	kTL6_1*mrna_RB1*(EIF4E/(kTL6_2+EIF4E))	0.1714746	0.005376217	0			
-vTL7	Nucleus	kTL7_1*mrna_E2F1*(EIF4E/(kTL7_2+EIF4E))	0.039925190909091	0.005376217	0			
-vTL8	Nucleus	kTL8_1*mrna_E2F2*(EIF4E/(kTL8_2+EIF4E))	0.039925190909091	0.005376217	0			
-vTL9	Nucleus	kTL9_1*mrna_E2F3*(EIF4E/(kTL9_2+EIF4E))	0.039925190909091	0.005376217	0			
-vTL10	Nucleus	kTL10_1*mrna_CCND1*(EIF4E/(kTL10_2+EIF4E))	0.011815841	0.001897488	100			
-vTL11	Nucleus	kTL11_1*mrna_CCND2*(EIF4E/(kTL11_2+EIF4E))	0.011815841	0.000316248	100			
-vTL12	Nucleus	kTL12_1*mrna_CCND3*(EIF4E/(kTL12_2+EIF4E))	0.011815841	0.000632496	100			
+vTL7	Nucleus	kTL7_1*mrna_E2F1*(EIF4E/(kTL7_2+EIF4E))	0.039925191	0.005376217	0			
+vTL8	Nucleus	kTL8_1*mrna_E2F2*(EIF4E/(kTL8_2+EIF4E))	0.039925191	0.005376217	0			
+vTL9	Nucleus	kTL9_1*mrna_E2F3*(EIF4E/(kTL9_2+EIF4E))	0.039925191	0.005376217	0			
+vTL10	Nucleus	kTL10_1*mrna_CCND1*(EIF4E/(kTL10_2+EIF4E))	0.1181584	0.001897488	100			
+vTL11	Nucleus	kTL11_1*mrna_CCND2*(EIF4E/(kTL11_2+EIF4E))	0.1181584	0.000316248	100			
+vTL12	Nucleus	kTL12_1*mrna_CCND3*(EIF4E/(kTL12_2+EIF4E))	0.1181584	0.000632496	100			
 vTL13	Nucleus	kTL13_1*mrna_CCNE1*(EIF4E/(kTL13_2+EIF4E))	0.002	0.005376217	0			
 vTL14	Nucleus	kTL14_1*mrna_CCNE2*(EIF4E/(kTL14_2+EIF4E))	0.002	0.005376217	0			
-vTL15	Nucleus	kTL15_1*mrna_SKP2*(EIF4E/(kTL15_2+EIF4E))	1.09794166666667	0.005376217	0			
+vTL15	Nucleus	kTL15_1*mrna_SKP2*(EIF4E/(kTL15_2+EIF4E))	1.097941667	0.005376217	0			
 vTL16	Nucleus	kTL16_1*mrna_CDC25A*(EIF4E/(kTL16_2+EIF4E))	11.4186	0.005376217	0			
 vTL17	Nucleus	kTL17_1*mrna_CDC25B*(EIF4E/(kTL17_2+EIF4E))	9.2227	0.005376217	0			
 vTL18	Nucleus	kTL18_1*mrna_CDC25C*(EIF4E/(kTL18_2+EIF4E))	0.421608	0.005376217	0			
 vTL19	Nucleus	kTL19_1*mrna_CCNA2*(EIF4E/(kTL19_2+EIF4E))	0.002	0.005376217	0			
 vTL20	Nucleus	kTL20_1*mrna_CDKN1B*(EIF4E/(kTL20_2+EIF4E))	0.164625	0.005376217	0			
-vTL21	Nucleus	kTL21_1*mrna_CDH1*(EIF4E/(kTL21_2+EIF4E))	0.644126666666667	0.005376217	0			
+vTL21	Nucleus	kTL21_1*mrna_CDH1*(EIF4E/(kTL21_2+EIF4E))	0.644126667	0.005376217	0			
 vTL22	Nucleus	kTL22_1*mrna_CCNB1*(EIF4E/(kTL22_2+EIF4E))	0.00087836	0.005376217	0			
-vTL23	Nucleus	kTL23_1*mrna_CDC20*(EIF4E/(kTL23_2+EIF4E))	1.46391666666667	0.005376217	0			
+vTL23	Nucleus	kTL23_1*mrna_CDC20*(EIF4E/(kTL23_2+EIF4E))	1.463916667	0.005376217	0			
 vTL24	Nucleus	kTL24_1*mrna_WEE1*(EIF4E/(kTL24_2+EIF4E))	0.0263505	0.005376217	0			
 vTL25	Cytoplasm	kTL25_1*mrna_CHEK1*(EIF4E/(kTL25_2+EIF4E))	0.008744	0.005376217	0			
 vTL26	Cytoplasm	kTL26_1*mrna_CDKN1A*(EIF4E/(kTL26_2+EIF4E))	0.701184	0.003794976	0			
 vTL27	Cytoplasm	kTL27_1*mrna_CDK1*(EIF4E/(kTL27_2+EIF4E))	0.2635	0.013914913	0			
 vTL28	Cytoplasm	kTL28_1*mrna_CDK2*(EIF4E/(kTL28_2+EIF4E))	0.1792	0.000632496	0			
-vTL29	Cytoplasm	kTL29_1*mrna_CDK4*(EIF4E/(kTL29_2+EIF4E))	0.0082295	0.003478728	0			
-vTL30	Cytoplasm	kTL30_1*mrna_CDK6*(EIF4E/(kTL30_2+EIF4E))	0.296215	0.002213736	0			
+vTL29	Cytoplasm	kTL29_1*mrna_CDK4*(EIF4E/(kTL29_2+EIF4E))	0.01234425	0.003478728	0			
+vTL30	Cytoplasm	kTL30_1*mrna_CDK6*(EIF4E/(kTL30_2+EIF4E))	0.48875475	0.002213736	0			
 vTL31	Cytoplasm	kTL31_1*mrna_TNFSF10*(EIF4E/(kTL31_2+EIF4E))	0	0	100			
 vTL32	Cytoplasm	kTL32_1*mrna_TNFRSF10A*(EIF4E/(kTL32_2+EIF4E))	0.006701184	0.000316248	100			
 vTL33	Cytoplasm	kTL33_1*mrna_TNFRSF10B*(EIF4E/(kTL33_2+EIF4E))	0.006964813	0.004111224	100			
@@ -142,9 +142,9 @@ vTL138	Cytoplasm	kTL138_1*mrna_BRCA2*(EIF4E/(kTL138_2+EIF4E))	0.04751087	0.00063
 vTL139	Cytoplasm	kTL139_1*mrna_MGMT*(EIF4E/(kTL139_2+EIF4E))	0.202338923	0.00158124	100			
 vTL140	Cytoplasm	kTL140_1*mrna_INSR*(EIF4E/(kTL140_2+EIF4E))	0.013971778	0.001897488	100			
 vTL141	Cytoplasm	kTL141_1*mrna_INS*(EIF4E/(kTL141_2+EIF4E))	0.071223884	0	100			
-vTL142	Nucleus	kTL142_1*mrna_CDKN2C*(EIF4E/(kTL142_2+EIF4E))	0.14244776	0.01612864969996	0			
-vTL143	Nucleus	kTL143_1*mrna_CDKN2D*(EIF4E/(kTL143_2+EIF4E))	0.071223884	0.000474372049999	0			
-vTL144	Nucleus	kTL144_1*mrna_CDKN1C*(EIF4E/(kTL144_2+EIF4E))	0.071223884	0.000948744099998	0			
+vTL142	Nucleus	kTL142_1*mrna_CDKN2C*(EIF4E/(kTL142_2+EIF4E))	0.14244776	0.01612865	0			
+vTL143	Nucleus	kTL143_1*mrna_CDKN2D*(EIF4E/(kTL143_2+EIF4E))	0.071223884	0.000474372	0			
+vTL144	Nucleus	kTL144_1*mrna_CDKN1C*(EIF4E/(kTL144_2+EIF4E))	0.071223884	0.000948744	0			
 vTLCd1	Nucleus	0						
 vTLCd2	Nucleus	0						
 vTLCd3	Nucleus	0						
@@ -250,7 +250,7 @@ vTLCd102	Cytoplasm	1.67E-06
 vTLCd103	Nucleus	8.8E-06						
 vTLCd104	Nucleus	4.1E-06						
 vTLCd105	Nucleus	2.77E-05						
-vTLCd106	Nucleus	1.925E-05						
+vTLCd106	Nucleus	1.93E-05						
 vTLCd107	Nucleus	7.7E-05						
 vTLCd108	Nucleus	3.85E-05						
 vE1	Cytoplasm	0.001						
@@ -332,19 +332,45 @@ vC5	Nucleus	0.001
 vC6	Nucleus	0.0001						
 vC7	Nucleus	0.001						
 vC8	Nucleus	0.0001						
-vC9	Nucleus	0						
-vC10	Nucleus	0						
-vC11	Nucleus	0						
-vC12	Nucleus	0						
-vC13	Nucleus	0						
-vC14	Nucleus	0						
-vC15	Nucleus	0						
-vC16	Nucleus	0						
-vC17	Nucleus	0						
-vC18	Nucleus	0						
-vC19	Nucleus	0						
-vC20	Nucleus	0						
-vC21	Nucleus	0						
+vC9	Nucleus	0.001						
+vC10	Nucleus	0.0001						
+vC11	Nucleus	0.0001						
+vC12	Nucleus	0.001						
+vC13	Nucleus	0.001						
+vC14	Nucleus	0.0001						
+vC15	Nucleus	0.001						
+vC16	Nucleus	0.0001						
+vC17	Nucleus	0.001						
+vC18	Nucleus	0.001						
+vC19	Nucleus	0.0001						
+vC20	Nucleus	0.001						
+vC21	Nucleus	0.001						
+vC22	Nucleus	0.001						
+vC23	Nucleus	0.0001						
+vC24	Nucleus	0.001						
+vC25	Nucleus	0.0001						
+vC26	Nucleus	0.001						
+vC27	Nucleus	0.0001						
+vC28	Nucleus	0.001						
+vC29	Nucleus	0.0001						
+vC30	Nucleus	0.001						
+vC31	Nucleus	0.0001						
+vC32	Nucleus	0.001						
+vC33	Nucleus	0.0001						
+vC34	Nucleus	0.001						
+vC35	Nucleus	0.0001						
+vC36	Nucleus	0.001						
+vC37	Nucleus	0.0001						
+vC38	Nucleus	0.001						
+vC39	Nucleus	0.0001						
+vC40	Nucleus	0.001						
+vC41	Nucleus	0.0001						
+vC42	Nucleus	0.001						
+vC43	Nucleus	0.0001						
+vC44	Nucleus	0.001						
+vC45	Nucleus	0.0001						
+vC46	Nucleus	0.001						
+vC47	Nucleus	0.0001						
 vCd1	Nucleus	0.000147						
 vCd3	Nucleus	0.000147						
 vCd4	Nucleus	3.85E-05						
@@ -374,12 +400,12 @@ vCd30	Nucleus	3.85E-05
 vCd31	Nucleus	0.000165						
 vCd36	Nucleus	2.14E-05						
 vCd37	Nucleus	2.14E-05						
-vCd38	Nucleus	0.000146946564885						
-vCd39	Nucleus	0.000146946564885						
-vCd40	Nucleus	0.000146946564885						
+vCd38	Nucleus	0.000146947						
+vCd39	Nucleus	0.000146947						
+vCd40	Nucleus	0.000146947						
 vCd41	Nucleus	3.85E-05						
 vCd42	Nucleus	7.7E-05						
-vCd43	Nucleus	0.000128333333333						
+vCd43	Nucleus	0.000128333						
 vA1	Cytoplasm	0.00126483						
 vA2	Cytoplasm	0.001						
 vA3	Cytoplasm	1E-06						

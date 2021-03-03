@@ -52,9 +52,9 @@ Vc = float(args.Vc)
 outfile = args.outfile
 ts = 30
 
-STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
+# STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
-# STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
+STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 
 STIMligs_id = ['E', 'H', 'HGF', 'P', 'F', 'I', 'INS']
 
@@ -123,9 +123,7 @@ model_param = np.array(model.getFixedParameterIds())
 # model.setFixedParameterById('k31_1', model.getFixedParameterById('k31_1')*1.5) #Cdk46
 # model.setFixedParameterById('k32_1', model.getFixedParameterById('k32_1')*1.5*1.1) #Cdk46
 
-# model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')/100)
-# model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/100)
-# model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/100)
+
 
 # model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')*50)
 # model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')*50)
@@ -140,12 +138,17 @@ model_param = np.array(model.getFixedParameterIds())
 # model.setFixedParameterById('k433', 1.47e-4)
 
 # Cyclins
+
+# model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')*10)
+# model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')*10)
+# model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')*10)
+
 # model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')/100/50) #CCNE1
 # model.setFixedParameterById('k16_1',model.getFixedParameterById('k16_1')/100/50) #CCNE2
 # model.setFixedParameterById('k21_1',model.getFixedParameterById('k21_1')/100/50) #CCNA2
 # model.setFixedParameterById('k24_1',model.getFixedParameterById('k24_1')/100/50) #CCNB2
 
-model.setFixedParameterById('k144_1',0.14244776) #CDKN2C
+#dParameterById('k144_1',0.14244776) #CDKN2C
 
 
 #%% Rate constants - half lives
@@ -230,7 +233,7 @@ model.setFixedParameterById('k340', 0.001)
 # species_initializations[species_all.index('pRB_E2F')] = 0.2182*0.90
 # species_initializations[species_all.index('E2F')] = 0.2182*0.10
 
-species_initializations[species_all.index('p18')] = 40.7
+# species_initializations[species_all.index('p18')] = 40.7
 
 
 
@@ -260,7 +263,9 @@ xoutS_all, xoutG_all, xoutObs_all, tout_all = RunSPARCED(flagD, th, species_init
 #     condsGDF.to_excel(nmxlsfile+'G_0.xlsx')
 #     condsGDF = None
 
+#xoutS_final = pd.Series(data=xoutS_all[-1], index=model.getStateIds())
 
+#xoutS_final.to_csv('xoutS_final.csv', sep='\t', index=True)
 # %% test - plot trajectories
 # xoutS_all[1960,:]
 
@@ -275,14 +280,14 @@ obs_all = model.getObservableIds()
 mpl.rcParams['figure.dpi'] = 300
 
 #%%#
-species_CC_dash = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46', 'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB', 'pRBp', 'pRBpp', 'pRB_E2F', 'E2F', 'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F']
+species_CC_dash = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46', 'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB', 'pRBp', 'pRBpp', 'pRB_E2F', 'E2F', 'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F', 'Cd_Cdk46_p18', 'Cd_Cdk46_p19', 'Cd_Cdk46_p21', 'Cd_Cdk46_p27', 'p18', 'p19', 'p21', 'p27', 'p57']                     
 
 k=0
 
-cc_dash_species, axs_s = plt.subplots(6,3, sharex='col')
+cc_dash_species, axs_s = plt.subplots(9,3, sharex='col', figsize = (5,7))
 plt.subplots_adjust(hspace = 0.6)
 
-for i in range(6):
+for i in range(9):
     for j in range(3):
         if k == len(species_CC_dash):
             break
@@ -294,7 +299,7 @@ for i in range(6):
             axs_s[i,j].ticklabel_format(useOffset=False, style='plain')
             axs_s[i,j].title.set_text('species: '+species_CC_dash[k]+' (nM)')
             axs_s[i,j].title.set_size(5)
-            if i == 5:
+            if i == 8:
                 axs_s[i,j].set_xlabel('time(h)', fontsize=5)
             k +=1
         
@@ -325,8 +330,8 @@ for i in range(9):
 
 
 #%%
-mrna_CC = list(genes_all[[5,6,7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,141,142,143]])
-
+#mrna_CC = list(genes_all[[5,6,7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,141,142,143]])
+mrna_CC = list(genes_all[[5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]])
 #mrna_CC_data = pd.read_csv('input_files/OmicsData.txt', sep='\t', index_col=0, header=0)['Exp RNA'][[14,15,16,17,19,20,21,22,23,24,25,26,27,28,29]]
 
 
