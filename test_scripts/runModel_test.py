@@ -46,7 +46,8 @@ if args.time == None or args.deterministic == None or args.Vn == None or args.Vc
     print("ERROR: missing arguments. Need to pass --time, --deterministic, --Vn, --Vc, --outfile. Use -h for help.")
 
 flagD = args.deterministic
-th = args.time
+# th = args.time
+th = 96
 Vn = float(args.Vn)
 Vc = float(args.Vc)
 outfile = args.outfile
@@ -143,10 +144,20 @@ model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')*5) #0.5
 model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')*5)
 model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')*5)
 
-model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')*5*10*2) #CCNE1
-model.setFixedParameterById('k16_1',model.getFixedParameterById('k16_1')*5*10*2) #CCNE2
+# model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')*5*10*2) #CCNE1 #0.2
+# model.setFixedParameterById('k16_1',model.getFixedParameterById('k16_1')*5*10*2) #CCNE2
 # model.setFixedParameterById('k21_1',model.getFixedParameterById('k21_1')/100/50) #CCNA2
 # model.setFixedParameterById('k24_1',model.getFixedParameterById('k24_1')/100/50) #CCNB2
+
+
+# model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')*5*8)
+# model.setFixedParameterById('k16_1',model.getFixedParameterById('k16_1')*5*8)
+
+# model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')*5)
+# model.setFixedParameterById('k16_1',model.getFixedParameterById('k16_1')*5)
+
+model.setFixedParameterById('k15_1',0.01)
+model.setFixedParameterById('k16_1',0.01)
 
 #dParameterById('k144_1',0.14244776) #CDKN2C
 
@@ -357,7 +368,7 @@ mrna_CC = list(genes_all[[5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24
 #x_m = xoutG_all[:,282:][:, list(genes_all).index(mrna_CC[2])]
 
 
-cc_dash_mrna, axs_m = plt.subplots(9,3, sharex='col')
+cc_dash_mrna, axs_m = plt.subplots(9,3, sharex='col', figsize = (5,7))
 plt.subplots_adjust(hspace = 0.8)
 k=0
 for i in range(9):
