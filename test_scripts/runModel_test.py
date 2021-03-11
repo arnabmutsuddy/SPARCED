@@ -140,9 +140,9 @@ model_param = np.array(model.getFixedParameterIds())
 
 # Cyclins
 
-model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')*5) #0.590792
-model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')*5)
-model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')*5)
+# model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')*5) #0.590792
+# model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')*5)
+# model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')*5)
 
 # model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')*5*10*2) #CCNE1 #0.2
 # model.setFixedParameterById('k16_1',model.getFixedParameterById('k16_1')*5*10*2) #CCNE2
@@ -156,8 +156,8 @@ model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')*5)
 # model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')*5)
 # model.setFixedParameterById('k16_1',model.getFixedParameterById('k16_1')*5)
 
-model.setFixedParameterById('k15_1',0.01)
-model.setFixedParameterById('k16_1',0.01)
+# model.setFixedParameterById('k15_1',0.01)
+# model.setFixedParameterById('k16_1',0.01)
 
 #dParameterById('k144_1',0.14244776) #CDKN2C
 
