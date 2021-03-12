@@ -53,9 +53,9 @@ Vc = float(args.Vc)
 outfile = args.outfile
 ts = 30
 
-# STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
+STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
-STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
+# STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 
 STIMligs_id = ['E', 'H', 'HGF', 'P', 'F', 'I', 'INS']
 
@@ -126,9 +126,13 @@ model_param = np.array(model.getFixedParameterIds())
 
 
 
-# model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')*50)
-# model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')*50)
-# model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')*50)
+# model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')/10)
+# model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/10)
+# model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/10)
+
+model.setFixedParameterById('k12_1',0.1181584)
+model.setFixedParameterById('k13_1',0.1181584)
+model.setFixedParameterById('k14_1',0.1181584)
 
 # model.setFixedParameterById('k8_1',model.getFixedParameterById('k8_1')/450*1.1) #Rb
 # model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')/100/1.1)
@@ -144,8 +148,8 @@ model_param = np.array(model.getFixedParameterIds())
 # model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')*5)
 # model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')*5)
 
-# model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')*5*10*2) #CCNE1 #0.2
-# model.setFixedParameterById('k16_1',model.getFixedParameterById('k16_1')*5*10*2) #CCNE2
+model.setFixedParameterById('k15_1',0.1/5) #CCNE1 
+model.setFixedParameterById('k16_1',0.1/5) #CCNE2
 # model.setFixedParameterById('k21_1',model.getFixedParameterById('k21_1')/100/50) #CCNA2
 # model.setFixedParameterById('k24_1',model.getFixedParameterById('k24_1')/100/50) #CCNB2
 
@@ -170,8 +174,31 @@ model_param = np.array(model.getFixedParameterIds())
 
 
 # # vCd
-# model.setFixedParameterById('k341', 1.47e-4) # Cd_Cdk46, vCd1
-# #model.setFixedParameterById('k433', 1.47e-4) # Md, vCd2 (obsolete)
+model.setFixedParameterById('k373', 2.77e-5) # Cd_Cdk46, vCd1
+model.setFixedParameterById('k374', 2.77e-5) # Cd_Cdk46_p27
+model.setFixedParameterById('k391', 2.77e-5) #Cd_Cdk46_p21
+model.setFixedParameterById('k396', 2.77e-5) #Cd_Cdk46_pRB
+model.setFixedParameterById('k397', 2.77e-5) #Cd_Cdk46_pRB_E2F
+model.setFixedParameterById('k402', 2.77e-5) #Cd_Cdk46_p18
+model.setFixedParameterById('k403', 2.77e-5) #Cd_Cdk46_p19
+model.setFixedParameterById('k404', 2.77e-5) #Cd_Cdk46_p57
+
+
+
+# Cdk2
+
+model.setFixedParameterById('k375', 4.1e-6)
+model.setFixedParameterById('k376', 4.1e-6)
+model.setFixedParameterById('k378', 4.1e-6)
+model.setFixedParameterById('k379', 4.1e-6)
+model.setFixedParameterById('k392', 4.1e-6)
+model.setFixedParameterById('k393', 4.1e-6)
+model.setFixedParameterById('k398', 4.1e-6)
+model.setFixedParameterById('k399', 4.1e-6)
+model.setFixedParameterById('k405', 4.1e-6)
+model.setFixedParameterById('k406', 4.1e-6)
+
+
 # model.setFixedParameterById('k342', 1.47e-4) # Cd_Cdk46_p27, vCd3
 # model.setFixedParameterById('k343', 3.85e-5) # Ce_Cdk2, vCd4
 # #model.setFixedParameterById('k436', 3.85e-5) # Me, vCd5 (obsolete)
@@ -288,6 +315,12 @@ numberofgenes = int(len(genes_all))
 
 obs_all = model.getObservableIds()
 
+title = str()
+
+for k in range(len(STIMligs)):
+    title = title + STIMligs_id[k]+'='+str(STIMligs[k]) + " "
+
+
 mpl.rcParams['figure.dpi'] = 300
 
  #%%#
@@ -297,6 +330,8 @@ k=0
 
 cc_dash_species, axs_s = plt.subplots(10,3, sharex='col', figsize = (5,7))
 plt.subplots_adjust(hspace = 0.6)
+
+cc_dash_species.suptitle(title,fontsize=5,y=0.92)
 
 for i in range(10):
     for j in range(3):
@@ -321,6 +356,10 @@ obs_CC_dash = ['ERK', 'AKT', 'Fos', 'Jun', 'Myc', 'Cd', 'Cdk46', 'Cdk1', 'Cdk2',
 k=0
 obs_all = model.getObservableIds()
 cc_dash_obs, axs_o = plt.subplots(9,3, sharex='col', figsize = (5,7))
+
+cc_dash_obs.suptitle(title,fontsize=5,y=0.92)
+
+
 plt.subplots_adjust(hspace = 0.8, wspace=0.25)
 
 for i in range(9):
@@ -338,6 +377,7 @@ for i in range(9):
             if i == 8:
                 axs_o[i,j].set_xlabel('time(h)', fontsize=5)
             k +=1
+
 
 #%% CDKi vs C
 
@@ -370,6 +410,10 @@ mrna_CC = list(genes_all[[5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24
 
 cc_dash_mrna, axs_m = plt.subplots(9,3, sharex='col', figsize = (5,7))
 plt.subplots_adjust(hspace = 0.8)
+
+cc_dash_mrna.suptitle(title,fontsize=5,y=0.92)
+
+
 k=0
 for i in range(9):
     for j in range(3):
