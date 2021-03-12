@@ -784,3 +784,4 @@
 #define Ce_Cdk2_p57 x_rdata[783]
 #define Ca_Cdk2_p57 x_rdata[784]
 #define Cb_Cdk1_p57 x_rdata[785]
+#define E2Frep x_rdata[786]

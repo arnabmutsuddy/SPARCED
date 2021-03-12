@@ -106,3 +106,4 @@
 #define sigma_p18 sigmay[105]
 #define sigma_p19 sigmay[106]
 #define sigma_p57 sigmay[107]
+#define sigma_E2Frep sigmay[108]

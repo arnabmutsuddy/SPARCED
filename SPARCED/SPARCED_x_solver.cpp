@@ -796,6 +796,7 @@ void x_solver_SPARCED(realtype *x_solver, const realtype *x_rdata){
     x_solver[783] = Ce_Cdk2_p57;
     x_solver[784] = Ca_Cdk2_p57;
     x_solver[785] = Cb_Cdk1_p57;
+    x_solver[786] = E2Frep;
 }
 
 } // namespace amici

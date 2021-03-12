@@ -340,6 +340,9 @@ void dJydy_SPARCED(realtype *dJydy, const int iy, const realtype *p, const realt
         case 107:
             dJydy[0] = (-1.0*mp57 + 1.0*p57)/std::pow(sigma_p57, 2);
             break;
+        case 108:
+            dJydy[0] = (1.0*E2Frep - 1.0*mE2Frep)/std::pow(sigma_E2Frep, 2);
+            break;
     }
 }
 

@@ -7,7 +7,8 @@
 namespace amici {
 namespace model_SPARCED {
 
-static constexpr std::array<std::array<sunindextype, 1>, 108> dJydy_rowvals_SPARCED_ = {{
+static constexpr std::array<std::array<sunindextype, 1>, 109> dJydy_rowvals_SPARCED_ = {{
+    {0}, 
     {0}, 
     {0}, 
     {0}, 
