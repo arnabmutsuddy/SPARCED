@@ -53,9 +53,9 @@ Vc = float(args.Vc)
 outfile = args.outfile
 ts = 30
 
-# STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
+STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
-STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
+# STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 
 STIMligs_id = ['E', 'H', 'HGF', 'P', 'F', 'I', 'INS']
 
@@ -166,11 +166,11 @@ model.setFixedParameterById('k16_1',0.1/5) #CCNE2
 #dParameterById('k144_1',0.14244776) #CDKN2C
 
 #E2Frep
-model.setFixedParameterById('k147_1', model.getFixedParameterById('k147_1')*50)
-model.setFixedParameterById('k148_1', model.getFixedParameterById('k148_1')*50)
-model.setFixedParameterById('k149_1', model.getFixedParameterById('k149_1')*50)
-model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*50)
-model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*50)
+model.setFixedParameterById('k147_1', model.getFixedParameterById('k147_1')*1000)
+model.setFixedParameterById('k148_1', model.getFixedParameterById('k148_1')*1000)
+model.setFixedParameterById('k149_1', model.getFixedParameterById('k149_1')*1000)
+model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*1000)
+model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*1000)
 
 #%% Rate constants - half lives
 
