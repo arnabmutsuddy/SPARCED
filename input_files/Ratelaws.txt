@@ -259,6 +259,7 @@ vTLCd106	Nucleus	1.93E-05
 vTLCd107	Nucleus	7.7E-05						
 vTLCd108	Nucleus	3.85E-05						
 vTLCd109	Nucleus	0.000165						
+vTLCd110	Nucleus	0.000165						
 vE1	Cytoplasm	0.001						
 vE2	Cytoplasm	0.1						
 vE3	Cytoplasm	kE3	0.000210658					

@@ -785,4 +785,5 @@ Cd_Cdk46_p57	Nucleus	0.01101324600861
 Ce_Cdk2_p57	Nucleus	0.000364967062398		
 Ca_Cdk2_p57	Nucleus	0		
 Cb_Cdk1_p57	Nucleus	0		
-E2Frep	Nucleus	13.12		
+E2Frep	Nucleus	5.28450463698679		
+E2Fatrep	Nucleus	0		

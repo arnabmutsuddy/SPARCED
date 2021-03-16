@@ -342,6 +342,9 @@ void dJydsigmay_SPARCED(realtype *dJydsigmay, const int iy, const realtype *p, c
         case 108:
             dJydsigmay[108] = 1.0/sigma_E2Frep - 1.0*std::pow(E2Frep - mE2Frep, 2)/std::pow(sigma_E2Frep, 3);
             break;
+        case 109:
+            dJydsigmay[109] = 1.0/sigma_E2Fatrep - 1.0*std::pow(E2Fatrep - mE2Fatrep, 2)/std::pow(sigma_E2Fatrep, 3);
+            break;
     }
 }
 

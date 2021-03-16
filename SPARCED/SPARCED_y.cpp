@@ -122,6 +122,7 @@ void y_SPARCED(realtype *y, const realtype t, const realtype *x, const realtype 
     y[106] = 0.33333333333333337*Cd_Cdk46_p19 + 0.33333333333333337*p19;
     y[107] = 0.33333333333333337*Ca_Cdk2_p57 + 0.33333333333333337*Cb_Cdk1_p57 + 0.33333333333333337*Cd_Cdk46_p57 + 0.33333333333333337*Ce_Cdk2_p57 + 0.33333333333333337*p57;
     y[108] = 0.33333333333333337*E2Frep;
+    y[109] = 0.33333333333333337*E2Fatrep;
 }
 
 } // namespace amici

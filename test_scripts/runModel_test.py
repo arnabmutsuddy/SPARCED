@@ -169,8 +169,8 @@ model.setFixedParameterById('k16_1',0.1/5) #CCNE2
 model.setFixedParameterById('k147_1', model.getFixedParameterById('k147_1')*1000)
 model.setFixedParameterById('k148_1', model.getFixedParameterById('k148_1')*1000)
 model.setFixedParameterById('k149_1', model.getFixedParameterById('k149_1')*1000)
-model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*1000)
-model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*1000)
+# model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*1000)
+# model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*1000)
 
 #%% Rate constants - half lives
 
@@ -180,29 +180,29 @@ model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*1000
 
 
 # # vCd
-model.setFixedParameterById('k373', 2.77e-5) # Cd_Cdk46, vCd1
-model.setFixedParameterById('k374', 2.77e-5) # Cd_Cdk46_p27
-model.setFixedParameterById('k391', 2.77e-5) #Cd_Cdk46_p21
-model.setFixedParameterById('k396', 2.77e-5) #Cd_Cdk46_pRB
-model.setFixedParameterById('k397', 2.77e-5) #Cd_Cdk46_pRB_E2F
-model.setFixedParameterById('k402', 2.77e-5) #Cd_Cdk46_p18
-model.setFixedParameterById('k403', 2.77e-5) #Cd_Cdk46_p19
-model.setFixedParameterById('k404', 2.77e-5) #Cd_Cdk46_p57
+model.setFixedParameterById('k380', 2.77e-5) # Cd_Cdk46, vCd1
+model.setFixedParameterById('k381', 2.77e-5) # Cd_Cdk46_p27
+model.setFixedParameterById('k398', 2.77e-5) #Cd_Cdk46_p21
+model.setFixedParameterById('k403', 2.77e-5) #Cd_Cdk46_pRB
+model.setFixedParameterById('k404', 2.77e-5) #Cd_Cdk46_pRB_E2F
+model.setFixedParameterById('k409', 2.77e-5) #Cd_Cdk46_p18
+model.setFixedParameterById('k410', 2.77e-5) #Cd_Cdk46_p19
+model.setFixedParameterById('k411', 2.77e-5) #Cd_Cdk46_p57
 
 
 
 # Cdk2
 
-model.setFixedParameterById('k375', 4.1e-6)
-model.setFixedParameterById('k376', 4.1e-6)
-model.setFixedParameterById('k378', 4.1e-6)
-model.setFixedParameterById('k379', 4.1e-6)
-model.setFixedParameterById('k392', 4.1e-6)
-model.setFixedParameterById('k393', 4.1e-6)
-model.setFixedParameterById('k398', 4.1e-6)
+model.setFixedParameterById('k382', 4.1e-6)
+model.setFixedParameterById('k383', 4.1e-6)
+model.setFixedParameterById('k385', 4.1e-6)
+model.setFixedParameterById('k386', 4.1e-6)
 model.setFixedParameterById('k399', 4.1e-6)
+model.setFixedParameterById('k400', 4.1e-6)
 model.setFixedParameterById('k405', 4.1e-6)
 model.setFixedParameterById('k406', 4.1e-6)
+model.setFixedParameterById('k412', 4.1e-6)
+model.setFixedParameterById('k413', 4.1e-6)
 
 
 # model.setFixedParameterById('k342', 1.47e-4) # Cd_Cdk46_p27, vCd3
@@ -329,7 +329,7 @@ for k in range(len(STIMligs)):
 
 mpl.rcParams['figure.dpi'] = 300
 
- #%%#
+#%%#
 species_CC_dash = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46', 'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB', 'pRBp', 'pRBpp', 'pRB_E2F','pRBp_E2F','Ce_Cdk2_p21','Ce_Cdk2_p27', 'E2F', 'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F', 'Cd_Cdk46_p18', 'Cd_Cdk46_p19', 'Cd_Cdk46_p21', 'Cd_Cdk46_p27', 'p18', 'p21', 'p27', 'p57', 'E2Frep']                     
 
 k=0
@@ -355,6 +355,34 @@ for i in range(10):
                 axs_s[i,j].set_xlabel('time(h)', fontsize=5)
             k +=1
         
+#%%
+species_CC_dash_2 = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46', 'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB', 'pRBp', 'pRBpp', 'pRB_E2F','pRBp_E2F','Ce_Cdk2_p21','Ce_Cdk2_p27', 'E2F', 'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F', 'Cd_Cdk46_p18', 'Cd_Cdk46_p19', 'Cd_Cdk46_p21', 'Cd_Cdk46_p27', 'p18', 'p21', 'p27', 'E2Frep', 'E2Fatrep']                     
+
+k=0
+
+cc_dash_species, axs_s = plt.subplots(10,3, sharex='col', figsize = (5,7))
+plt.subplots_adjust(hspace = 0.6)
+
+cc_dash_species.suptitle(title,fontsize=5,y=0.92)
+
+for i in range(10):
+    for j in range(3):
+        if k == len(species_CC_dash_2):
+            break
+        else:
+            y_val = xoutS_all[:, list(species_all).index(species_CC_dash_2[k])]
+            axs_s[i,j].plot(tout_all/3600, y_val, 'b-')            
+            axs_s[i,j].set_ylim(0,max(y_val)*1.2)
+            axs_s[i,j].tick_params(axis='both', which='major', labelsize='4')
+            axs_s[i,j].ticklabel_format(useOffset=False, style='plain')
+            axs_s[i,j].title.set_text('species: '+species_CC_dash_2[k]+' (nM)')
+            axs_s[i,j].title.set_size(5)
+            if i == 9:
+                axs_s[i,j].set_xlabel('time(h)', fontsize=5)
+            k +=1
+
+
+
 #%%
 
 obs_CC_dash = ['ERK', 'AKT', 'Fos', 'Jun', 'Myc', 'Cd', 'Cdk46', 'Cdk1', 'Cdk2', 'RB', 'E2F', 'Ce', 'Ca', 'Cb', 'Skp2', 'Pai', 'Pei', 'Pbi', 'p27', 'Cdh1a', 'Cdc20', 'Chk1', 'p21', 'p18', 'p19', 'p57', 'E2Frep']

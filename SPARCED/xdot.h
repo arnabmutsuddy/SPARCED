@@ -785,3 +785,4 @@
 #define xdot784 xdot[784]
 #define xdot785 xdot[785]
 #define xdot786 xdot[786]
+#define xdot787 xdot[787]
