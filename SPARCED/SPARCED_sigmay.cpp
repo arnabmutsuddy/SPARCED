@@ -122,6 +122,8 @@ void sigmay_SPARCED(realtype *sigmay, const realtype t, const realtype *p, const
     sigma_p57 = 1.0;  // sigmay[107]
     sigma_E2Frep = 1.0;  // sigmay[108]
     sigma_E2Fatrep = 1.0;  // sigmay[109]
+    sigma_p107 = 1.0;  // sigmay[110]
+    sigma_p130 = 1.0;  // sigmay[111]
 }
 
 } // namespace amici

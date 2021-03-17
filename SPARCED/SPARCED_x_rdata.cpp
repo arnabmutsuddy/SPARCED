@@ -799,6 +799,8 @@ void x_rdata_SPARCED(realtype *x_rdata, const realtype *x, const realtype *tcl){
     x_rdata[785] = Cb_Cdk1_p57;
     x_rdata[786] = E2Frep;
     x_rdata[787] = E2Fatrep;
+    x_rdata[788] = p107;
+    x_rdata[789] = p130;
 }
 
 } // namespace amici

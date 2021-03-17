@@ -108,3 +108,5 @@
 #define dJy0_dp57_107 dJydy[107]
 #define dJy0_dE2Frep_108 dJydy[108]
 #define dJy0_dE2Fatrep_109 dJydy[109]
+#define dJy0_dp107_110 dJydy[110]
+#define dJy0_dp130_111 dJydy[111]

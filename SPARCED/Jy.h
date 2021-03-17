@@ -108,3 +108,5 @@
 #define Jy107 Jy[107]
 #define Jy108 Jy[108]
 #define Jy109 Jy[109]
+#define Jy110 Jy[110]
+#define Jy111 Jy[111]

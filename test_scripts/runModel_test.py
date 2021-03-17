@@ -172,6 +172,10 @@ model.setFixedParameterById('k149_1', model.getFixedParameterById('k149_1')*1000
 # model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*1000)
 # model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*1000)
 
+#pocket proteins, p107,p130
+model.setFixedParameterById('k152_1', 0.9179315)
+model.setFixedParameterById('k153_1', 0.01835863)
+
 #%% Rate constants - half lives
 
 # # vTLCd
@@ -180,29 +184,11 @@ model.setFixedParameterById('k149_1', model.getFixedParameterById('k149_1')*1000
 
 
 # # vCd
-model.setFixedParameterById('k380', 2.77e-5) # Cd_Cdk46, vCd1
-model.setFixedParameterById('k381', 2.77e-5) # Cd_Cdk46_p27
-model.setFixedParameterById('k398', 2.77e-5) #Cd_Cdk46_p21
-model.setFixedParameterById('k403', 2.77e-5) #Cd_Cdk46_pRB
-model.setFixedParameterById('k404', 2.77e-5) #Cd_Cdk46_pRB_E2F
-model.setFixedParameterById('k409', 2.77e-5) #Cd_Cdk46_p18
-model.setFixedParameterById('k410', 2.77e-5) #Cd_Cdk46_p19
-model.setFixedParameterById('k411', 2.77e-5) #Cd_Cdk46_p57
-
 
 
 # Cdk2
 
-model.setFixedParameterById('k382', 4.1e-6)
-model.setFixedParameterById('k383', 4.1e-6)
-model.setFixedParameterById('k385', 4.1e-6)
-model.setFixedParameterById('k386', 4.1e-6)
-model.setFixedParameterById('k399', 4.1e-6)
-model.setFixedParameterById('k400', 4.1e-6)
-model.setFixedParameterById('k405', 4.1e-6)
-model.setFixedParameterById('k406', 4.1e-6)
-model.setFixedParameterById('k412', 4.1e-6)
-model.setFixedParameterById('k413', 4.1e-6)
+
 
 
 # model.setFixedParameterById('k342', 1.47e-4) # Cd_Cdk46_p27, vCd3
@@ -356,7 +342,7 @@ for i in range(10):
             k +=1
         
 #%%
-species_CC_dash_2 = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46', 'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB', 'pRBp', 'pRBpp', 'pRB_E2F','pRBp_E2F','Ce_Cdk2_p21','Ce_Cdk2_p27', 'E2F', 'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F', 'Cd_Cdk46_p18', 'Cd_Cdk46_p19', 'Cd_Cdk46_p21', 'Cd_Cdk46_p27', 'p18', 'p21', 'p27', 'E2Frep', 'E2Fatrep']                     
+species_CC_dash_2 = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46', 'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB', 'pRBp', 'pRBpp', 'pRB_E2F','pRBp_E2F','Ce_Cdk2_p21','Ce_Cdk2_p27', 'E2F', 'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F', 'Cd_Cdk46_p18', 'Cd_Cdk46_p19', 'Cd_Cdk46_p21', 'Cd_Cdk46_p27', 'p18', 'p107', 'p130', 'E2Frep', 'E2Fatrep']                     
 
 k=0
 
@@ -385,7 +371,7 @@ for i in range(10):
 
 #%%
 
-obs_CC_dash = ['ERK', 'AKT', 'Fos', 'Jun', 'Myc', 'Cd', 'Cdk46', 'Cdk1', 'Cdk2', 'RB', 'E2F', 'Ce', 'Ca', 'Cb', 'Skp2', 'Pai', 'Pei', 'Pbi', 'p27', 'Cdh1a', 'Cdc20', 'Chk1', 'p21', 'p18', 'p19', 'p57', 'E2Frep']
+obs_CC_dash = ['ERK', 'AKT', 'Fos', 'Jun', 'Myc', 'Cd', 'Cdk46', 'Cdk1', 'Cdk2', 'RB', 'E2F', 'Ce', 'Ca', 'Cb', 'Skp2', 'Pai', 'Pei', 'Pbi', 'p27', 'p107', 'p130', 'Chk1', 'p21', 'p18', 'p19', 'p57', 'E2Frep']
 
 k=0
 obs_all = model.getObservableIds()
@@ -435,7 +421,8 @@ plt.plot(tout_all/3600, obs_Cdki)
 
 #%%
 #mrna_CC = list(genes_all[[5,6,7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,141,142,143]])
-mrna_CC = list(genes_all[[5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,22,24,25,26,27,28,29,144,145,146,147,148]])
+# mrna_CC = list(genes_all[[5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,22,24,25,26,27,28,29,144,145,146,147,148]])
+mrna_CC = list(genes_all[[5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,25,26,27,28,29,144,145,146,147,148,149,150]])
 #mrna_CC_data = pd.read_csv('input_files/OmicsData.txt', sep='\t', index_col=0, header=0)['Exp RNA'][[14,15,16,17,19,20,21,22,23,24,25,26,27,28,29]]
 
 

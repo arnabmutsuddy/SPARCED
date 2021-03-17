@@ -108,3 +108,5 @@
 #define p57 y[107]
 #define E2Frep y[108]
 #define E2Fatrep y[109]
+#define p107 y[110]
+#define p130 y[111]

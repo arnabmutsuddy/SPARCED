@@ -786,3 +786,5 @@
 #define Cb_Cdk1_p57 x_rdata[785]
 #define E2Frep x_rdata[786]
 #define E2Fatrep x_rdata[787]
+#define p107 x_rdata[788]
+#define p130 x_rdata[789]
