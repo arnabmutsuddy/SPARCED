@@ -145,6 +145,13 @@ vTL141	Cytoplasm	kTL141_1*mrna_INS*(EIF4E/(kTL141_2+EIF4E))	0.071223884	0	100
 vTL142	Nucleus	kTL142_1*mrna_CDKN2C*(EIF4E/(kTL142_2+EIF4E))	0.14244776	0.01612865	0			
 vTL143	Nucleus	kTL143_1*mrna_CDKN2D*(EIF4E/(kTL143_2+EIF4E))	0.071223884	0.000474372	0			
 vTL144	Nucleus	kTL144_1*mrna_CDKN1C*(EIF4E/(kTL144_2+EIF4E))	0.071223884	0.000948744	0			
+vTL145	Nucleus	kTL145_1*mrna_E2F4*(EIF4E/(kTL145_2+EIF4E))	0.001835863	0.000948744	0			
+vTL146	Nucleus	kTL146_1*mrna_E2F5*(EIF4E/(kTL146_2+EIF4E))	0.001835863	0.000948744	0			
+vTL147	Nucleus	kTL147_1*mrna_E2F6*(EIF4E/(kTL147_2+EIF4E))	0.001835863	0	0			
+vTL148	Nucleus	kTL148_1*mrna_E2F7*(EIF4E/(kTL148_2+EIF4E))	0.001835863	0.000948744	0			
+vTL149	Nucleus	kTL149_1*mrna_E2F8*(EIF4E/(kTL149_2+EIF4E))	0.001835863	0.000948744	0			
+vTL150	Nucleus	kTL150_1*mrna_RBL1*(EIF4E/(kTL150_2+EIF4E))	0.001835863	0.001423116149996	0			
+vTL151	Nucleus	kTL151_1*mrna_RBL2*(EIF4E/(kTL151_2+EIF4E))	0.001835863	0.013282417399967	0			
 vTLCd1	Nucleus	0						
 vTLCd2	Nucleus	0						
 vTLCd3	Nucleus	0						
@@ -253,6 +260,10 @@ vTLCd105	Nucleus	2.77E-05
 vTLCd106	Nucleus	1.93E-05						
 vTLCd107	Nucleus	7.7E-05						
 vTLCd108	Nucleus	3.85E-05						
+vTLCd109	Nucleus	0.000165						
+vTLCd110	Nucleus	0.000165						
+vTLCd111	Nucleus	2.13888888888889E-05						
+vTLCd112	Nucleus	2.13888888888889E-05						
 vE1	Cytoplasm	0.001						
 vE2	Cytoplasm	0.1						
 vE3	Cytoplasm	kE3	0.000210658					
@@ -371,13 +382,13 @@ vC44	Nucleus	0.001
 vC45	Nucleus	0.0001						
 vC46	Nucleus	0.001						
 vC47	Nucleus	0.0001						
-vCd1	Nucleus	0.000147						
-vCd3	Nucleus	0.000147						
-vCd4	Nucleus	3.85E-05						
-vCd6	Nucleus	3.85E-05						
+vCd1	Nucleus	2.77E-05						
+vCd3	Nucleus	2.77E-05						
+vCd4	Nucleus	4.10E-06						
+vCd6	Nucleus	4.10E-06						
 vCd7	Nucleus	3.21E-05						
-vCd8	Nucleus	7.7E-05						
-vCd10	Nucleus	7.7E-05						
+vCd8	Nucleus	4.10E-06						
+vCd10	Nucleus	4.10E-06						
 vCd11	Nucleus	2.35E-05						
 vCd12	Nucleus	0.000165						
 vCd13	Nucleus	3.21E-05						
@@ -389,22 +400,22 @@ vCd19	Nucleus	2.75E-05
 vCd20	Nucleus	0.000128						
 vCd21	Nucleus	0.000165						
 vCd22	Nucleus	0.000165						
-vCd23	Nucleus	0.000385						
-vCd24	Nucleus	0.000385						
-vCd25	Nucleus	0.000385						
+vCd23	Nucleus	2.77E-05						
+vCd24	Nucleus	4.10E-06						
+vCd25	Nucleus	4.10E-06						
 vCd26	Nucleus	0.000385						
 vCd27	Nucleus	0.000165						
-vCd28	Nucleus	0.000147						
-vCd29	Nucleus	0.000165						
-vCd30	Nucleus	3.85E-05						
-vCd31	Nucleus	0.000165						
+vCd28	Nucleus	2.77E-05						
+vCd29	Nucleus	2.77E-05						
+vCd30	Nucleus	4.10E-06						
+vCd31	Nucleus	4.10E-06						
 vCd36	Nucleus	2.14E-05						
 vCd37	Nucleus	2.14E-05						
-vCd38	Nucleus	0.000146947						
-vCd39	Nucleus	0.000146947						
-vCd40	Nucleus	0.000146947						
-vCd41	Nucleus	3.85E-05						
-vCd42	Nucleus	7.7E-05						
+vCd38	Nucleus	2.77E-05						
+vCd39	Nucleus	2.77E-05						
+vCd40	Nucleus	2.77E-05						
+vCd41	Nucleus	4.10E-06						
+vCd42	Nucleus	4.10E-06						
 vCd43	Nucleus	0.000128333						
 vA1	Cytoplasm	0.00126483						
 vA2	Cytoplasm	0.001						

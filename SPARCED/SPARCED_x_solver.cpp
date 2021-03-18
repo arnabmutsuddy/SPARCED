@@ -800,6 +800,8 @@ void x_solver_SPARCED(realtype *x_solver, const realtype *x_rdata){
     x_solver[787] = E2Fatrep;
     x_solver[788] = p107;
     x_solver[789] = p130;
+    x_solver[790] = p107_E2Frep;
+    x_solver[791] = p130_E2Frep;
 }
 
 } // namespace amici

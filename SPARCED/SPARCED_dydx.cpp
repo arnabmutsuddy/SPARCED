@@ -2227,6 +2227,10 @@ void dydx_SPARCED(realtype *dydx, const realtype t, const realtype *x, const rea
     dydx[88253] = 0.33333333333333337;
     dydx[88366] = 0.33333333333333337;
     dydx[88479] = 0.33333333333333337;
+    dydx[88589] = 0.33333333333333337;
+    dydx[88590] = 0.33333333333333337;
+    dydx[88701] = 0.33333333333333337;
+    dydx[88703] = 0.33333333333333337;
 }
 
 } // namespace amici

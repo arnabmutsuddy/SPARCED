@@ -789,3 +789,5 @@ E2Frep	Nucleus	5.28450463698679
 E2Fatrep	Nucleus	0		
 p107	Nucleus	16.3183985199592		
 p130	Nucleus	3.98472521999004		
+p107_E2Frep	Nucleus	0		
+p130_E2Frep	Nucleus	0		

@@ -788,3 +788,5 @@
 #define E2Fatrep x_rdata[787]
 #define p107 x_rdata[788]
 #define p130 x_rdata[789]
+#define p107_E2Frep x_rdata[790]
+#define p130_E2Frep x_rdata[791]
