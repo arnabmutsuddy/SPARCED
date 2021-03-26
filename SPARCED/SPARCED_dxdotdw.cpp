@@ -2,13 +2,13 @@
 #include "amici/defines.h"
 #include "sundials/sundials_types.h"
 
+#include <gsl/gsl-lite.hpp>
 #include <array>
 
-#include "p.h"
-#include "k.h"
-#include "w.h"
-#include "x.h"
-#include "dxdotdw.h"
+#include "SPARCED_x.h"
+#include "SPARCED_k.h"
+#include "SPARCED_w.h"
+#include "SPARCED_dxdotdw.h"
 
 namespace amici {
 namespace model_SPARCED {
@@ -5153,5 +5153,5 @@ void dxdotdw_SPARCED(realtype *dxdotdw, const realtype t, const realtype *x, con
     dxdot766_dflux_r2441 = -190476190476.19049;  // dxdotdw[5136]
 }
 
-} // namespace amici
 } // namespace model_SPARCED
+} // namespace amici

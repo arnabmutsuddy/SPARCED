@@ -2,11 +2,11 @@
 #include "amici/defines.h"
 #include "sundials/sundials_types.h"
 
+#include <gsl/gsl-lite.hpp>
 #include <array>
 
-#include "p.h"
-#include "k.h"
-#include "sigmay.h"
+#include "SPARCED_k.h"
+#include "SPARCED_sigmay.h"
 
 namespace amici {
 namespace model_SPARCED {
@@ -126,5 +126,5 @@ void sigmay_SPARCED(realtype *sigmay, const realtype t, const realtype *p, const
     sigma_p130 = 1.0;  // sigmay[111]
 }
 
-} // namespace amici
 } // namespace model_SPARCED
+} // namespace amici

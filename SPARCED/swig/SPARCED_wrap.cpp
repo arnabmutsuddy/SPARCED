@@ -4317,7 +4317,7 @@ SWIGINTERN PyObject *_wrap_getModel(PyObject *SWIGUNUSEDPARM(self), PyObject *ar
     } catch(std::exception const& ex) {
       SWIG_exception_fail(SWIG_RuntimeError, ex.what());
     } catch(...) {
-      SWIG_exception_fail(SWIG_RuntimeError, "Unknown exception occured");
+      SWIG_exception_fail(SWIG_RuntimeError, "Unknown exception occurred");
     }
   }
   

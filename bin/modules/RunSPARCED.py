@@ -52,6 +52,7 @@ def RunSPARCED(flagD,th,spdata,genedata,Vn,Vc,model,input_data_folder):
     model.setInitialStates(xoutS_all[0,:])
     xoutObs_all[0,:] = amici.runAmiciSimulation(model, solver)['y'][0,:]
     
+    
     for qq in range(NSteps):
         genedata,xmN_nM,AllGenesVec = SGEmodule(flagD,ts,xoutG_all[qq,:],xoutS_all[qq,:],Vn,Vc,kTCmaxs,kTCleak,kTCd,AllGenesVec,GenePositionMatrix,kGin_1,kGac_1,tcnas,tck50as,tcnrs,tck50rs,spIDs,mrna_IDs_sge)
         xmN_nM = xmN_nM.reindex(index=mrnaIds)

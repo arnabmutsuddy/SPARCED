@@ -33,7 +33,7 @@ model_output_dir = model_name
 
 parser = argparse.ArgumentParser(description='Provide arguments to build the SPARCED model')
 parser.add_argument('--deterministic', metavar='flagD', type=int, help='1 for deterministic run, 0 for stochastic', default=1)
-parser.add_argument('--time', metavar='time', type=int, help='experiment run time (in hours)', default=48)
+parser.add_argument('--time', metavar='time', type=int, help='experiment run time (in hours)', default=4)
 parser.add_argument('--Vn', metavar='Vn', help='the volume of the nucleus in liters', default=1.7500E-12)
 parser.add_argument('--Vc', metavar='Vc', help='the volume of the cytoplasm in liters', default=5.2500E-12)
 parser.add_argument('--folder', metavar='folder', help='input data folder path', default='input_files')
@@ -869,3 +869,7 @@ mpl.rcParams['figure.dpi'] = 300
 # mrna_stable = pd.Series(data=species_initializations[773:], index=mrna_id)
 
 # mrna_stable.to_csv('mrna_stable.csv', sep='\t', header=False)
+
+import time
+
+t2 = time.time()

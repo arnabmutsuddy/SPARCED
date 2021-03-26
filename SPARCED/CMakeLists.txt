@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.3)
 
 if(POLICY CMP0060)
   cmake_policy(SET CMP0060 NEW)
@@ -27,49 +27,32 @@ foreach(FLAG ${MY_CXX_FLAGS})
     endif()
 endforeach(FLAG)
 
-find_package(Amici 0.11.10 HINTS ${CMAKE_CURRENT_LIST_DIR}/../../build)
+find_package(Amici 0.11.14 HINTS ${CMAKE_CURRENT_LIST_DIR}/../../build)
 message(STATUS "Found AMICI ${Amici_DIR}")
 
 set(MODEL_DIR ${CMAKE_CURRENT_LIST_DIR})
 
-set(SRC_LIST_LIB SPARCED_Jy.cpp 
-SPARCED_dJydsigmay.cpp 
-SPARCED_dJydy.cpp 
-SPARCED_dwdp.cpp 
-SPARCED_dwdx.cpp 
-SPARCED_dwdw.cpp 
-SPARCED_dxdotdw.cpp 
-SPARCED_dxdotdx_explicit.cpp 
-SPARCED_dxdotdp_explicit.cpp 
-SPARCED_dydx.cpp 
-SPARCED_dydp.cpp 
-SPARCED_dsigmaydp.cpp 
-SPARCED_sigmay.cpp 
+set(SRC_LIST_LIB SPARCED_sigmay.cpp 
 SPARCED_w.cpp 
 SPARCED_x0.cpp 
-SPARCED_x0_fixedParameters.cpp 
-SPARCED_sx0.cpp 
-SPARCED_sx0_fixedParameters.cpp 
 SPARCED_xdot.cpp 
-SPARCED_y.cpp 
 SPARCED_x_rdata.cpp 
-SPARCED_total_cl.cpp 
 SPARCED_x_solver.cpp 
-SPARCED_dJydy_colptrs.cpp
+SPARCED_y.cpp 
+wrapfunctions.cpp 
+SPARCED.cpp 
+SPARCED_dJydsigma.cpp 
+SPARCED_dJydy.cpp 
+SPARCED_dJydy_colptrs.cpp 
 SPARCED_dJydy_rowvals.cpp 
-SPARCED_dwdp_colptrs.cpp
-SPARCED_dwdp_rowvals.cpp 
-SPARCED_dwdx_colptrs.cpp
+SPARCED_dwdx.cpp 
+SPARCED_dwdx_colptrs.cpp 
 SPARCED_dwdx_rowvals.cpp 
-SPARCED_dwdw_colptrs.cpp
-SPARCED_dwdw_rowvals.cpp 
-SPARCED_dxdotdw_colptrs.cpp
+SPARCED_dxdotdw.cpp 
+SPARCED_dxdotdw_colptrs.cpp 
 SPARCED_dxdotdw_rowvals.cpp 
-SPARCED_dxdotdx_explicit_colptrs.cpp
-SPARCED_dxdotdx_explicit_rowvals.cpp 
-SPARCED_dxdotdp_explicit_colptrs.cpp
-SPARCED_dxdotdp_explicit_rowvals.cpp 
-SPARCED.cpp
+SPARCED_dydx.cpp 
+SPARCED_Jy.cpp 
 ${MODEL_DIR}/wrapfunctions.cpp
 )
 

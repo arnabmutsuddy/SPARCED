@@ -52,7 +52,7 @@ Vn = float(args.Vn)
 Vc = float(args.Vc)
 outfile = args.outfile
 ts = 30
-
+#
 STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
@@ -169,8 +169,10 @@ model.setFixedParameterById('k16_1',0.1/5) #CCNE2
 model.setFixedParameterById('k147_1', model.getFixedParameterById('k147_1')*1000)
 model.setFixedParameterById('k148_1', model.getFixedParameterById('k148_1')*1000)
 model.setFixedParameterById('k149_1', model.getFixedParameterById('k149_1')*1000)
-# model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*1000)
-# model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*1000)
+
+#E2Fatrep
+model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*300)
+model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*300)
 
 #pocket proteins, p107,p130
 model.setFixedParameterById('k152_1', 2.7537945)
@@ -342,17 +344,25 @@ for i in range(10):
             k +=1
         
 #%%
-species_CC_dash_2 = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46', 'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB', 'pRBp', 'pRBpp', 'pRB_E2F','pRBp_E2F','p107_E2Frep','p130_E2Frep','Ce_Cdk2_p27', 'E2F', 'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F', 'Cd_Cdk46_p18', 'Cd_Cdk46_p19', 'Cd_Cdk46_p21', 'Cd_Cdk46_p27', 'p18', 'p107', 'p130', 'E2Frep', 'E2Fatrep']                     
+species_CC_dash_2 = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46',
+                     'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB',
+                     'pRBp', 'pRBpp', 'pRB_E2F','pRBp_E2F','p107_E2Frep',
+                     'p130_E2Frep', 'E2F', 'E2Frep', 'E2Fatrep', 'Cd_Cdk46_p18', 
+                     'Cd_Cdk46_p19', 'Cd_Cdk46_p21', 'Cd_Cdk46_p27',
+                     'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F',
+                     'Ce_Cdk2_p21', 'Ce_Cdk2_p57', 'Ce_Cdk2_p27',
+                     'Ca', 'Ca_Cdk2', 'Ca_Cdk2_p21', 'Ca_Cdk2_p27',
+                     'p18', 'p19', 'p21', 'p27', 'p107', 'p130']                     
 
 k=0
 
-cc_dash_species, axs_s = plt.subplots(10,3, sharex='col', figsize = (5,7))
-plt.subplots_adjust(hspace = 0.6)
+cc_dash_species, axs_s = plt.subplots(10,4, sharex='col', figsize = (6,7))
+plt.subplots_adjust(hspace = 0.6,wspace = 0.25)
 
 cc_dash_species.suptitle(title,fontsize=5,y=0.92)
 
 for i in range(10):
-    for j in range(3):
+    for j in range(4):
         if k == len(species_CC_dash_2):
             break
         else:

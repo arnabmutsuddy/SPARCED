@@ -2,13 +2,13 @@
 #include "amici/defines.h"
 #include "sundials/sundials_types.h"
 
+#include <gsl/gsl-lite.hpp>
 #include <array>
 
-#include "p.h"
-#include "k.h"
-#include "w.h"
-#include "x.h"
-#include "xdot.h"
+#include "SPARCED_x.h"
+#include "SPARCED_k.h"
+#include "SPARCED_w.h"
+#include "SPARCED_xdot.h"
 
 namespace amici {
 namespace model_SPARCED {
@@ -808,5 +808,5 @@ void xdot_SPARCED(realtype *xdot, const realtype t, const realtype *x, const rea
     xdot791 = 571428571428.57141*flux_r385 - 571428571428.57141*flux_r386 - 571428571428.57141*flux_r423;  // xdot[791]
 }
 
-} // namespace amici
 } // namespace model_SPARCED
+} // namespace amici
