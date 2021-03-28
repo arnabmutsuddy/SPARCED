@@ -33,7 +33,7 @@ model_output_dir = model_name
 
 parser = argparse.ArgumentParser(description='Provide arguments to build the SPARCED model')
 parser.add_argument('--deterministic', metavar='flagD', type=int, help='1 for deterministic run, 0 for stochastic', default=1)
-parser.add_argument('--time', metavar='time', type=int, help='experiment run time (in hours)', default=48)
+parser.add_argument('--time', metavar='time', type=int, help='experiment run time (in hours)', default=96)
 parser.add_argument('--Vn', metavar='Vn', help='the volume of the nucleus in liters', default=1.7500E-12)
 parser.add_argument('--Vc', metavar='Vc', help='the volume of the cytoplasm in liters', default=5.2500E-12)
 parser.add_argument('--folder', metavar='folder', help='input data folder path', default='input_files')
@@ -593,6 +593,182 @@ obs_all = model.getObservableIds()
 plt.yticks(fontsize=5)
 
 cc_dash, axs = plt.subplots(4,4, sharex='col')
+
+#%% vTC monitoring
+
+sys.path.append(os.getcwd()[0:os.getcwd().rfind('/')]+'/sparced/bin')
+
+from modules.RunSPARCED_test import RunSPARCED_test
+
+flagD = args.deterministic
+th = 96
+# th = 96
+Vn = float(args.Vn)
+Vc = float(args.Vc)
+outfile = args.outfile
+ts = 30
+#
+STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
+# STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
+# STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
+
+STIMligs_id = ['E', 'H', 'HGF', 'P', 'F', 'I', 'INS']
+
+species_sheet = np.array([np.array(line.strip().split("\t")) for line in open(
+    os.path.join(input_data_folder, 'Species.txt'), encoding='latin-1')])
+
+species_all = [species_sheet[k][0] for k in range(1,len(species_sheet))]
+
+species_initializations = []
+for row in species_sheet[1:]:
+    species_initializations.append(float(row[2]))
+species_initializations = np.array(species_initializations)
+
+
+
+for k in range(len(STIMligs)):
+    species_initializations[species_all.index(STIMligs_id[k])] = STIMligs[k]
+
+# %% model import
+
+sys.path.insert(0, os.path.abspath(model_output_dir))
+
+
+model_module = importlib.import_module(model_name)
+model = model_module.getModel()
+
+model_param = np.array(model.getFixedParameterIds())
+
+
+
+model.setFixedParameterById('k12_1',0.1181584)
+model.setFixedParameterById('k13_1',0.1181584)
+model.setFixedParameterById('k14_1',0.1181584)
+
+
+model.setFixedParameterById('k15_1',0.1/5) #CCNE1 
+model.setFixedParameterById('k16_1',0.1/5) #CCNE2
+#
+model.setFixedParameterById('k147_1', model.getFixedParameterById('k147_1')*1000)
+model.setFixedParameterById('k148_1', model.getFixedParameterById('k148_1')*1000)
+model.setFixedParameterById('k149_1', model.getFixedParameterById('k149_1')*1000)
+
+#E2Fatrep
+model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*300)
+model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*300)
+
+#pocket proteins, p107,p130
+model.setFixedParameterById('k152_1', 2.7537945)
+model.setFixedParameterById('k153_1', 0.05507589)
+
+flagD = 1
+nmxlsfile = outfile
+solver = model.getSolver()  # Create solver instance
+solver.setMaxSteps = 1e10
+model.setTimepoints(np.linspace(0, ts))  # np.linspace(0, 30) # set timepoints
+
+
+xoutS_all, xoutG_all, xoutObs_all, tout_all, vTC_all, vTCd_all, Nb_all, Nd_all, hills_all, TFa_all, TFr_all = RunSPARCED_test(flagD, th, species_initializations, [], Vn, Vc, model, input_data_folder)
+
+
+#%% Dash vTC
+
+mrna_CC = list(genes_all[[5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,25,26,27,28,29,144,145,146,147,148,149,150]])
+
+
+
+cc_dash_vTC, axs_vTC = plt.subplots(9,3, sharex='col', figsize = (5,7))
+plt.subplots_adjust(hspace = 0.8, wspace = 0.35)
+
+cc_dash_vTC.suptitle(title,fontsize=5,y=0.92)
+
+
+k=0
+for i in range(9):
+    for j in range(3):
+        if k == len(mrna_CC):
+            break
+        else:
+            y_val = vTC_all[:, list(genes_all).index(mrna_CC[k])]
+            axs_vTC[i,j].plot(tout_all[1:]/3600, y_val,'r-')
+            #axs_m[i,j].axhline(y=mrna_CC_data[k],c='red')
+            axs_vTC[i,j].set_ylim(0,max(y_val)*1.2)
+            axs_vTC[i,j].tick_params(axis='both', which='major', labelsize='4')
+            axs_vTC[i,j].ticklabel_format(useOffset=False, style='plain')
+            axs_vTC[i,j].title.set_text('vTC: '+mrna_CC[k])
+            axs_vTC[i,j].title.set_size(5)
+            if i == 8:
+                axs_vTC[i,j].set_xlabel('time(h)', fontsize=5)
+            k +=1
+
+#%% Dash vTCd
+
+cc_dash_vTCd, axs_vTCd = plt.subplots(9,3, sharex='col', figsize = (5,7))
+plt.subplots_adjust(hspace = 0.8, wspace = 0.35)
+
+cc_dash_vTCd.suptitle(title,fontsize=5,y=0.92)
+
+
+k=0
+for i in range(9):
+    for j in range(3):
+        if k == len(mrna_CC):
+            break
+        else:
+            y_val = vTCd_all[:, list(genes_all).index(mrna_CC[k])]
+            axs_vTCd[i,j].plot(tout_all[1:]/3600, y_val,'r-')
+            #axs_m[i,j].axhline(y=mrna_CC_data[k],c='red')
+            axs_vTCd[i,j].set_ylim(0,max(y_val)*1.2)
+            axs_vTCd[i,j].tick_params(axis='both', which='major', labelsize='4')
+            axs_vTCd[i,j].ticklabel_format(useOffset=False, style='plain')
+            axs_vTCd[i,j].title.set_text('vTCd: '+mrna_CC[k])
+            axs_vTCd[i,j].title.set_size(5)
+            if i == 8:
+                axs_vTC[i,j].set_xlabel('time(h)', fontsize=5)
+            k +=1
+
+#%% Dash hills
+
+cc_dash_hills, axs_hills = plt.subplots(9,3, sharex='col', figsize = (5,7))
+plt.subplots_adjust(hspace = 0.8, wspace = 0.35)
+
+cc_dash_hills.suptitle(title,fontsize=5,y=0.92)
+
+
+k=0
+for i in range(9):
+    for j in range(3):
+        if k == len(mrna_CC):
+            break
+        else:
+            y_val = hills_all[:, list(genes_all).index(mrna_CC[k])]
+            axs_hills[i,j].plot(tout_all[1:]/3600, y_val,'r-')
+            #axs_m[i,j].axhline(y=mrna_CC_data[k],c='red')
+            axs_hills[i,j].set_ylim(0,max(y_val)*1.2)
+            axs_hills[i,j].tick_params(axis='both', which='major', labelsize='4')
+            axs_hills[i,j].ticklabel_format(useOffset=False, style='plain')
+            axs_hills[i,j].title.set_text('hills: '+mrna_CC[k])
+            axs_hills[i,j].title.set_size(5)
+            if i == 8:
+                axs_hills[i,j].set_xlabel('time(h)', fontsize=5)
+            k +=1
+
+
+#%% Dash vTCd vs repressors
+
+vTCd_vs_rep, axs_vTCdrep = plt.subplots(3,1, sharex='col', figsize = (5,7))
+
+e2f = ['E2F1', 'E2F2', 'E2F3']
+
+for i in range(3):
+    y_val = vTC_all[:,list(genes_all).index(e2f[i])]
+    axs_vTCdrep[i].plot(xoutS_all[1:,list(species_all).index('E2Fatrep')], y_val, 'g-')
+    axs_vTCdrep[i].set_ylim(0,max(y_val)*1.2)
+    axs_vTCdrep[i].tick_params(axis='both', which='major', labelsize='4')
+    axs_vTCdrep[i].ticklabel_format(useOffset=False, style='plain')
+    axs_vTCdrep[i].title.set_text('vTCd '+str(e2f[i])+' vs E2Fatrep')
+    axs_vTCdrep[i].title.set_size(5)
+    axs_vTCdrep[i].set_xlabel('E2Fatrep')
 
 
 
