@@ -2338,19 +2338,19 @@
       <parameter id="k11_1" value="0.03992519" constant="true"/>
       <parameter id="mrna_E2F3" value="0.005376217" constant="true"/>
       <parameter id="k11_2" value="0" constant="true"/>
-      <parameter id="k12_1" value="0.590792" constant="true"/>
+      <parameter id="k12_1" value="0.1181584" constant="true"/>
       <parameter id="mrna_CCND1" value="0.001897488" constant="true"/>
       <parameter id="k12_2" value="100" constant="true"/>
-      <parameter id="k13_1" value="0.590792" constant="true"/>
+      <parameter id="k13_1" value="0.1181584" constant="true"/>
       <parameter id="mrna_CCND2" value="0.000316248" constant="true"/>
       <parameter id="k13_2" value="100" constant="true"/>
-      <parameter id="k14_1" value="0.590792" constant="true"/>
+      <parameter id="k14_1" value="0.1181584" constant="true"/>
       <parameter id="mrna_CCND3" value="0.000632496" constant="true"/>
       <parameter id="k14_2" value="100" constant="true"/>
-      <parameter id="k15_1" value="0.01" constant="true"/>
+      <parameter id="k15_1" value="0.002" constant="true"/>
       <parameter id="mrna_CCNE1" value="0.005376217" constant="true"/>
       <parameter id="k15_2" value="0" constant="true"/>
-      <parameter id="k16_1" value="0.01" constant="true"/>
+      <parameter id="k16_1" value="0.002" constant="true"/>
       <parameter id="mrna_CCNE2" value="0.005376217" constant="true"/>
       <parameter id="k16_2" value="0" constant="true"/>
       <parameter id="k17_1" value="1.097942" constant="true"/>
@@ -2743,25 +2743,25 @@
       <parameter id="k146_1" value="0.07122388" constant="true"/>
       <parameter id="mrna_CDKN1C" value="0.000948744" constant="true"/>
       <parameter id="k146_2" value="0" constant="true"/>
-      <parameter id="k147_1" value="0.001835863" constant="true"/>
+      <parameter id="k147_1" value="1.835863" constant="true"/>
       <parameter id="mrna_E2F4" value="0.000948744" constant="true"/>
       <parameter id="k147_2" value="0" constant="true"/>
-      <parameter id="k148_1" value="0.001835863" constant="true"/>
+      <parameter id="k148_1" value="1.835863" constant="true"/>
       <parameter id="mrna_E2F5" value="0.000948744" constant="true"/>
       <parameter id="k148_2" value="0" constant="true"/>
-      <parameter id="k149_1" value="0.001835863" constant="true"/>
+      <parameter id="k149_1" value="1.835863" constant="true"/>
       <parameter id="mrna_E2F6" value="0" constant="true"/>
       <parameter id="k149_2" value="0" constant="true"/>
-      <parameter id="k150_1" value="0.001835863" constant="true"/>
+      <parameter id="k150_1" value="0.5507589" constant="true"/>
       <parameter id="mrna_E2F7" value="0.000948744" constant="true"/>
       <parameter id="k150_2" value="0" constant="true"/>
-      <parameter id="k151_1" value="0.001835863" constant="true"/>
+      <parameter id="k151_1" value="0.5507589" constant="true"/>
       <parameter id="mrna_E2F8" value="0.000948744" constant="true"/>
       <parameter id="k151_2" value="0" constant="true"/>
-      <parameter id="k152_1" value="0.001835863" constant="true"/>
+      <parameter id="k152_1" value="2.753795" constant="true"/>
       <parameter id="mrna_RBL1" value="0.001423116" constant="true"/>
       <parameter id="k152_2" value="0" constant="true"/>
-      <parameter id="k153_1" value="0.001835863" constant="true"/>
+      <parameter id="k153_1" value="0.05507589" constant="true"/>
       <parameter id="mrna_RBL2" value="0.01328242" constant="true"/>
       <parameter id="k153_2" value="0" constant="true"/>
       <parameter id="k154" value="0" constant="true"/>

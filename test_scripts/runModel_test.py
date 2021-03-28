@@ -130,9 +130,9 @@ model_param = np.array(model.getFixedParameterIds())
 # model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/10)
 # model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/10)
 
-model.setFixedParameterById('k12_1',0.1181584)
-model.setFixedParameterById('k13_1',0.1181584)
-model.setFixedParameterById('k14_1',0.1181584)
+# model.setFixedParameterById('k12_1',0.1181584)
+# model.setFixedParameterById('k13_1',0.1181584)
+# model.setFixedParameterById('k14_1',0.1181584)
 
 # model.setFixedParameterById('k8_1',model.getFixedParameterById('k8_1')/450*1.1) #Rb
 # model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')/100/1.1)
@@ -148,8 +148,8 @@ model.setFixedParameterById('k14_1',0.1181584)
 # model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')*5)
 # model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')*5)
 
-model.setFixedParameterById('k15_1',0.1/5) #CCNE1 
-model.setFixedParameterById('k16_1',0.1/5) #CCNE2
+# model.setFixedParameterById('k15_1',0.1/5) #CCNE1 
+# model.setFixedParameterById('k16_1',0.1/5) #CCNE2
 # model.setFixedParameterById('k21_1',model.getFixedParameterById('k21_1')/100/50) #CCNA2
 # model.setFixedParameterById('k24_1',model.getFixedParameterById('k24_1')/100/50) #CCNB2
 
@@ -166,17 +166,25 @@ model.setFixedParameterById('k16_1',0.1/5) #CCNE2
 #dParameterById('k144_1',0.14244776) #CDKN2C
 
 #E2Frep
-model.setFixedParameterById('k147_1', model.getFixedParameterById('k147_1')*1000)
-model.setFixedParameterById('k148_1', model.getFixedParameterById('k148_1')*1000)
-model.setFixedParameterById('k149_1', model.getFixedParameterById('k149_1')*1000)
+# model.setFixedParameterById('k147_1', model.getFixedParameterById('k147_1')*1000)
+# model.setFixedParameterById('k148_1', model.getFixedParameterById('k148_1')*1000)
+# model.setFixedParameterById('k149_1', model.getFixedParameterById('k149_1')*1000)
+
+# model.setFixedParameterById('k147_1', 1.835863)
+# model.setFixedParameterById('k148_1', 1.835863)
+# model.setFixedParameterById('k149_1', 1.835863)
+
 
 #E2Fatrep
-model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*300)
-model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*300)
+# model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*300)
+# model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*300)
 
-#pocket proteins, p107,p130
-model.setFixedParameterById('k152_1', 2.7537945)
-model.setFixedParameterById('k153_1', 0.05507589)
+# model.setFixedParameterById('k150_1', 0.5507589)
+# model.setFixedParameterById('k151_1', 0.5507589)
+
+# #pocket proteins, p107,p130
+# model.setFixedParameterById('k152_1', 2.7537945)
+# model.setFixedParameterById('k153_1', 0.05507589)
 
 #%% Rate constants - half lives
 
