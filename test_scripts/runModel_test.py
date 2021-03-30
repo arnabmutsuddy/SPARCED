@@ -508,85 +508,6 @@ stm = pd.read_csv('input_files/StoicMat.txt', sep='\t', header=0, index_col=0)
 
 obsm = pd.read_csv('input_files/Observables.txt', sep='\t', header=0, index_col=0)
 
-#%%
-species_CC_dash = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46', 'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB', 'pRBp', 'pRBpp', 'pRB_E2F', 'E2F', 'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F']
-
-k=0
-
-cc_dash_species, axs_s = plt.subplots(6,3, sharex='col')
-plt.subplots_adjust(hspace = 0.6)
-
-for i in range(6):
-    for j in range(3):
-        if k == len(species_CC_dash):
-            break
-        else:
-            y_val = xoutS_all[:, list(species_all).index(species_CC_dash[k])]
-            axs_s[i,j].plot(tout_all/3600, y_val, 'b-')            
-            axs_s[i,j].set_ylim(0,max(y_val)*1.2)
-            axs_s[i,j].tick_params(axis='both', which='major', labelsize='4')
-            axs_s[i,j].ticklabel_format(useOffset=False, style='plain')
-            axs_s[i,j].title.set_text('species: '+species_CC_dash[k]+' (nM)')
-            axs_s[i,j].title.set_size(5)
-            if i == 5:
-                axs_s[i,j].set_xlabel('time(h)', fontsize=5)
-            k +=1
-        
-#%%
-
-obs_CC_dash = ['ERK', 'AKT', 'Fos', 'Jun', 'Myc', 'Cd', 'Cdk46', 'Cdk1', 'Cdk2', 'RB', 'E2F', 'Ce', 'Ca', 'Cb', 'Skp2', 'Pai', 'Pei', 'Pbi', 'p27', 'Cdh1a', 'Cdc20', 'Wee1', 'Chk1', 'p21',]
-
-k=0
-obs_all = model.getObservableIds()
-cc_dash_obs, axs_o = plt.subplots(8,3, sharex='col', figsize = (5,7))
-plt.subplots_adjust(hspace = 0.8, wspace=0.25)
-
-for i in range(8):
-    for j in range(3):
-        if k == len(obs_CC_dash):
-            break
-        else:
-            y_val = xoutObs_all[:, list(obs_all).index(obs_CC_dash[k])]
-            axs_o[i,j].plot(tout_all/3600, y_val, 'g-')            
-            axs_o[i,j].set_ylim(0,max(y_val)*1.2)
-            axs_o[i,j].tick_params(axis='both', which='major', labelsize='4')
-            axs_o[i,j].ticklabel_format(useOffset=False, style='plain')
-            axs_o[i,j].title.set_text('obs: '+obs_CC_dash[k]+' (nM)')
-            axs_o[i,j].title.set_size(5)
-            if i == 7:
-                axs_o[i,j].set_xlabel('time(h)', fontsize=5)
-            k +=1
-
-
-#%%
-mrna_CC = list(genes_all[[5,6,7,8,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]])
-
-#mrna_CC_data = pd.read_csv('input_files/OmicsData.txt', sep='\t', index_col=0, header=0)['Exp RNA'][[14,15,16,17,19,20,21,22,23,24,25,26,27,28,29]]
-
-
-x_m = xoutG_all[:,282:][:, list(genes_all).index(mrna_CC[2])]
-
-
-cc_dash_mrna, axs_m = plt.subplots(8,3, sharex='col')
-plt.subplots_adjust(hspace = 0.8)
-k=0
-for i in range(8):
-    for j in range(3):
-        if k == len(mrna_CC):
-            break
-        else:
-            y_val = xoutG_all[:, 282:][:, list(genes_all).index(mrna_CC[k])]
-            axs_m[i,j].plot(tout_all/3600, y_val,'r-')
-            #axs_m[i,j].axhline(y=mrna_CC_data[k],c='red')
-            axs_m[i,j].set_ylim(0,max(y_val)*1.2)
-            axs_m[i,j].tick_params(axis='both', which='major', labelsize='4')
-            axs_m[i,j].ticklabel_format(useOffset=False, style='plain')
-            axs_m[i,j].title.set_text('mrna: '+mrna_CC[k]+' (mpc)')
-            axs_m[i,j].title.set_size(5)
-            if i == 7:
-                axs_m[i,j].set_xlabel('time(h)', fontsize=5)
-            k +=1
-
 
 
 #%% CC dashboard
@@ -649,9 +570,9 @@ model_param = np.array(model.getFixedParameterIds())
 
 
 # E2F 
-model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')*4 )
-model.setFixedParameterById('k10_1',model.getFixedParameterById('k10_1')*4 )
-model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')*4 )
+model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')*8 )
+model.setFixedParameterById('k10_1',model.getFixedParameterById('k10_1')*8 )
+model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')*8 )
 # model.setFixedParameterById('k12_1',0.1181584)
 # model.setFixedParameterById('k13_1',0.1181584)
 # model.setFixedParameterById('k14_1',0.1181584)
