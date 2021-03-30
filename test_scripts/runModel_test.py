@@ -648,26 +648,29 @@ model = model_module.getModel()
 model_param = np.array(model.getFixedParameterIds())
 
 
+# E2F 
+model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')*4 )
+model.setFixedParameterById('k10_1',model.getFixedParameterById('k10_1')*4 )
+model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')*4 )
+# model.setFixedParameterById('k12_1',0.1181584)
+# model.setFixedParameterById('k13_1',0.1181584)
+# model.setFixedParameterById('k14_1',0.1181584)
 
-model.setFixedParameterById('k12_1',0.1181584)
-model.setFixedParameterById('k13_1',0.1181584)
-model.setFixedParameterById('k14_1',0.1181584)
 
+# model.setFixedParameterById('k15_1',0.1/5) #CCNE1 
+# model.setFixedParameterById('k16_1',0.1/5) #CCNE2
+# #
+# model.setFixedParameterById('k147_1', model.getFixedParameterById('k147_1')*1000)
+# model.setFixedParameterById('k148_1', model.getFixedParameterById('k148_1')*1000)
+# model.setFixedParameterById('k149_1', model.getFixedParameterById('k149_1')*1000)
 
-model.setFixedParameterById('k15_1',0.1/5) #CCNE1 
-model.setFixedParameterById('k16_1',0.1/5) #CCNE2
-#
-model.setFixedParameterById('k147_1', model.getFixedParameterById('k147_1')*1000)
-model.setFixedParameterById('k148_1', model.getFixedParameterById('k148_1')*1000)
-model.setFixedParameterById('k149_1', model.getFixedParameterById('k149_1')*1000)
+# #E2Fatrep
+# model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*300)
+# model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*300)
 
-#E2Fatrep
-model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*300)
-model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*300)
-
-#pocket proteins, p107,p130
-model.setFixedParameterById('k152_1', 2.7537945)
-model.setFixedParameterById('k153_1', 0.05507589)
+# #pocket proteins, p107,p130
+# model.setFixedParameterById('k152_1', 2.7537945)
+# model.setFixedParameterById('k153_1', 0.05507589)
 
 flagD = 1
 nmxlsfile = outfile
