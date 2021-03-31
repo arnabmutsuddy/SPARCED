@@ -529,6 +529,8 @@ sys.path.append(os.getcwd()[0:os.getcwd().rfind('/')]+'/sparced/bin')
 
 from modules.RunSPARCED_test import RunSPARCED_test
 
+
+
 flagD = args.deterministic
 th = 96
 # th = 96
@@ -537,9 +539,9 @@ Vc = float(args.Vc)
 outfile = args.outfile
 ts = 30
 #
-STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
+# STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
-# STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
+STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 
 STIMligs_id = ['E', 'H', 'HGF', 'P', 'F', 'I', 'INS']
 
@@ -570,16 +572,16 @@ model_param = np.array(model.getFixedParameterIds())
 
 
 # E2F 
-model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')*8 )
-model.setFixedParameterById('k10_1',model.getFixedParameterById('k10_1')*8 )
-model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')*8 )
+model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')*8*2 )
+model.setFixedParameterById('k10_1',model.getFixedParameterById('k10_1')*8*2 )
+model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')*8*2 )
 # model.setFixedParameterById('k12_1',0.1181584)
 # model.setFixedParameterById('k13_1',0.1181584)
 # model.setFixedParameterById('k14_1',0.1181584)
 
 
-# model.setFixedParameterById('k15_1',0.1/5) #CCNE1 
-# model.setFixedParameterById('k16_1',0.1/5) #CCNE2
+model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')*10) #CCNE1 
+model.setFixedParameterById('k16_1',model.getFixedParameterById('k15_1')*10) #CCNE2
 # #
 # model.setFixedParameterById('k147_1', model.getFixedParameterById('k147_1')*1000)
 # model.setFixedParameterById('k148_1', model.getFixedParameterById('k148_1')*1000)
