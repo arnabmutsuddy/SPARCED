@@ -45,17 +45,15 @@ input_data_folder = args.folder
 if args.time == None or args.deterministic == None or args.Vn == None or args.Vc == None or args.outfile == None:
     print("ERROR: missing arguments. Need to pass --time, --deterministic, --Vn, --Vc, --outfile. Use -h for help.")
 
-flagD = args.deterministic
 th = args.time
 # th = 96
 Vn = float(args.Vn)
 Vc = float(args.Vc)
-outfile = args.outfile
 ts = 30
 #
 STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
 # STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
-STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
+# STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
 
 STIMligs_id = ['E', 'H', 'HGF', 'P', 'F', 'I', 'INS']
 
@@ -84,162 +82,28 @@ model = model_module.getModel()
 
 model_param = np.array(model.getFixedParameterIds())
 
-# %% turn off irrelevant CC reactions
 
-#ks = ['k'+str(n) for n in range(320, 432)]
-
-#ks = ['k'+str(n) for n in range(337, 432)] # turn on E2F, pRB reactions
-
-# ks = ['k'+str(n) for n in range(328, 419)]
-
-# ks_actual = []
-# for p in model_param:
-#     for k in ks:
-#         if k in p:
-#             ks_actual.append(p)
-
-# for p in ks_actual:
-#     model.setFixedParameterById(p, 0)
 
 # %% Rate constants - kTL
 
-
-# model.setFixedParameterById('k424', 0.001)  # kon, Mdi
-# model.setFixedParameterById('k425', 0.0001)  # koff, Mdi
-# model.setFixedParameterById('k426',0.001) #kon, Mei
-# model.setFixedParameterById('k427',0.0001) #koff, Mei
-# model.setFixedParameterById('k428',0.001) #kon, Mai
-# model.setFixedParameterById('k429',0.0001) #koff, Mai
-# model.setFixedParameterById('k430',0.001) #kon, Mbi
-# model.setFixedParameterById('k431',0.0001) #koff, Mbi
-# model.setFixedParameterById('k17_1', model.getFixedParameterById('k17_1')/12) #Skp2
-# model.setFixedParameterById('k20_1', model.getFixedParameterById('k20_1')/25) #Pbi
-# model.setFixedParameterById('k22_1', model.getFixedParameterById('k22_1')*1.5*1.25) #p27
-# model.setFixedParameterById('k23_1', model.getFixedParameterById('k23_1')/15) #Cdh1a
-# model.setFixedParameterById('k25_1', model.getFixedParameterById('k25_1')/6) #Cdc20
-# model.setFixedParameterById('k26_1', model.getFixedParameterById('k26_1')/200) #Wee1
-# model.setFixedParameterById('k28_1', model.getFixedParameterById('k28_1')*1.2*1.1) #p21
-
-
-# model.setFixedParameterById('k31_1', model.getFixedParameterById('k31_1')*1.5) #Cdk46
-# model.setFixedParameterById('k32_1', model.getFixedParameterById('k32_1')*1.5*1.1) #Cdk46
-
-
-
-# model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')/10)
-# model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')/10)
-# model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')/10)
-
+# E2F 
+model.setFixedParameterById('k9_1',0.63880304)
+model.setFixedParameterById('k10_1',0.63880304 )
+model.setFixedParameterById('k11_1',0.63880304 )
 # model.setFixedParameterById('k12_1',0.1181584)
 # model.setFixedParameterById('k13_1',0.1181584)
 # model.setFixedParameterById('k14_1',0.1181584)
 
-# model.setFixedParameterById('k8_1',model.getFixedParameterById('k8_1')/450*1.1) #Rb
-# model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')/100/1.1)
-# model.setFixedParameterById('k10_1',model.getFixedParameterById('k10_1')/100/1.1)
-# model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')/100/1.1)
 
-# model.setFixedParameterById('k432', 1.47e-4)
-# model.setFixedParameterById('k433', 1.47e-4)
+model.setFixedParameterById('k15_1',0.02*8) #CCNE1 
+model.setFixedParameterById('k16_1',0.02*8) #CCNE2
 
-# Cyclins
+# E2fatrep
+model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*8)
+model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*8)
 
-# model.setFixedParameterById('k12_1',model.getFixedParameterById('k12_1')*5) #0.590792
-# model.setFixedParameterById('k13_1',model.getFixedParameterById('k13_1')*5)
-# model.setFixedParameterById('k14_1',model.getFixedParameterById('k14_1')*5)
-
-# model.setFixedParameterById('k15_1',0.1/5) #CCNE1 
-# model.setFixedParameterById('k16_1',0.1/5) #CCNE2
-# model.setFixedParameterById('k21_1',model.getFixedParameterById('k21_1')/100/50) #CCNA2
-# model.setFixedParameterById('k24_1',model.getFixedParameterById('k24_1')/100/50) #CCNB2
-
-
-# model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')*5*8)
-# model.setFixedParameterById('k16_1',model.getFixedParameterById('k16_1')*5*8)
-
-# model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')*5)
-# model.setFixedParameterById('k16_1',model.getFixedParameterById('k16_1')*5)
-
-# model.setFixedParameterById('k15_1',0.01)
-# model.setFixedParameterById('k16_1',0.01)
-
-#dParameterById('k144_1',0.14244776) #CDKN2C
-
-#E2Frep
-# model.setFixedParameterById('k147_1', model.getFixedParameterById('k147_1')*1000)
-# model.setFixedParameterById('k148_1', model.getFixedParameterById('k148_1')*1000)
-# model.setFixedParameterById('k149_1', model.getFixedParameterById('k149_1')*1000)
-
-# model.setFixedParameterById('k147_1', 1.835863)
-# model.setFixedParameterById('k148_1', 1.835863)
-# model.setFixedParameterById('k149_1', 1.835863)
-
-
-#E2Fatrep
-# model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*300)
-# model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*300)
-
-# model.setFixedParameterById('k150_1', 0.5507589)
-# model.setFixedParameterById('k151_1', 0.5507589)
-
-# #pocket proteins, p107,p130
-# model.setFixedParameterById('k152_1', 2.7537945)
-# model.setFixedParameterById('k153_1', 0.05507589)
-
-#%% Rate constants - half lives
-
-# # vTLCd
-# model.setFixedParameterById('k154', 2.14e-5) # pRB half life
-# model.setFixedParameterById('k155', 1.65e-4) # E2F half life
-
-
-# # vCd
-
-
-# Cdk2
-
-
-
-
-# model.setFixedParameterById('k342', 1.47e-4) # Cd_Cdk46_p27, vCd3
-# model.setFixedParameterById('k343', 3.85e-5) # Ce_Cdk2, vCd4
-# #model.setFixedParameterById('k436', 3.85e-5) # Me, vCd5 (obsolete)
-# model.setFixedParameterById('k344', 3.85e-5) # Ce_Cdk2_p27, vCd6
-# model.setFixedParameterById('k345', 3.21e-5) # Pe, vCd7
-# model.setFixedParameterById('k346', 7.70e-5) # Ca_Cdk2, vCd8
-# # model.setFixedParameterById('k440', 7.70e-5) # Ma, vCd9 (obsolete)
-# model.setFixedParameterById('k347', 7.70e-5) # Ca_Cdk2_p27, vCd10
-# model.setFixedParameterById('k348', 2.35e-5) # Cdh1i, vCd11
-# model.setFixedParameterById('k349', 1.65e-4) # E2Fp, vCd12
-# model.setFixedParameterById('k350', 3.21e-5) # p27p, vCd13
-# model.setFixedParameterById('k351', 3.85e-4) # Pa, vCd14
-# model.setFixedParameterById('k352', 1.28e-4) # Cb_Cdk1, vCd15
-# # model.setFixedParameterById('k353', 1.28e-4) # Mb, vCd16
-# model.setFixedParameterById('k353', 3.85e-4) # Cdc20a, vCd17
-# model.setFixedParameterById('k354', 1.93e-4) # Pb, vCd18
-# model.setFixedParameterById('k355', 2.75e-5) # Wee1p, vCd19
-# model.setFixedParameterById('k356', 1.28e-4) # Cb_Cdk1_p27, vCd20
-# model.setFixedParameterById('k357', 1.65e-4) # pRB_E2F, vCd21
-# model.setFixedParameterById('k358', 1.65e-4) # pRB_E2Fp, vCd22
-# model.setFixedParameterById('k359', 3.85e-4) # Cd_Cdk46_p21, vCd23
-# model.setFixedParameterById('k360', 3.85e-4) # Ce_Cdk2_p21, vCd24
-# model.setFixedParameterById('k361', 3.85e-4) # Ca_Cdk2_p21, vCd25
-# model.setFixedParameterById('k362', 3.85e-4) # Cb_Cdk1_p21, vCd26
-# model.setFixedParameterById('k363', 1.65e-4) # pRBpp_E2F, vCd27
-# model.setFixedParameterById('k364', 1.47e-4) # Cd_Cdk46_pRB, vCd28
-# model.setFixedParameterById('k365', 1.65e-4) # Cd_Cdk46_pRB_E2F, vCd29
-# model.setFixedParameterById('k366', 3.85e-5) # Ce_Cdk2_pRBp, vCd30
-# model.setFixedParameterById('k367', 1.65e-4) # Ce_Cdk2_pRBp_E2F, vCd31
-
-# # model.setFixedParameterById('k368', 1.47e-4) # Cd_Cdk46_pRBp, vCd32
-# # model.setFixedParameterById('k369', 1.65e-4) # Cd_Cdk46_pRBp_E2F, vCd33
-# # model.setFixedParameterById('k370', 3.85e-5) # Ce_Cdk2_pRBpp, vCd34
-# # model.setFixedParameterById('k371', 1.65e-4) # Ce_Cdk2_pRBpp_E2F, vCd35
-
-# model.setFixedParameterById('k368', 2.14e-5) # pRBp half life
-# model.setFixedParameterById('k369', 2.14e-5) # pRBpp half life
-
-
+# Ca
+model.setFixedParameterById('k21_1', model.getFixedParameterById('k21_1')*100)
 
 #%% Rate constants - CC
 
@@ -258,31 +122,9 @@ model_param = np.array(model.getFixedParameterIds())
 # model.setFixedParameterById('k339', 0.001)
 # model.setFixedParameterById('k340', 0.001)
 
-
-
-
-
-
-
-
-
-#%% initial conditions
-# species_all = [species_sheet[n][0] for n in range(1,len(species_sheet))]
-
-# species_initializations[species_all.index('pRB')] = 21.484-0.2182*0.90
-# species_initializations[species_all.index('pRB_E2F')] = 0.2182*0.90
-# species_initializations[species_all.index('E2F')] = 0.2182*0.10
-
-# species_initializations[species_all.index('p18')] = 40.7
-
-
-
-
 #%% Deterministic Run
-#model_module = importlib.import_module(model_name)
-#model = model_module.getModel()
+
 flagD = 1
-nmxlsfile = outfile
 solver = model.getSolver()  # Create solver instance
 solver.setMaxSteps = 1e10
 model.setTimepoints(np.linspace(0, ts))  # np.linspace(0, 30) # set timepoints
@@ -290,24 +132,38 @@ model.setTimepoints(np.linspace(0, ts))  # np.linspace(0, 30) # set timepoints
 
 xoutS_all, xoutG_all, xoutObs_all, tout_all = RunSPARCED(flagD, th, species_initializations, [], Vn, Vc, model, input_data_folder)
 
-# if flagWr==1:
-#     columnsS=[ele for ele in model.getStateIds()]
-#     columnsG = columnsS[773:914]
-#     resa = [sub.replace('m_', 'ag_') for sub in columnsG]
-#     resi = [sub.replace('m_', 'ig_') for sub in columnsG]
-#     columnsG2 = np.concatenate((resa, resi), axis=None)
-#     condsSDF = pd.DataFrame(data=xoutS_all,columns=columnsS)
-#     condsSDF.to_excel(nmxlsfile+'S_0.xlsx')
-#     condsSDF = None
-#     condsGDF = pd.DataFrame(data=xoutG_all,columns=columnsG2)
-#     condsGDF.to_excel(nmxlsfile+'G_0.xlsx')
-#     condsGDF = None
 
-#xoutS_final = pd.Series(data=xoutS_all[-1], index=model.getStateIds())
 
-#xoutS_final.to_csv('xoutS_final.csv', sep='\t', index=True)
-#test - plot trajectories
-# xoutS_all[1960,:]
+species_input = pd.read_csv('input_files/Species.txt', sep='\t', header=0, index_col=0)
+
+species_all = species_input.index
+genes_all = pd.read_csv('input_files/GeneReg.txt', sep='\t', header=0, index_col=0).index
+numberofgenes = int(len(genes_all))
+
+obs_all = model.getObservableIds()
+
+title = str()
+
+for k in range(len(STIMligs)):
+    title = title + STIMligs_id[k]+'='+str(STIMligs[k]) + " "
+
+
+mpl.rcParams['figure.dpi'] = 300
+
+
+#%% test module - diagnostics
+from modules.RunSPARCED_test import RunSPARCED_test
+
+flagD = 1
+# nmxlsfile = outfile
+solver = model.getSolver()  # Create solver instance
+solver.setMaxSteps = 1e10
+model.setTimepoints(np.linspace(0, ts))  # np.linspace(0, 30) # set timepoints
+
+
+xoutS_all, xoutG_all, xoutObs_all, tout_all, vTC_all, vTCd_all, Nb_all, Nd_all, hills_all, TFa_all, TFr_all = RunSPARCED_test(flagD, th, species_initializations, [], Vn, Vc, model, input_data_folder)
+
+
 
 species_input = pd.read_csv('input_files/Species.txt', sep='\t', header=0, index_col=0)
 
@@ -488,201 +344,6 @@ obsm = pd.read_csv('input_files/Observables.txt', sep='\t', header=0, index_col=
 
 #%% test module with vTC output
 
-sys.path.append(os.getcwd()[0:os.getcwd().rfind('/')]+'/sparced/bin')
-
-from modules.RunSPARCED_test import RunSPARCED_test
-
-
-
-flagD = args.deterministic
-th = 96
-# th = 96
-Vn = float(args.Vn)
-Vc = float(args.Vc)
-outfile = args.outfile
-ts = 30
-#
-# STIMligs = [100, 100.0, 100.0, 100.0, 100.0, 100.0, 1721.0]  # EGF, Her, HGF, PDGF, FGF, IGF, INS
-# STIMligs = [100.0,0.0,0.0,0.0,0.0,0.0,100.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
-STIMligs = [0.0,0.0,0.0,0.0,0.0,0.0,0.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
-
-STIMligs_id = ['E', 'H', 'HGF', 'P', 'F', 'I', 'INS']
-
-species_sheet = np.array([np.array(line.strip().split("\t")) for line in open(
-    os.path.join(input_data_folder, 'Species.txt'), encoding='latin-1')])
-
-species_all = [species_sheet[k][0] for k in range(1,len(species_sheet))]
-
-species_initializations = []
-for row in species_sheet[1:]:
-    species_initializations.append(float(row[2]))
-species_initializations = np.array(species_initializations)
-
-
-
-for k in range(len(STIMligs)):
-    species_initializations[species_all.index(STIMligs_id[k])] = STIMligs[k]
-
-# %% model import
-
-sys.path.insert(0, os.path.abspath(model_output_dir))
-
-
-model_module = importlib.import_module(model_name)
-model = model_module.getModel()
-
-model_param = np.array(model.getFixedParameterIds())
-
-
-# E2F 
-model.setFixedParameterById('k9_1',model.getFixedParameterById('k9_1')*8*2 )
-model.setFixedParameterById('k10_1',model.getFixedParameterById('k10_1')*8*2 )
-model.setFixedParameterById('k11_1',model.getFixedParameterById('k11_1')*8*2 )
-# model.setFixedParameterById('k12_1',0.1181584)
-# model.setFixedParameterById('k13_1',0.1181584)
-# model.setFixedParameterById('k14_1',0.1181584)
-
-
-model.setFixedParameterById('k15_1',model.getFixedParameterById('k15_1')*10) #CCNE1 
-model.setFixedParameterById('k16_1',model.getFixedParameterById('k15_1')*10) #CCNE2
-# #
-# model.setFixedParameterById('k147_1', model.getFixedParameterById('k147_1')*1000)
-# model.setFixedParameterById('k148_1', model.getFixedParameterById('k148_1')*1000)
-# model.setFixedParameterById('k149_1', model.getFixedParameterById('k149_1')*1000)
-
-# #E2Fatrep
-# model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*300)
-# model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*300)
-
-# #pocket proteins, p107,p130
-# model.setFixedParameterById('k152_1', 2.7537945)
-# model.setFixedParameterById('k153_1', 0.05507589)
-
-flagD = 1
-nmxlsfile = outfile
-solver = model.getSolver()  # Create solver instance
-solver.setMaxSteps = 1e10
-model.setTimepoints(np.linspace(0, ts))  # np.linspace(0, 30) # set timepoints
-
-
-xoutS_all, xoutG_all, xoutObs_all, tout_all, vTC_all, vTCd_all, Nb_all, Nd_all, hills_all, TFa_all, TFr_all = RunSPARCED_test(flagD, th, species_initializations, [], Vn, Vc, model, input_data_folder)
-
-
-
-species_input = pd.read_csv('input_files/Species.txt', sep='\t', header=0, index_col=0)
-
-species_all = species_input.index
-genes_all = pd.read_csv('input_files/GeneReg.txt', sep='\t', header=0, index_col=0).index
-numberofgenes = int(len(genes_all))
-
-obs_all = model.getObservableIds()
-
-title = str()
-
-for k in range(len(STIMligs)):
-    title = title + STIMligs_id[k]+'='+str(STIMligs[k]) + " "
-
-
-mpl.rcParams['figure.dpi'] = 300
-
-#%%
-
-species_CC_dash_2 = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46',
-                     'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB',
-                     'pRBp', 'pRBpp', 'pRB_E2F','pRBp_E2F','p107_E2Frep',
-                     'p130_E2Frep', 'E2F', 'E2Frep', 'E2Fatrep', 'Cd_Cdk46_p18', 
-                     'Cd_Cdk46_p19', 'Cd_Cdk46_p21', 'Cd_Cdk46_p27',
-                     'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F',
-                     'Ce_Cdk2_p21', 'Ce_Cdk2_p57', 'Ce_Cdk2_p27',
-                     'Ca', 'Ca_Cdk2', 'Ca_Cdk2_p21', 'Ca_Cdk2_p27',
-                     'p18', 'p19', 'p21', 'p27', 'p107', 'p130']                     
-
-k=0
-
-cc_dash_species, axs_s = plt.subplots(10,4, sharex='col', figsize = (6,7))
-plt.subplots_adjust(hspace = 0.6,wspace = 0.25)
-
-cc_dash_species.suptitle(title,fontsize=5,y=0.92)
-
-for i in range(10):
-    for j in range(4):
-        if k == len(species_CC_dash_2):
-            break
-        else:
-            y_val = xoutS_all[:, list(species_all).index(species_CC_dash_2[k])]
-            axs_s[i,j].plot(tout_all/3600, y_val, 'b-')            
-            axs_s[i,j].set_ylim(0,max(y_val)*1.2)
-            axs_s[i,j].tick_params(axis='both', which='major', labelsize='4')
-            axs_s[i,j].ticklabel_format(useOffset=False, style='plain')
-            axs_s[i,j].title.set_text('species: '+species_CC_dash_2[k]+' (nM)')
-            axs_s[i,j].title.set_size(5)
-            if i == 9:
-                axs_s[i,j].set_xlabel('time(h)', fontsize=5)
-            k +=1
-
-
-
-#%%
-
-obs_CC_dash = ['ERK', 'AKT', 'Fos', 'Jun', 'Myc', 'Cd', 'Cdk46', 'Cdk1', 'Cdk2', 'RB', 'E2F', 'Ce', 'Ca', 'Cb', 'Skp2', 'Pai', 'Pei', 'Pbi', 'p27', 'p107', 'p130', 'Cdc20','Cdh1a', 'Chk1', 'p21', 'p18', 'p19', 'p57', 'E2Frep','E2Fatrep']
-
-k=0
-obs_all = model.getObservableIds()
-cc_dash_obs, axs_o = plt.subplots(10,3, sharex='col', figsize = (5,7))
-
-cc_dash_obs.suptitle(title,fontsize=5,y=0.92)
-
-
-plt.subplots_adjust(hspace = 0.8, wspace=0.25)
-
-for i in range(10):
-    for j in range(3):
-        if k == len(obs_CC_dash):
-            break
-        else:
-            y_val = xoutObs_all[:, list(obs_all).index(obs_CC_dash[k])]
-            axs_o[i,j].plot(tout_all/3600, y_val, 'g-')            
-            axs_o[i,j].set_ylim(0,max(y_val)*1.2)
-            axs_o[i,j].tick_params(axis='both', which='major', labelsize='4')
-            axs_o[i,j].ticklabel_format(useOffset=False, style='plain')
-            axs_o[i,j].title.set_text('obs: '+obs_CC_dash[k]+' (nM)')
-            axs_o[i,j].title.set_size(5)
-            if i == 9:
-                axs_o[i,j].set_xlabel('time(h)', fontsize=5)
-            k +=1
-
-#%%
-
-mrna_CC = list(genes_all[[5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,25,26,27,28,29,144,145,146,147,148,149,150]])
-#mrna_CC_data = pd.read_csv('input_files/OmicsData.txt', sep='\t', index_col=0, header=0)['Exp RNA'][[14,15,16,17,19,20,21,22,23,24,25,26,27,28,29]]
-
-
-#x_m = xoutG_all[:,282:][:, list(genes_all).index(mrna_CC[2])]
-
-
-cc_dash_mrna, axs_m = plt.subplots(9,3, sharex='col', figsize = (5,7))
-plt.subplots_adjust(hspace = 0.8)
-
-cc_dash_mrna.suptitle(title,fontsize=5,y=0.92)
-
-
-k=0
-for i in range(9):
-    for j in range(3):
-        if k == len(mrna_CC):
-            break
-        else:
-            y_val = xoutG_all[:, (numberofgenes*2):][:, list(genes_all).index(mrna_CC[k])]
-            axs_m[i,j].plot(tout_all/3600, y_val,'r-')
-            #axs_m[i,j].axhline(y=mrna_CC_data[k],c='red')
-            axs_m[i,j].set_ylim(0,max(y_val)*1.2)
-            axs_m[i,j].tick_params(axis='both', which='major', labelsize='4')
-            axs_m[i,j].ticklabel_format(useOffset=False, style='plain')
-            axs_m[i,j].title.set_text('mrna: '+mrna_CC[k]+' (mpc)')
-            axs_m[i,j].title.set_size(5)
-            if i == 8:
-                axs_m[i,j].set_xlabel('time(h)', fontsize=5)
-            k +=1
 
 
 #%% Dash vTC
@@ -786,286 +447,3 @@ for i in range(3):
 
 
 
-#%% plot - mrnas
-
-
-
-# # def timecourse_mrna(gene_symbol, x_g=xoutG_all[:, 282:], tout_all=tout_all):
-# #     x_t = x_g[:, list(genes_all).index(gene_symbol)]
-# #     plt.scatter(tout_all/3600, x_t)
-# #     plt.ylabel('mrna_'+str(gene_symbol)+'_mpc')
-# #     plt.xlabel('time(h)')
-# #     plt.ylim(0, max(x_t)*1.25)
-# #     plt.show
-
-# mrna_CC = list(genes_all[[12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]])
-
-# mrna_CC_data = pd.read_csv('input_files/OmicsData.txt', sep='\t', index_col=0, header=0)['Exp RNA'][[12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]]
-
-
-# x_m = xoutG_all[:,282:][:, list(genes_all).index(mrna_CC[2])]
-
-
-# cc_dash_mrna, axs_m = plt.subplots(6,3, sharex='col')
-# plt.subplots_adjust(hspace = 0.4)
-# k=0
-# for i in range(6):
-#     for j in range(3):
-#         y_val = xoutG_all[:, 282:][:, list(genes_all).index(mrna_CC[k])]
-#         axs_m[i,j].plot(tout_all/3600, y_val)
-#         axs_m[i,j].axhline(y=mrna_CC_data[k],c='red')
-#         axs_m[i,j].set_ylim(0,max(y_val)*1.2)
-#         axs_m[i,j].tick_params(axis='both', which='major', labelsize='4')
-#         axs_m[i,j].ticklabel_format(useOffset=False, style='plain')
-#         axs_m[i,j].title.set_text('mrna: '+mrna_CC[k]+' (mpc)')
-#         axs_m[i,j].title.set_size(5)
-#         if i == 5:
-#             axs_m[i,j].set_xlabel('time(h)', fontsize=5)
-#         k +=1
-
-# axs[0,2].figure
-
-# axs[0,1].plot(tout_all/3600,xoutS_all[:, list(species_all).index('ppERK')], 'g-')
-# axs[0,2].plot(tout_all/3600,xoutS_all[:, list(species_all).index('ppERK')], 'g-')
-    # %% stochastic test
-
-# flagD = 0
-
-
-# flagWr = 0
-# nmxlsfile = outfile
-
-# sys.path.insert(0, os.path.abspath(model_output_dir))
-# species_sheet = np.array([np.array(line.strip().split("\t")) for line in open(
-#     os.path.join(input_data_folder, 'Species.txt'), encoding='latin-1')])
-
-# species_initializations = []
-# for row in species_sheet[1:]:
-#     species_initializations.append(float(row[2]))
-
-# species_initializations = np.array(species_initializations)
-# species_initializations[np.argwhere(species_initializations <= 1e-6)] = 0.0
-
-# model_module = importlib.import_module(model_name)
-# model = model_module.getModel()
-# solver = model.getSolver()          # Create solver instance
-# solver.setMaxSteps = 1e10
-# model.setTimepoints(np.linspace(0, ts))  # np.linspace(0, 30) # set timepoints
-
-# xoutS_all, xoutG_all, tout_all = RunSPARCED(
-#     flagD, th, species_initializations, [], Vn, Vc, model, input_data_folder)
-
-# if flagWr == 1:
-#     columnsS = [ele for ele in model.getStateIds()]
-#     columnsG = columnsS[773:914]
-#     resa = [sub.replace('m_', 'ag_') for sub in columnsG]
-#     resi = [sub.replace('m_', 'ig_') for sub in columnsG]
-#     columnsG2 = np.concatenate((resa, resi), axis=None)
-#     condsSDF = pd.DataFrame(data=xoutS_all, columns=columnsS)
-#     condsSDF.to_excel(nmxlsfile+'S_0.xlsx')
-#     condsSDF = None
-#     condsGDF = pd.DataFrame(data=xoutG_all, columns=columnsG2)
-#     condsGDF.to_excel(nmxlsfile+'G_0.xlsx')
-#     condsGDF = None
-
-
-
-# %%
-# elif flagD == 1:
-#     flagWr = 1
-#     nmxlsfile = outfile
-
-#     sys.path.insert(0, os.path.abspath(model_output_dir))
-#     species_sheet = np.array([np.array(line.strip().split("\t")) for line in open(
-#         os.path.join(input_data_folder, 'Species.txt'), encoding='latin-1')])
-
-#     species_initializations = []
-#     for row in species_sheet[1:]:
-#         species_initializations.append(float(row[2]))
-
-#     species_initializations = np.array(species_initializations)
-#     species_initializations[np.argwhere(species_initializations <= 1e-6)] = 0.0
-
-#     model_module = importlib.import_module(model_name)
-#     model = model_module.getModel()
-#     solver = model.getSolver()          # Create solver instance
-#     solver.setMaxSteps = 1e10
-#     # np.linspace(0, 30) # set timepoints
-#     model.setTimepoints(np.linspace(0, ts))
-
-#     xoutS_all, xoutG_all, tout_all = RunSPARCED(
-#         flagD, th, species_initializations, [], Vn, Vc, model)
-
-#     if flagWr == 1:
-#         columnsS = [ele for ele in model.getStateIds()]
-#         columnsG = columnsS[773:914]
-#         resa = [sub.replace('m_', 'ag_') for sub in columnsG]
-#         resi = [sub.replace('m_', 'ig_') for sub in columnsG]
-#         columnsG2 = np.concatenate((resa, resi), axis=None)
-#         condsSDF = pd.DataFrame(data=xoutS_all, columns=columnsS)
-#         condsSDF.to_excel(nmxlsfile+'S_0.xlsx')
-#         condsSDF = None
-#         condsGDF = pd.DataFrame(data=xoutG_all, columns=columnsG2)
-#         condsGDF.to_excel(nmxlsfile+'G_0.xlsx')
-#         condsGDF = None
-
-# %%
-
-# parameter check
-
-
-# params_check = pd.Series(data=model_module.getModel(
-# ).getFixedParameters(), index=model.getFixedParameterIds())
-
-# params_check = params_check.iloc[params_check.index.argsort(kind='mergesort')]
-# params_check = params_check[:2715]
-
-# ic_check = pd.Series(data=species_initializations, index=model.getStateIds())
-
-
-# # %%
-
-# params_check.to_csv('params_check.csv', sep='\t')
-# ic_check.to_csv('ic_check.csv', sep='\t')
-
-
-# # %% run a few steps manually and compare
-
-
-# # %% write results to dataframes
-
-# # %% write results to dataframes
-
-# columnsS = [ele for ele in model.getStateIds()]
-# columnsG = [str('mrna_'+gene) for gene in genes_all]
-# resa = [sub.replace('mrna_', 'ag_') for sub in columnsG]
-# resi = [sub.replace('mrna_', 'ig_') for sub in columnsG]
-# columnsG2 = np.concatenate((resa, resi, columnsG), axis=None)
-# condsSDF = pd.DataFrame(data=xoutS_all, columns=columnsS, index=tout_all)
-# condsSDF = condsSDF.rename_axis('tout_all')
-# condsSDF.to_csv(nmxlsfile+'S_0.csv', sep='\t')
-# condsSDF = None
-# condsGDF = pd.DataFrame(data=xoutG_all, columns=columnsG2, index=tout_all)
-# condsGDF = condsGDF.rename_axis('tout_all')
-# condsGDF.to_csv(nmxlsfile+'G_0.csv', sep='\t')
-# condsGDF = None
-
-# # %%
-
-# condsGDF = pd.read_csv(nmxlsfile+'G_0.csv', sep='\t', header=0, index_col=0)
-
-# condsSDF = pd.read_csv(nmxlsfile+'S_0.csv', sep='\t', header=0, index_col=0)
-
-# # %% run odes only
-
-
-# sbml_file = 'SPARCED.xml'
-# model_name = sbml_file[0:-4]
-
-# model_output_dir = model_name
-# cellNumber = 0
-
-# kGsRead = pd.read_csv(os.path.join(
-#     input_data_folder, 'OmicsData.txt'), header=0, index_col=0, sep="\t")
-# gExp_mpc = np.float64(kGsRead.values[:, 0])
-# mExp_mpc = np.float64(kGsRead.values[:, 1])
-# kGin = np.float64(kGsRead.values[:, 2])
-# kGac = np.float64(kGsRead.values[:, 3])
-# kTCleak = np.float64(kGsRead.values[:, 4])
-# kTCmaxs = np.float64(kGsRead.values[:, 5])
-# kTCd = np.float64(kGsRead.values[:, 6])
-# mpc2nM_Vc = (1E9/(Vc*6.023E+23))
-
-# #nmxlsfile = 'GrowthStim_det_'
-
-# th = 48
-# Vn = 1.75E-12
-# Vc = 5.25E-12
-# # STIMligs = [100,100.0,100.0,100.0,100.0,100.0,1721.0] # EGF, Her, HGF, PDGF, FGF, IGF, INS
-# STIMligs = [0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-
-
-# sys.path.insert(0, os.path.abspath(model_output_dir))
-# species_sheet = np.array([np.array(line.strip().split("\t")) for line in open(
-#     os.path.join(input_data_folder, 'Species.txt'), encoding='latin-1')])
-
-# species_initializations = []
-# for row in species_sheet[1:]:
-#     species_initializations.append(float(row[2]))
-# species_initializations = np.array(species_initializations)
-# species_initializations[np.argwhere(species_initializations <= 1e-6)] = 0.0
-# species_initializations[155:162] = STIMligs
-
-# model_module = importlib.import_module(model_name)
-# model = model_module.getModel()
-
-# # %%
-# mrna_stable = pd.read_csv('mrna_stable.csv', sep='\t',
-#                           index_col=0, squeeze=True)
-
-# for k in range(len(mrna_stable)):
-#     model.setFixedParameterById(mrna_stable.index[k], mrna_stable[k])
-
-
-# # %%
-
-# paramIds = np.array(model.getFixedParameterIds())
-# params = np.array(model.getFixedParameters())
-
-# param_p = re.compile('mrna_\w+')
-
-# mrnaIds = np.array(list(filter(param_p.match, paramIds)))
-
-# mrna_i = np.nonzero(np.isin(paramIds, mrnaIds))[0]
-
-# params[mrna_i] = np.dot(mExp_mpc, mpc2nM_Vc)
-# model.setFixedParameters(params)
-
-
-# # %%
-# solver = model.getSolver()          # Create solver instance
-# solver.setMaxSteps = 1e10
-
-# ts = 30  # time-step to update mRNA numbers
-# NSteps = int(th*3600/ts)
-# model.setTimepoints(np.linspace(0, th, (NSteps+1)))
-
-# #xoutS_all, xoutG_all, tout_all = RunSPARCED(flagD,th,species_initializations,[],Vn,Vc,model)
-# #genedata, mExp_mpc, GenePositionMatrix, AllGenesVec, kTCmaxs, kTCleak, kTCleak2, kGin_1, kGac_1, kTCd, TARs0, tcnas, tcnrs, tck50as, tck50rs, spIDs = RunPrep(flagD,Vn,model)
-
-# xoutS_all = np.zeros(shape=(NSteps+1, len(species_initializations)))
-# xoutS_all[0, :] = species_initializations
-
-# model.setInitialStates(xoutS_all[0, :])
-
-# rdata = amici.runAmiciSimulation(model, solver)
-
-# qq = 0
-
-# xoutS_all[(qq+1):, :] = rdata['x'][1:, :]
-
-# columnsS = [ele for ele in model.getStateIds()]
-# #columnsG = columnsS[773:914]
-# #resa = [sub.replace('m_', 'ag_') for sub in columnsG]
-# #resi = [sub.replace('m_', 'ig_') for sub in columnsG]
-# #columnsG2 = np.concatenate((resa, resi), axis=None)
-# condsSDF = pd.DataFrame(data=xoutS_all, columns=columnsS, index=tout_all)
-# condsSDF = condsSDF.rename_axis('tout_all')
-# condsSDF.to_csv('new_odes_nostim.csv', sep='\t')
-# condsSDF = None
-# # condsGDF = pd.DataFrame(data=xoutG_all,columns=columnsG2, index=tout_all)
-# # condsGDF = condsGDF.rename_axis('tout_all')
-# # condsGDF.to_csv(nmxlsfile+'G_0.csv', sep='\t')
-# # condsGDF = None
-
-# condsSDF_read = pd.read_csv('new_odes_nostim.csv',
-#                             sep='\t', index_col=0, header=0)
-
-# %%
-
-# mrna_id = model.getStateIds()[773:]
-# mrna_id = [sub.replace('m_','mrna_') for sub in mrna_id]
-
-# mrna_stable = pd.Series(data=species_initializations[773:], index=mrna_id)
-
-# mrna_stable.to_csv('mrna_stable.csv', sep='\t', header=False)
