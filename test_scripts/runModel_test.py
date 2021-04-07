@@ -99,11 +99,11 @@ model.setFixedParameterById('k15_1',0.02*8) #CCNE1
 model.setFixedParameterById('k16_1',0.02*8) #CCNE2
 
 # E2fatrep
-model.setFixedParameterById('k150_1', model.getFixedParameterById('k150_1')*8)
-model.setFixedParameterById('k151_1', model.getFixedParameterById('k151_1')*8)
+model.setFixedParameterById('k150_1', 4.4060712)
+model.setFixedParameterById('k151_1', 4.4060712)
 
 # Ca
-model.setFixedParameterById('k21_1', model.getFixedParameterById('k21_1')*100)
+model.setFixedParameterById('k21_1', 0.4)
 
 #%% Rate constants - CC
 
@@ -184,15 +184,26 @@ mpl.rcParams['figure.dpi'] = 300
 
         
 #%%
+# species_CC_dash_2 = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46',
+#                      'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB',
+#                      'pRBp', 'pRBpp', 'pRB_E2F','pRBp_E2F','p107_E2Frep',
+#                      'p130_E2Frep', 'E2F', 'E2Frep', 'E2Fatrep', 'Cd_Cdk46_p18', 
+#                      'Cd_Cdk46_p19', 'Cd_Cdk46_p21', 'Cd_Cdk46_p27',
+#                      'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F',
+#                      'Ce_Cdk2_p21', 'Ce_Cdk2_p57', 'Ce_Cdk2_p27',
+#                      'Ca', 'Ca_Cdk2', 'Ca_Cdk2_p21', 'Ca_Cdk2_p27',
+#                      'p18', 'p19', 'p21', 'p27', 'p107', 'p130']                     
+
 species_CC_dash_2 = ['ppERK', 'ppAKT', 'pcFos_cJun', 'cMyc', 'Cd', 'Cdk46',
                      'Cd_Cdk46', 'Cd_Cdk46_pRB', 'Cd_Cdk46_pRB_E2F', 'pRB',
                      'pRBp', 'pRBpp', 'pRB_E2F','pRBp_E2F','p107_E2Frep',
                      'p130_E2Frep', 'E2F', 'E2Frep', 'E2Fatrep', 'Cd_Cdk46_p18', 
                      'Cd_Cdk46_p19', 'Cd_Cdk46_p21', 'Cd_Cdk46_p27',
                      'Ce', 'Ce_Cdk2', 'Ce_Cdk2_pRBp', 'Ce_Cdk2_pRBp_E2F',
-                     'Ce_Cdk2_p21', 'Ce_Cdk2_p57', 'Ce_Cdk2_p27',
+                     'Ce_Cdk2_p21', 'Ce_Cdk2_p27', 'Cdk2',
                      'Ca', 'Ca_Cdk2', 'Ca_Cdk2_p21', 'Ca_Cdk2_p27',
-                     'p18', 'p19', 'p21', 'p27', 'p107', 'p130']                     
+                     'p18', 'p19', 'p21', 'p27', 'p107', 'p130'] 
+
 
 k=0
 
