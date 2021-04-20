@@ -238,8 +238,8 @@ def obs2gene_i (obs_name):
 
 
 kTLest[obs2gene_i('p27')] = kTLest[obs2gene_i('p27')]/1.6
-kTLest[obs2gene_i('E2Frep')]=kTLest[obs2gene_i('E2Frep')]*1.6
-
+# kTLest[obs2gene_i('E2Frep')]=kTLest[obs2gene_i('E2Frep')]*1.65
+kTLest[obs2gene_i('E2Frep')]=kTLest[obs2gene_i('E2Frep')]*1.575
 
 obs_kTLmod = ['p53', 'Mdm2', 'RB', 'Ca', 'p27', 'Cdk1', 'p21', 'BAD', 'BIM', 'RSK',
        'bCATENIN', 'mTOR', 'TSC1', 'FOXO', 'EIF4E', 'p18', 'E2Frep', 'p107',
@@ -248,6 +248,7 @@ obs_kTLmod = ['p53', 'Mdm2', 'RB', 'Ca', 'p27', 'Cdk1', 'p21', 'BAD', 'BIM', 'RS
 for m in obs_kTLmod:
     kTL_mod[obs2gene_i(m)] = 0.5
 
+kTL_mod[obs2gene_i('E2Frep')] = 0.1
 
 
 #%% optimizer (manual)
