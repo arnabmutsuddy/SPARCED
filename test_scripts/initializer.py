@@ -238,6 +238,7 @@ def obs2gene_i (obs_name):
 
 
 kTLest[obs2gene_i('p27')] = kTLest[obs2gene_i('p27')]/1.6
+kTLest[obs2gene_i('E2Frep')]=kTLest[obs2gene_i('E2Frep')]*1.6
 
 
 obs_kTLmod = ['p53', 'Mdm2', 'RB', 'Ca', 'p27', 'Cdk1', 'p21', 'BAD', 'BIM', 'RSK',
@@ -342,6 +343,8 @@ obs_c0_1 = ObsMat.columns[~ObsMat.columns.isin(obs_nc0_1)]
 
 #optimizer loop
 
+margin = 0.05
+
 rdata_list = list()
 error_fe_list = list()
 kTLf_obs_list = list()
@@ -355,7 +358,7 @@ kTL_loop = kTLest
 [model.setFixedParameterById(kTL_id[k],kTL_loop[k]) for k in range (len(kTL_id))]
 
 
-for k in range(0,10):
+for k in range(0,20):
     
     rdata1 = amici.runAmiciSimulation(model,solver)
     #x0_1 = rdata1['x']
@@ -372,11 +375,11 @@ for k in range(0,10):
     error_fe_list.append(error_fe)
     
     for i in range(len(error_fe)):
-        if error_fe[i] > 0.01 and ~np.isinf(error_fe[i]):
+        if error_fe[i] > margin and ~np.isinf(error_fe[i]):
             kTLf_obs[i] = 1/(1-error_fe[i])
-        elif error_fe[i] < -0.01 and ~np.isinf(error_fe[i]):
+        elif error_fe[i] < -1 * margin and ~np.isinf(error_fe[i]):
             kTLf_obs[i] = 1/(1-error_fe[i])
-        elif error_fe[i] > -0.01 and error_fe[i] < 0.01:
+        elif error_fe[i] > -1 * margin and error_fe[i] < margin:
             kTLf_obs[i] = 1
     # elif np.isinf(error_fe[i]):
     #     kTLf_obs[i] = 10
@@ -409,7 +412,7 @@ for k in range(0,10):
     
     [model.setFixedParameterById(kTL_id[k],kTL_loop[k]) for k in range(len(kTL_id))]
     
-    obs_notmatched = ObsMat.columns[~((error_fe > -0.01) & (error_fe < 0.01) | (obs0==0))]
+    obs_notmatched = ObsMat.columns[~((error_fe > -1*margin) & (error_fe < margin) | (obs0==0))]
     obs_matched = ObsMat.columns[~ObsMat.columns.isin(obs_notmatched)]
     
     obs_notmatched_list.append(obs_notmatched)
