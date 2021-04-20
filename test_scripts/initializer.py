@@ -12,6 +12,7 @@ import amici
 import amici.plotting
 
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import time
 import yaml
 import pypesto
@@ -19,6 +20,9 @@ import pypesto.petab
 import pypesto.optimize as optimize
 import pypesto.visualize as visualize
 import petab
+
+
+mpl.rcParams['figure.dpi'] = 300
 
 #%%
 
@@ -184,18 +188,64 @@ def timecourse(species,x_s,start_h=0,end_h=1000):
     plt.title('species timecourse')
     plt.show
 
-def timecourse_obs(obs_name,obs_all,i,start_h=0,end_h=1000,obs0_def=obs0):
-    timeh = np.linspace(start_h,end_h,(end_h-start_h))
+# def timecourse_obs(obs_name,obs_all,i,start_h=0,end_h=1000,obs0_def=obs0):
+#     timeh = np.linspace(start_h,end_h,(end_h-start_h))
+#     obs_ind = np.nonzero(ObsMat.columns==str(obs_name))[0][0]
+#     obs_t = obs_all[start_h:end_h,obs_ind]
+#     plt.figure(i)
+#     plt.scatter(timeh,obs_t)
+#     plt.axhline(y=obs0_def[obs_ind],color='r')
+#     plt.ylabel(str(obs_name))
+#     plt.xlabel('time(h)')
+#     plt.title('obs timecourse')
+#     plt.savefig(os.getcwd()+'/plots/obs/'+str(obs_name)+'_'+str(time.time())+'.png', dpi = 300)
+#     plt.show
+
+def timecourse_obs(obs_name,rdata,obs0_def=obs0):
+    
+    timeh = rdata['t']/3600
     obs_ind = np.nonzero(ObsMat.columns==str(obs_name))[0][0]
-    obs_t = obs_all[start_h:end_h,obs_ind]
+    obs_t = rdata['y'][:,obs_ind]
     plt.figure(i)
     plt.scatter(timeh,obs_t)
     plt.axhline(y=obs0_def[obs_ind],color='r')
+    plt.ylim(0,max(max(obs_t),obs0_def[obs_ind])*1.5)
     plt.ylabel(str(obs_name))
     plt.xlabel('time(h)')
     plt.title('obs timecourse')
-    plt.savefig(os.getcwd()+'/plots/obs/'+str(obs_name)+'_'+str(time.time())+'.png', dpi = 300)
+    # plt.savefig(os.getcwd()+'/plots/obs/'+str(obs_name)+'_'+str(time.time())+'.png', dpi = 300)
     plt.show
+
+#%%
+# kTL  modifier
+
+#kTLest[5] = kTLest[5]*5
+
+
+
+kTL_mod = np.ones(numberofgenes)
+
+
+
+
+def obs2gene (obs_name):
+    gene = model_genes[np.nonzero(np.matmul(ObsMat.values[:,list(ObsMat.columns).index(obs_name)],S_TL.values))[0]]
+    return gene
+
+def obs2gene_i (obs_name):
+    gene_i = np.nonzero(np.matmul(ObsMat.values[:,list(ObsMat.columns).index(obs_name)],S_TL.values))[0]
+    return gene_i
+
+
+kTLest[obs2gene_i('p27')] = kTLest[obs2gene_i('p27')]/1.6
+
+
+obs_kTLmod = ['p53', 'Mdm2', 'RB', 'Ca', 'p27', 'Cdk1', 'p21', 'BAD', 'BIM', 'RSK',
+       'bCATENIN', 'mTOR', 'TSC1', 'FOXO', 'EIF4E', 'p18', 'E2Frep', 'p107',
+       'p130']
+
+for m in obs_kTLmod:
+    kTL_mod[obs2gene_i(m)] = 0.5
 
 
 
@@ -219,7 +269,7 @@ kTL_initial = kTLest
 solver = model.getSolver()
 solver.setMaxSteps = 1e10
 
-
+#%%
 rdata1 = amici.runAmiciSimulation(model,solver)
 x0_1 = rdata1['x']
 x1 = rdata1['x'][-1,:]
@@ -256,7 +306,7 @@ kTLf = pd.Series(kTLf)
 kTLf = kTLf.transform(lambda x: 1 if np.isinf(x) or np.isnan(x) else x)
 kTLf = np.array(kTLf)
 
-kTLest_new = kTLest*kTLf
+kTLest_new = kTLest*(1+(kTLf-1)*kTL_mod)
 kTLest_new = pd.Series(kTLest_new)
 kTLest_new = kTLest_new.transform(lambda x:0 if np.isnan(x) else x)
 kTLest_new = np.array(kTLest_new)
@@ -275,9 +325,157 @@ obs1_new = obs0_1_new[-1]
 obsfse0_1_new = fse(obs0, obs1_new)
 obs_nc0_1 = ObsMat.columns[~((obsfse0_1_new > -0.01) & (obsfse0_1_new < 0.01) | (obs0==0))]
 
+obs_c0_1 = ObsMat.columns[~ObsMat.columns.isin(obs_nc0_1)]
+
 #%%
 
 # obs_inf_nan = ObsMat.columns[np.isinf(error_fe) | np.isnan(error_fe)]
 
 # obs_inf_i = [i for i, x in enumerate(np.isinf(error_fe) | np.isnan(error_fe)) if x]
 
+# timecourse_obs('MSH6', rdata1)
+
+#ObsMat.columns[~ObsMat.columns.isin(obs_nc0_1)]
+
+#%%
+
+
+#optimizer loop
+
+rdata_list = list()
+error_fe_list = list()
+kTLf_obs_list = list()
+obs_notmatched_list = list()
+obs_matched_list = list()
+kTL_loop_list = list()
+
+kTL_loop = kTLest
+
+
+[model.setFixedParameterById(kTL_id[k],kTL_loop[k]) for k in range (len(kTL_id))]
+
+
+for k in range(0,10):
+    
+    rdata1 = amici.runAmiciSimulation(model,solver)
+    #x0_1 = rdata1['x']
+    # x1 = rdata1['x'][-1,:]
+    #obs0_1 = rdata1['y']
+    obs1 = rdata1['y'][-1]
+    
+    rdata_list.append(rdata1)
+    #adjust kTLs
+    
+    error_fe = (obs0 - obs1)/obs0
+    kTLf_obs = np.ones(len(obs0))
+    
+    error_fe_list.append(error_fe)
+    
+    for i in range(len(error_fe)):
+        if error_fe[i] > 0.01 and ~np.isinf(error_fe[i]):
+            kTLf_obs[i] = 1/(1-error_fe[i])
+        elif error_fe[i] < -0.01 and ~np.isinf(error_fe[i]):
+            kTLf_obs[i] = 1/(1-error_fe[i])
+        elif error_fe[i] > -0.01 and error_fe[i] < 0.01:
+            kTLf_obs[i] = 1
+    # elif np.isinf(error_fe[i]):
+    #     kTLf_obs[i] = 10
+        elif np.isinf(error_fe[i]):
+            kTLf_obs[i] = 1
+    
+    kTLf_obs_list.append(kTLf_obs)
+
+    kTLf = []
+    for i in range(len(S_TL.columns)):
+        a = np.nonzero(np.array(S_TL.iloc[:,i]))[0]
+        if len(a) != 0:
+            sp_ind = a[0]
+            obs_ind = np.nonzero(np.array(ObsMat.iloc[sp_ind,:]))[0][0]
+            kTLf.append(kTLf_obs[obs_ind])
+        else:
+            kTLf.append(1)
+    kTLf = pd.Series(kTLf)
+    kTLf = kTLf.transform(lambda x: 1 if np.isinf(x) or np.isnan(x) else x)
+    kTLf = np.array(kTLf)
+    
+    kTLest_new = kTLest
+    
+    kTL_loop = kTL_loop*(1+(kTLf-1)*kTL_mod)
+    kTL_loop = pd.Series(kTL_loop)
+    kTL_loop = kTL_loop.transform(lambda x:0 if np.isnan(x) else x)
+    kTL_loop = np.array(kTL_loop)
+    
+    kTL_loop_list.append(kTL_loop)
+    
+    [model.setFixedParameterById(kTL_id[k],kTL_loop[k]) for k in range(len(kTL_id))]
+    
+    obs_notmatched = ObsMat.columns[~((error_fe > -0.01) & (error_fe < 0.01) | (obs0==0))]
+    obs_matched = ObsMat.columns[~ObsMat.columns.isin(obs_notmatched)]
+    
+    obs_notmatched_list.append(obs_notmatched)
+    obs_matched_list.append(obs_matched)
+    
+
+# kTLest_final = kTLest_new
+# [model.setFixedParameterById(kTL_id[k],kTLest_new[k]) for k in range(len(kTL_id))]
+
+
+# rdata1_test = amici.runAmiciSimulation(model,solver)
+
+# obsfse0_1_test = fse(obs0, rdata1_test['y'][-1])
+
+# obs_nc0_1 = ObsMat.columns[~((obsfse0_1_test > -0.01) & (obsfse0_1_test < 0.01) | (obs0==0))]
+
+# obs_c0_1 = ObsMat.columns[~ObsMat.columns.isin(obs_nc0_1)]
+
+
+#%%
+
+#obs2gene
+
+
+
+# obs_ind = 45
+
+# S_TL.values[np.nonzero(ObsMat.iloc[:,obs_ind].values)[0],:]
+
+# np.nonzero(np.matmul(ObsMat.values[:,obs_ind],S_TL.values))[0]
+
+#%%
+
+def timecourse_obs_loop(obs_name,rdata_list,obs0_def=obs0):
+    
+    timeh = rdata_list[0]['t']/3600
+    obs_ind = np.nonzero(ObsMat.columns==str(obs_name))[0][0]
+    obs_t = rdata_list[0]['y'][:,obs_ind]
+    
+    dash, axs = plt.subplots(2,2, figsize=(7,7))
+    
+    plt.figure
+    plt.subplots_adjust(hspace = 0.5, wspace = 0.35)
+    for j in range(len(rdata_list)):
+        
+        # l1 = str(j)
+        # l2 = '. kTLest=' + str(kTLest_list[j][obs2gene_i(obs_name)[0]])
+        # l3 = ', error_fe=' + str(kTLest_list[j][obs2gene])
+        
+        # label = str(j) + 'kTLest=' + str(kTLest_list[j][obs2gene_i(obs_name)[0]]) + ',error_fe=' + str(error_fe_list[j][list(ObsMat.index).index(obs_name)) + ',kTLf=' + str(kTLf_obs())]            
+        axs[0,0].plot(timeh,rdata_list[j]['y'][:,obs_ind])
+        
+        
+    axs[0,0].axhline(y=obs0_def[obs_ind],color='r')
+    axs[0,0].set_ylim(0,max(max(obs_t),obs0_def[obs_ind])*1.5)
+    axs[0,0].set_ylabel(str(obs_name))
+    axs[0,0].set_xlabel('time(h)')
+    axs[0,0].title.set_text('obs timecourse')
+    
+    axs[0,1].scatter(range(len(rdata_list)),np.array(error_fe_list)[:,list(ObsMat.columns).index(obs_name)])
+    axs[0,1].title.set_text('error_fe')
+    axs[1,0].scatter(range(len(rdata_list)),np.array(kTL_loop_list)[:,obs2gene_i(obs_name)[0]])
+    axs[1,0].title.set_text('kTLest_new')
+    axs[1,0].set_yscale('log')
+    axs[1,1].scatter(range(len(rdata_list)),np.array(kTLf_obs_list)[:,list(ObsMat.columns).index(obs_name)])
+    axs[1,1].title.set_text('kTLf_obs')
+    axs[1,1].set_yscale('log')
+    # plt.savefig(os.getcwd()+'/plots/obs/'+str(obs_name)+'_'+str(time.time())+'.png', dpi = 300)
+    # plt.show
