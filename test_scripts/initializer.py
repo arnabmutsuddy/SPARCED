@@ -35,7 +35,7 @@ sys.path.insert(0, os.path.abspath(model_output_dir))
 model_module = importlib.import_module(model_name)
 model = model_module.getModel()
 
-#%%
+
 
 sbml_reader = libsbml.SBMLReader()
 sbml_doc = sbml_reader.readSBML(sbml_file)
@@ -68,6 +68,7 @@ k50E_values = []
 
 for rr in range(numRlaws):
     line1 = Ratelawsf.iloc[rr]
+    # if "EIF4E" in str(line1[1]) and "MDM2pro" not in str(line1[1]) and "Wip1pro" not in str(line1[1]):
     if "EIF4E" in str(line1[1]):
         kTL_i = "k"+str(rr+1)+"_1"
         kTL_id.append(kTL_i)
@@ -88,6 +89,8 @@ for rr in range(numRlaws):
         
 
 kTLest = gene_params['kTLnat_s'].values
+
+
 # kTLd = gene_params['kTLd_s'].values
 mExp_mpc = gene_params['mrna_mpc'].copy()
 
@@ -178,10 +181,10 @@ def fe(x,y):
         f_error = 0         
     return f_error
 
-def timecourse(species,x_s,start_h=0,end_h=1000):    
-    timeh = np.linspace(start_h,end_h,(end_h-start_h))
+def timecourse(species,rdata):    
+    timeh = rdata['t']/3600
     species_ind = np.nonzero(S_PARCDL.index==species)[0][0]        
-    x_t = x_s[start_h:end_h,species_ind]
+    x_t = rdata['x'][:,species_ind]
     plt.scatter(timeh,x_t)
     plt.ylabel(str(species))
     plt.xlabel('time(h)')
@@ -216,6 +219,43 @@ def timecourse_obs(obs_name,rdata,obs0_def=obs0):
     # plt.savefig(os.getcwd()+'/plots/obs/'+str(obs_name)+'_'+str(time.time())+'.png', dpi = 300)
     plt.show
 
+#%% temp - debug
+# ts = 1000*3600
+# model.setTimepoints(np.linspace(0,ts,1000))
+# model.setFixedParameterById(kA77_id, kA77)
+# model.setFixedParameterById(kA87_id, kA87)
+
+# solver = model.getSolver()
+# solver.setMaxSteps = 1e10
+
+# x0 = x0PARCDL
+# model.setInitialStates(x0.values)
+# kTLest = np.delete(kTLest,[1,2])
+#%%
+
+
+# kTLest[0] = kTLest[0]*1000
+
+
+
+# kTL_initial = kTLest
+
+# model.setFixedParameterById('k273_1',0)
+
+# # kTL_initial = np.delete(kTL_initial,[0])
+# # kTL_id = np.delete(kTL_id,[0])
+
+# [model.setFixedParameterById(kTL_id[k],kTL_initial[k]) for k in range (len(kTL_id))]
+
+
+# rdata_test = amici.runAmiciSimulation(model,solver)
+# timecourse('p53ac',rdata_test)
+# timecourse('p53inac',rdata_test)
+
+
+
+
+
 #%%
 # kTL  modifier
 
@@ -239,7 +279,9 @@ def obs2gene_i (obs_name):
 
 kTLest[obs2gene_i('p27')] = kTLest[obs2gene_i('p27')]/1.6
 # kTLest[obs2gene_i('E2Frep')]=kTLest[obs2gene_i('E2Frep')]*1.65
-kTLest[obs2gene_i('E2Frep')]=kTLest[obs2gene_i('E2Frep')]*1.575
+kTLest[obs2gene_i('E2Frep')] = kTLest[obs2gene_i('E2Frep')]*1.575
+# kTLest[obs2gene_i('p53')] = kTLest[obs2gene_i('p53')]/100
+# kTLest[obs2gene_i('p53')] = 0
 
 obs_kTLmod = ['p53', 'Mdm2', 'RB', 'Ca', 'p27', 'Cdk1', 'p21', 'BAD', 'BIM', 'RSK',
        'bCATENIN', 'mTOR', 'TSC1', 'FOXO', 'EIF4E', 'p18', 'E2Frep', 'p107',
@@ -256,6 +298,8 @@ ts = 1000*3600
 model.setTimepoints(np.linspace(0,ts,1000))
 model.setFixedParameterById(kA77_id, kA77)
 model.setFixedParameterById(kA87_id, kA87)
+
+model.setFixedParameterById('k273_1',0)
 
 [model.setFixedParameterById(k50E_id[k],0) for k in range(len(k50E_id))]
 
@@ -344,7 +388,7 @@ obs_c0_1 = ObsMat.columns[~ObsMat.columns.isin(obs_nc0_1)]
 
 #optimizer loop
 
-margin = 0.05
+margin = 0.01
 
 rdata_list = list()
 error_fe_list = list()
@@ -359,7 +403,7 @@ kTL_loop = kTLest
 [model.setFixedParameterById(kTL_id[k],kTL_loop[k]) for k in range (len(kTL_id))]
 
 
-for k in range(0,20):
+for k in range(0,100):
     
     rdata1 = amici.runAmiciSimulation(model,solver)
     #x0_1 = rdata1['x']
@@ -483,3 +527,40 @@ def timecourse_obs_loop(obs_name,rdata_list,obs0_def=obs0):
     axs[1,1].set_yscale('log')
     # plt.savefig(os.getcwd()+'/plots/obs/'+str(obs_name)+'_'+str(time.time())+'.png', dpi = 300)
     # plt.show
+    
+    
+#%%
+
+# test p53ac reactions
+
+model.setFixedParameterById('k332_1',0)
+
+model.setFixedParameterById('k273_1',0.0005)
+
+model.setFixedParameterById('k273_1',0)
+
+model.setFixedParameterById('k273_2',0.002777778)
+
+model.setFixedParameterById('k273_1',5e-9)
+
+rdata_test = amici.runAmiciSimulation(model,solver)
+
+timecourse('p53ac',rdata_test)
+timecourse('p53inac',rdata_test)
+
+#%%
+ts = 1000*3600
+model.setTimepoints(np.linspace(0,ts,1000))
+model.setFixedParameterById(kA77_id, kA77)
+model.setFixedParameterById(kA87_id, kA87)
+
+solver = model.getSolver()
+solver.setMaxSteps = 1e10
+
+#%%
+model.setInitialStates(x0.values)
+kTLest = np.delete(kTLest,[1,2])
+
+rdata_test = amici.runAmiciSimulation(model,solver)
+timecourse('p53ac',rdata_test)
+timecourse('p53inac',rdata_test)
