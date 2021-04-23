@@ -534,6 +534,10 @@ kTL_loop_list = list()
 kTL_loop = kTLest
 
 
+model.setFixedParameterById('k1_1',0)
+model.setFixedParameterById('k1_2',0)
+model.setFixedParameterById('k2',0)
+
 [model.setFixedParameterById(kTL_id[k],kTL_loop[k]) for k in range (len(kTL_id))]
 
 m = len(ObsMat.columns)
@@ -583,7 +587,6 @@ while m !=0:
     kTLf = kTLf.transform(lambda x: 1 if np.isinf(x) or np.isnan(x) else x)
     kTLf = np.array(kTLf)
     
-    kTLest_new = kTLest
     
     kTL_loop = kTL_loop*(1+(kTLf-1)*kTL_mod)
     kTL_loop = pd.Series(kTL_loop)
@@ -615,6 +618,12 @@ x1 = pd.Series(data=x1, index=S_TL.index)
 
 #%%
 
+model.setFixedParameterById('k1_1',0)
+model.setFixedParameterById('k1_2',0)
+model.setFixedParameterById('k2',0)
+
+
+
 model.setInitialStates(x1.values)
 
 [model.setFixedParameterById(k50E_id[k],k50E_values[k]) for k in range (len(k50E_id))]
@@ -626,7 +635,7 @@ obs_notmatched_list_1 = list()
 obs_matched_list_1 = list()
 kTL_loop_list_1 = list()
 
-kTL_loop_1 = kTLest
+kTL_loop = kTL_loop_list[-1]
 
 m = len(ObsMat.columns)
 
@@ -701,3 +710,213 @@ rdata_final_2 = amici.runAmiciSimulation(model,solver)
 x2 = rdata_final_2['x'][-1]
 
 x2 = pd.Series(data=x1, index=S_TL.index)
+
+#%%
+
+kbRi = 0.04
+kdR0 = 2.22e-6
+nR = 5
+k50R = 4.86
+
+ps6ki = x2['pS6K']
+f1 = (ps6ki**nR)/(k50R**nR+ps6ki**nR)
+Rt = x2['Ribosome']
+kbR0 = Rt*kdR0 - kbRi*f1
+
+model.setFixedParameterById('k1_1', kbR0)
+model.setFixedParameterById('k1_2', kbRi)
+model.setFixedParameterById('k2', kdR0)
+
+model.setInitialStates(x2.values)
+
+#%%
+
+
+rdata_list_2 = list()
+error_fe_list_2 = list()
+kTLf_obs_list_2 = list()
+obs_notmatched_list_2 = list()
+obs_matched_list_2 = list()
+kTL_loop_list_2 = list()
+
+kTL_loop = kTL_loop_list_1[-1]
+
+m = len(ObsMat.columns)
+
+while m !=0:
+    
+    rdata1 = amici.runAmiciSimulation(model,solver)
+    #x0_1 = rdata1['x']
+    # x1 = rdata1['x'][-1,:]
+    #obs0_1 = rdata1['y']
+    obs1 = rdata1['y'][-1]
+    
+    rdata_list_2.append(rdata1)
+    #adjust kTLs
+    
+    error_fe = (obs0 - obs1)/obs0
+    kTLf_obs = np.ones(len(obs0))
+    
+    error_fe_list_2.append(error_fe)
+    
+    for i in range(len(error_fe)):
+        if error_fe[i] > margin and ~np.isinf(error_fe[i]):
+            kTLf_obs[i] = 1/(1-error_fe[i])
+        elif error_fe[i] < -1 * margin and ~np.isinf(error_fe[i]):
+            kTLf_obs[i] = 1/(1-error_fe[i])
+        elif error_fe[i] > -1 * margin and error_fe[i] < margin:
+            kTLf_obs[i] = 1
+    # elif np.isinf(error_fe[i]):
+    #     kTLf_obs[i] = 10
+        elif np.isinf(error_fe[i]):
+            kTLf_obs[i] = 1
+    
+    kTLf_obs_list_2.append(kTLf_obs)
+
+    kTLf = []
+    for i in range(len(S_TL.columns)):
+        a = np.nonzero(np.array(S_TL.iloc[:,i]))[0]
+        if len(a) != 0:
+            sp_ind = a[0]
+            obs_ind = np.nonzero(np.array(ObsMat.iloc[sp_ind,:]))[0][0]
+            kTLf.append(kTLf_obs[obs_ind])
+        else:
+            kTLf.append(1)
+    kTLf = pd.Series(kTLf)
+    kTLf = kTLf.transform(lambda x: 1 if np.isinf(x) or np.isnan(x) else x)
+    kTLf = np.array(kTLf)
+    
+    kTLest_new = kTLest
+    
+    kTL_loop = kTL_loop*(1+(kTLf-1)*kTL_mod)
+    kTL_loop = pd.Series(kTL_loop)
+    kTL_loop = kTL_loop.transform(lambda x:0 if np.isnan(x) else x)
+    kTL_loop = np.array(kTL_loop)
+    
+    kTL_loop_list_2.append(kTL_loop)
+    
+    [model.setFixedParameterById(kTL_id[k],kTL_loop[k]) for k in range(len(kTL_id))]
+    
+    obs_notmatched = ObsMat.columns[~((error_fe > -1*margin) & (error_fe < margin) | (obs0==0))]
+    obs_matched = ObsMat.columns[~ObsMat.columns.isin(obs_notmatched)]
+    
+    obs_notmatched_list_2.append(obs_notmatched)
+    obs_matched_list_2.append(obs_matched)
+    
+    m = len(obs_notmatched)
+    
+kTLest_final_3 = kTL_loop_list_2[-1]
+
+[model.setFixedParameterById(kTL_id[k],kTLest_final_3[k]) for k in range(len(kTL_id))]
+
+rdata_final_3 = amici.runAmiciSimulation(model,solver)
+
+x3 = rdata_final_3['x'][-1]
+
+x3 = pd.Series(data=x1, index=S_TL.index)
+
+#%%
+
+apop_def = model.getInitialStates()[list(ObsMat.index).index('PARP')]*0.5
+
+kA87s = [1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1]
+
+for y in range(len(kA87s)):
+    kA87 = kA87s[y]
+    model.setFixedParameterById(kA87_id, kA87)
+    
+        
+    rdata_list_loop = list()
+    error_fe_list_loop = list()
+    kTLf_obs_list_loop = list()
+    obs_notmatched_list_loop = list()
+    obs_matched_list_loop = list()
+    kTL_loop_list_loop = list()
+    
+    kTL_loop = kTL_loop_list_2[-1]
+    
+    m = len(ObsMat.columns)
+    
+    while m !=0:
+        
+        rdata1 = amici.runAmiciSimulation(model,solver)
+        #x0_1 = rdata1['x']
+        # x1 = rdata1['x'][-1,:]
+        #obs0_1 = rdata1['y']
+        obs1 = rdata1['y'][-1]
+        
+        rdata_list_loop.append(rdata1)
+        #adjust kTLs
+        
+        error_fe = (obs0 - obs1)/obs0
+        kTLf_obs = np.ones(len(obs0))
+        
+        error_fe_list_loop.append(error_fe)
+        
+        for i in range(len(error_fe)):
+            if error_fe[i] > margin and ~np.isinf(error_fe[i]):
+                kTLf_obs[i] = 1/(1-error_fe[i])
+            elif error_fe[i] < -1 * margin and ~np.isinf(error_fe[i]):
+                kTLf_obs[i] = 1/(1-error_fe[i])
+            elif error_fe[i] > -1 * margin and error_fe[i] < margin:
+                kTLf_obs[i] = 1
+        # elif np.isinf(error_fe[i]):
+        #     kTLf_obs[i] = 10
+            elif np.isinf(error_fe[i]):
+                kTLf_obs[i] = 1
+        
+        kTLf_obs_list_loop.append(kTLf_obs)
+    
+        kTLf = []
+        for i in range(len(S_TL.columns)):
+            a = np.nonzero(np.array(S_TL.iloc[:,i]))[0]
+            if len(a) != 0:
+                sp_ind = a[0]
+                obs_ind = np.nonzero(np.array(ObsMat.iloc[sp_ind,:]))[0][0]
+                kTLf.append(kTLf_obs[obs_ind])
+            else:
+                kTLf.append(1)
+        kTLf = pd.Series(kTLf)
+        kTLf = kTLf.transform(lambda x: 1 if np.isinf(x) or np.isnan(x) else x)
+        kTLf = np.array(kTLf)
+        
+        kTLest_new = kTLest
+        
+        kTL_loop = kTL_loop*(1+(kTLf-1)*kTL_mod)
+        kTL_loop = pd.Series(kTL_loop)
+        kTL_loop = kTL_loop.transform(lambda x:0 if np.isnan(x) else x)
+        kTL_loop = np.array(kTL_loop)
+        
+        kTL_loop_list_loop.append(kTL_loop)
+        
+        [model.setFixedParameterById(kTL_id[k],kTL_loop[k]) for k in range(len(kTL_id))]
+        
+        obs_notmatched = ObsMat.columns[~((error_fe > -1*margin) & (error_fe < margin) | (obs0==0))]
+        obs_matched = ObsMat.columns[~ObsMat.columns.isin(obs_notmatched)]
+        
+        obs_notmatched_list_loop.append(obs_notmatched)
+        obs_matched_list_loop.append(obs_matched)
+        
+        m = len(obs_notmatched)
+        
+    kTLest_final_loop = kTL_loop_list_2[-1]
+    
+    [model.setFixedParameterById(kTL_id[k],kTLest_final_3[k]) for k in range(len(kTL_id))]
+    
+    rdata_final_loop = amici.runAmiciSimulation(model,solver)
+    
+    x_loop = rdata_final_loop['x'][-1]
+    
+    x_loop = pd.Series(data=x_loop, index=S_TL.index)
+    
+    flagA = 0
+    
+    parp_all = rdata_final_loop['x'][:,list(ObsMat.index).index('PARP')]
+    
+    if sum(parp_all < apop_def) != 0:
+        flagA = 1
+    
+    if flagA == 1:
+        kA87 = kA87s[y-1]
+        break
+    
