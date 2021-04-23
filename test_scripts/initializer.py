@@ -555,7 +555,9 @@ while m !=0:
     error_fe_list.append(error_fe)
     
     for i in range(len(error_fe)):
-        if error_fe[i] > margin and ~np.isinf(error_fe[i]):
+        if obs0[i] == 0:
+            kTLf_obs[i] = 0        
+        elif error_fe[i] > margin and ~np.isinf(error_fe[i]):
             kTLf_obs[i] = 1/(1-error_fe[i])
         elif error_fe[i] < -1 * margin and ~np.isinf(error_fe[i]):
             kTLf_obs[i] = 1/(1-error_fe[i])
@@ -689,3 +691,13 @@ while m !=0:
     obs_matched_list_1.append(obs_matched)
     
     m = len(obs_notmatched)
+    
+kTLest_final_2 = kTL_loop_list_1[-1]
+
+[model.setFixedParameterById(kTL_id[k],kTLest_final_2[k]) for k in range(len(kTL_id))]
+
+rdata_final_2 = amici.runAmiciSimulation(model,solver)
+
+x2 = rdata_final_2['x'][-1]
+
+x2 = pd.Series(data=x1, index=S_TL.index)

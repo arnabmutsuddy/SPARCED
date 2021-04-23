@@ -386,6 +386,10 @@ vC48	Nucleus	0.001
 vC49	Nucleus	0.0001						
 vC50	Nucleus	0.001						
 vC51	Nucleus	0.0001						
+vC52	Nucleus	0.001						
+vC53	Nucleus	0.0001						
+vC54	Nucleus	0.001						
+vC55	Nucleus	0.0001						
 vCd1	Nucleus	2.77E-05						
 vCd3	Nucleus	2.77E-05						
 vCd4	Nucleus	4.1E-06						
