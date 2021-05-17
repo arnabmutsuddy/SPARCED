@@ -8,7 +8,7 @@ Created on Wed Apr 21 13:12:04 2021
 import sys
 import os
 import pandas as pd
-sys.path.append(os.getcwd()[0:os.getcwd().rfind('/')]+'/sparced'+'/bin')
+sys.path.append(os.path.join(os.getcwd()[0:os.getcwd().rfind('\\')],'sparced','bin'))
 
 import libsbml
 import importlib
